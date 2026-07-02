@@ -18,11 +18,19 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>ADdigital: Tworzenie Stron Internetowych w Szczecinie. Darmowa Wycena</title>
-        <meta name="description" content="ADdigital: Profesjonalne tworzenie stron internetowych w Szczecinie. Strony dla firm, wizytówki, sklepy oraz aplikacje webowe. Obsługujemy również Goleniów, Stargard, Nowogard. Otrzymaj darmową wycenę w 24 godziny!" />
-        <meta name="keywords" content="tworzenie stron internetowych Szczecin, strony internetowe Szczecin, strony www Szczecin, strony dla firm Szczecin, ADdigital, darmowa wycena strony, tworzenie stron Goleniów, tworzenie stron Stargard, tworzenie stron Nowogard, wizytówki, CMS, sklepy internetowe" />
+        <title>
+          ADdigital: Tworzenie Stron Internetowych w Szczecinie. Darmowa Wycena
+        </title>
+        <meta
+          name="description"
+          content="ADdigital: Profesjonalne tworzenie stron internetowych w Szczecinie. Strony dla firm, wizytówki, sklepy oraz aplikacje webowe. Obsługujemy również Goleniów, Stargard, Nowogard. Otrzymaj darmową wycenę w 24 godziny!"
+        />
+        <meta
+          name="keywords"
+          content="tworzenie stron internetowych Szczecin, strony internetowe Szczecin, strony www Szczecin, strony dla firm Szczecin, ADdigital, darmowa wycena strony, tworzenie stron Goleniów, tworzenie stron Stargard, tworzenie stron Nowogard, wizytówki, CMS, sklepy internetowe"
+        />
       </Helmet>
-      
+
       {/* Scrolling Dot Pattern below Hero */}
       <div className="absolute top-[100svh] inset-x-0 bottom-0 pointer-events-none z-0 [mask-image:linear-gradient(to_bottom,transparent,black_10vh,black_calc(100%-10vh),transparent)]">
         <DotPattern
@@ -43,7 +51,7 @@ export default function Home() {
           <Services />
           <ForWho />
           <Process />
-          <Testimonials />
+          {/* <Testimonials /> */}
           <FAQ />
           <Contact />
         </main>
