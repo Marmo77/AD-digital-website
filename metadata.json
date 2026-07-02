@@ -1,0 +1,6 @@
+{
+  "name": "Minimalist Digital Agency",
+  "description": "Mint-accented Awwwards-level landing page for a digital agency offering Web, SEO, and Design services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

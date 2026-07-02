@@ -1,0 +1,324 @@
+{
+  "translation": {
+    "nav": {
+      "projects": "Realizacje",
+      "about": "O mnie",
+      "services": "Oferta",
+      "process": "Proces",
+      "contact": "Kontakt",
+      "freeQuote": "Darmowa wycena"
+    },
+    "hero": {
+      "title": "Tworzymy strony, które zarabiają dla ",
+      "titleHighlight": "Twojej firmy.",
+      "subtitle": "Zajmujemy się projektowaniem i wdrażaniem nowoczesnych stron internetowych (Goleniów, Szczecin, Stargard, Nowogard). Tworzymy strony WWW i sklepy internetowe, które świetnie wyglądają, wysoko pozycjonują się w Google i generują nowych klientów.",
+      "ctaPrimary": "Darmowa Wycena",
+      "ctaSecondary": "Zobacz realizacje",
+      "scroll": "PRZEWIŃ"
+    },
+    "about": {
+      "badge": "O MNIE",
+      "title": "Tworzę strony, które ",
+      "titleHighlight": [
+        "przyciągają.",
+        "zarabiają.",
+        "sprzedają.",
+        "konwertują."
+      ],
+      "subtitle": "Cześć, jestem Aleksy! Mam 19 lat i z wykształcenia jestem programistą. Programowanie to dla mnie coś więcej niż tylko pisanie kodu – to realne narzędzie sprzedażowe.",
+      "description1": "Nie używam ociężałych szablonów (np. WordPress). Buduję od podstaw, wykorzystując potężny stos technologiczny (m.in. React i TypeScript), dzięki czemu Twoja strona jest bezkonkurencyjnie szybka i generuje zyski.",
+      "description2": "Strona internetowa to inwestycja w rozwój Twojej firmy. Oferuję profesjonalne tworzenie stron internetowych (obsługuję Szczecin, Goleniów, Stargard, Nowogard i okolice). Wierzę w przejrzystość i partnerską współpracę bez skomplikowanego żargonu.",
+      "cta": "Porozmawiajmy o Twoim biznesie",
+      "features": {
+        "location": {
+          "title": "Lokalna współpraca",
+          "description": "Działam na terenie Szczecina, Goleniowa, Nowogardu i Stargardu. Chętnie spotkam się osobiście, aby omówić projekt."
+        },
+        "quality": {
+          "title": "Bezkompromisowa jakość",
+          "description": "Koduję w najnowszych technologiach (Vite, Supabase, Tailwind, Vercel). Masz gwarancję bezpieczeństwa i niezawodności."
+        },
+        "approach": {
+          "title": "Indywidualne podejście",
+          "description": "Żadnych sztywnych cenników. Otrzymujesz szybką, darmową wycenę i dedykowane rozwiązanie skrojone pod Twój budżet."
+        }
+      }
+    },
+    "projects": {
+      "badge": "Realizacje",
+      "title": "Projekty, które napędzają biznes",
+      "subtitle": "Zobacz strony, które stworzyliśmy, aby pomóc firmom zdobywać więcej klientów z wyszukiwarki Google.",
+      "viewCase": "Zobacz na żywo",
+      "viewMore": "Zobacz więcej"
+    },
+    "services": {
+      "badge": "W CZYM MOGĘ POMÓC",
+      "title": "Kompleksowe rozwiązania, które ",
+      "titleHighlight": "napędzają",
+      "titleEnd": " Twój biznes.",
+      "subtitle": "Od szybkich wizytówek po rozbudowane systemy. Gwarantuję precyzyjne kodowanie, nowoczesny design i mierzalne efekty oparte na najnowszych technologiach.",
+      "list": [
+        {
+          "id": "landing_page",
+          "title": "Strony wizytówkowe & Landing Page",
+          "description": "Szybkie, jednonastronicowe witryny stworzone do maksymalizacji konwersji i zbierania leadów. Idealne na start, promocję wydarzenia lub pojedynczej usługi. Brak zbędnego kodu, błyskawiczne ładowanie.",
+          "tags": [
+            "React",
+            "Vite",
+            "Wysoka Konwersja"
+          ]
+        },
+        {
+          "id": "cms",
+          "title": "Strony z systemem zarządzania treścią (CMS)",
+          "description": "Indywidualnie zaprojektowane serwisy z intuicyjnym panelem administracyjnym. Pozwalają na samodzielne zarządzanie tekstami, dodawanie artykułów na bloga i zdjęć bez znajomości programowania.",
+          "tags": [
+            "Supabase",
+            "Tailwind CSS",
+            "Skalowalność"
+          ]
+        },
+        {
+          "id": "seo",
+          "title": "Zaawansowane SEO i widoczność w sieci",
+          "description": "Buduję strony zoptymalizowane pod kątem algorytmów Google od pierwszej linijki kodu. Poprawiam szybkość wczytywania (Core Web Vitals) i dbam o idealną semantykę, by wyprzedzić Twoją konkurencję.",
+          "tags": [
+            "Technical SEO",
+            "Core Web Vitals",
+            "Semantyczny HTML"
+          ]
+        },
+        {
+          "id": "webapp",
+          "title": "Zaawansowane Aplikacje Webowe",
+          "description": "Wychodzę poza standardowe witryny. Tworzę autorskie aplikacje z logowaniem, bazami danych i integracjami zewnętrznych systemów (API), np. dedykowane portale klienta czy systemy rezerwacji.",
+          "tags": [
+            "TypeScript",
+            "API Integrations",
+            "Vercel"
+          ]
+        },
+        {
+          "id": "redesign",
+          "title": "Redesign obecnej strony",
+          "description": "Twoja witryna przestała sprzedawać lub działa zbyt wolno na telefonach? Przeprowadzę techniczny audyt, zaproponuję nowy układ UX/UI i przepiszę ją na nowoczesne technologie, zachowując pozycje w Google.",
+          "tags": [
+            "Audyt UX/UI",
+            "Migracja",
+            "Optymalizacja"
+          ]
+        },
+        {
+          "id": "marketing",
+          "title": "Marketing i Analityka",
+          "description": "Łączę świetny produkt technologiczny z precyzyjnym dotarciem do klienta. Konfiguruję analitykę i prowadzę płatne kampanie reklamowe, które generują realny ruch i szybki zwrot z inwestycji.",
+          "tags": [
+            "Google Ads",
+            "Meta Ads",
+            "Analityka"
+          ]
+        }
+      ],
+      "contactPrompt": "Nie znalazłeś tego, czego szukasz, lub potrzebujesz dedykowanej wyceny?",
+      "contactButton": "Porozmawiajmy o Twoim projekcie"
+    },
+    "forWho": {
+      "badge": "Czy to dla Ciebie?",
+      "title": "Dla kogo jest ta oferta?",
+      "subtitle": "Diagnostyka Współpracy",
+      "heading": "Sprawdźmy, czy do siebie ",
+      "headingHighlight": "pasujemy.",
+      "desc": "Nie celuję we współpracę z każdym. Angażuję się w projekty traktowane jako inwestycja w rozwój biznesu, gdzie jakość to priorytet, a nie dodatek.",
+      "goodFitTitle": "Jesteśmy idealnym dopasowaniem, jeżeli:",
+      "goodFit": [
+        {
+          "title": "Strona ma zarabiać",
+          "description": "Traktujesz WWW jako narzędzie sprzedażowe. Oczekujesz zwrotu z inwestycji i profesjonalnego wizerunku w sieci.",
+          "number": "1."
+        },
+        {
+          "title": "Partnerstwo biznesowe",
+          "description": "Szukasz partnera, a nie \"wykonawcy\". Masz czas na krótką rozmowę, by wspólnie nakreślić strategię.",
+          "number": "2."
+        },
+        {
+          "title": "Inwestycja w jakość",
+          "description": "Rozumiesz, że dobra aplikacja kosztuje, ale dzięki szybkości i użyteczności, zarabia na siebie.",
+          "number": "3."
+        }
+      ],
+      "badFitTitle": "NIE jesteśmy dopasowaniem, jeżeli:",
+      "badFit": [
+        {
+          "title": "A najtaniej to ile?",
+          "description": "Zależy Ci tylko na tym, by znaleźć najtańszą opcję na rynku za 500 zł, bez względu na jakość i sprzedaż.",
+          "number": "1."
+        },
+        {
+          "title": "Projekt \"na wczoraj\"",
+          "description": "Oczekujesz natychmiastowych efektów \"od ręki\". Nie masz czasu na wstępną analizę swojej firmy.",
+          "number": "2."
+        },
+        {
+          "title": "Strona \"tylko żeby była\"",
+          "description": "Nie interesuje Cię pozyskiwanie nowych klientów z internetu. Szukasz po prostu martwej wizytówki.",
+          "number": "3."
+        }
+      ]
+    },
+    "process": {
+      "badge": "Jak pracujemy",
+      "title": "Zmieniamy chaos ",
+      "steps": [
+        {
+          "phase": "01 / KONSULTACJA",
+          "title": "Analiza i cele",
+          "desc": "Zaczynamy od niezobowiązującej rozmowy – na żywo lub online. Dokładnie analizuję Twoją branżę, działania konkurencji oraz oczekiwania Twoich klientów. Wspólnie definiujemy cele biznesowe, które ma realizować nowa strona. To solidny fundament, bez którego nie ruszamy z pracą.",
+          "tags": [
+            "Analiza Rynku",
+            "Brief Biznesowy",
+            "Cele Projektu"
+          ]
+        },
+        {
+          "phase": "02 / PROJEKTOWANIE",
+          "title": "Koncepcja i makiety",
+          "desc": "Przekuwam nasze ustalenia w pierwsze wizualizacje, zanim jeszcze napiszę linijkę kodu. Krok po kroku tłumaczę Ci zaproponowane rozwiązania i sprawdzam, czy wpisują się w Twoją wizję. Na tym etapie wspólnie dyskutujemy i wprowadzamy poprawki, aż projekt będzie w 100% zgodny z Twoimi oczekiwaniami.",
+          "tags": [
+            "Makiety Wizualne",
+            "Konsultacje",
+            "Wdrażanie Poprawek"
+          ]
+        },
+        {
+          "phase": "03 / PROGRAMOWANIE",
+          "title": "Kodowanie i optymalizacja",
+          "desc": "Tu dzieje się magia. Zamieniam zatwierdzone projekty w w pełni funkcjonalną stronę korzystając z najnowszych technologii. Dbam o każdy detal – od płynnych animacji, po optymalizację szybkości ładowania (Core Web Vitals) i perfekcyjne wyświetlanie na urządzeniach mobilnych.",
+          "tags": [
+            "Frontend Dev",
+            "Mobile Optymalizacja",
+            "Core Web Vitals"
+          ]
+        },
+        {
+          "phase": "04 / TESTY",
+          "title": "Kontrola jakości",
+          "desc": "Zanim pokażemy stronę światu, przechodzi ona rygorystyczny proces testowania. Sprawdzam jej wydajność w różnych przeglądarkach, testuję formularze i weryfikuję poprawne wyświetlanie na wszystkich możliwych rozdzielczościach ekranu. Otrzymujesz w pełni działającą wersję do ostatecznej weryfikacji.",
+          "tags": [
+            "Cross-browser QA",
+            "Responsive Check",
+            "Final Review"
+          ]
+        },
+        {
+          "phase": "05 / WDROŻENIE",
+          "title": "Publikacja i Wsparcie",
+          "desc": "Gdy w pełni zaakceptujesz wygląd i działanie strony, a formalności finansowe zostaną dopięte, publikuję gotowy produkt na niezawodnych serwerach. Moja rola jednak się tu nie kończy. Pozostaję do Twojej dyspozycji – pomagam w obsłudze, wdrażam ewentualne poprawki i jestem gotowy na dalszą rozbudowę strony w przyszłości.",
+          "tags": [
+            "Publikacja w Sieci",
+            "Wsparcie Techniczne",
+            "Rozwój Projektu"
+          ]
+        }
+      ],
+      "titleLight": "w płynną ",
+      "titleHighlight": "egzekucję."
+    },
+    "testimonials": {
+      "badge": "Opinie",
+      "title": "Co mówią moi klienci?",
+      "subtitle": "Dowód na to, że proces naprawdę działa."
+    },
+    "faq": {
+      "badge": "Rozwiej swoje wątpliwości",
+      "title": "Najczęściej zadawane ",
+      "items": [
+        {
+          "question": "Ile kosztuje stworzenie strony internetowej?",
+          "answer": "Zazwyczaj budżet moich projektów mieści się w przedziale od 1500 do 5000 PLN. Ostateczna kwota zawsze zależy od Twoich wymagań i wybranego typu strony (Landing Page będzie tańszy niż rozbudowany serwis z systemem CMS). Przed rozpoczęciem prac otrzymasz ode mnie dokładną, bezpłatną wycenę."
+        },
+        {
+          "question": "Czy będę mógł sam edytować treści na stronie?",
+          "answer": "Tak. Tworzę również strony wyposażone w dedykowany, intuicyjny system CMS (Content Management System). Dzięki temu będziesz mógł samodzielnie aktualizować teksty, podmieniać zdjęcia czy dodawać wpisy bez konieczności kontaktu ze mną i bez wiedzy programistycznej."
+        },
+        {
+          "question": "Czy pomagasz w pozycjonowaniu (SEO) i reklamach?",
+          "answer": "Zdecydowanie. Samo stworzenie strony to dopiero połowa sukcesu. Od strony technicznej wdrażam najnowsze struktury SEO, dzięki czemu witryna ładuje się błyskawicznie i jest faworyzowana przez algorytmy. Oferuję również kompleksowe prowadzenie płatnych kampanii Google Ads oraz Meta Ads, aby natychmiast sprowadzić klientów do Twojej firmy."
+        },
+        {
+          "question": "Jak długo trwa realizacja projektu?",
+          "answer": "Prosty Landing Page to zazwyczaj kwestia 7-14 dni. Rozbudowane strony z systemem CMS i wieloma podstronami zajmują od 3 do 5 tygodni. Dokładny harmonogram zawsze ustalamy przed startem."
+        },
+        {
+          "question": "Czy moja strona będzie poprawnie działać na telefonach?",
+          "answer": "Absolutnie tak. Projektowanie zaczynam często od wersji mobilnej (mobile-first). Gwarantuję, że strona będzie w 100% responsywna i idealnie dopasowana do smartfonów, tabletów i dużych ekranów."
+        },
+        {
+          "question": "Jakich technologii używasz?",
+          "answer": "Nie używam powolnych kreatorów z tysiącem wtyczek. Koduję od podstaw używając nowoczesnego stacku technologicznego: Vite, React, TypeScript, Supabase, Tailwind CSS. Zapewnia to maksymalne bezpieczeństwo i szybkość działania."
+        },
+        {
+          "question": "Jak wygląda proces współpracy?",
+          "answer": "Zaczynamy od spotkania (na żywo lub online), gdzie poznaję Twój biznes. Następnie przygotowuję strategię i projekt graficzny. Po Twojej akceptacji programuję stronę, podpinam pod domenę i przeprowadzam dla Ciebie krótkie szkolenie z obsługi."
+        }
+      ],
+      "titleHighlight": "pytania"
+    },
+    "contact": {
+      "badge": "Kontakt",
+      "title": "Zbudujmy Twoją przewagę.",
+      "subtitle": "Wypełnij formularz. Odezwiemy się maksymalnie w ciągu 24 godzin z propozycją spotkania.",
+      "form": {
+        "name": "Imię i nazwisko / Firma",
+        "namePlaceholder": "Jan Kowalski",
+        "phone": "Nr Telefonu (Opcjonalnie)",
+        "phonePlaceholder": "+48 000 000 000",
+        "email": "Email",
+        "emailPlaceholder": "kontakt@twojafirma.pl",
+        "message": "Wiadomość",
+        "messagePlaceholder": "Napisz z czym się zmagasz lub opisz swój projekt...",
+        "messageHelp": "Jeśli nie wiesz co wpisać, napisz czym się zajmuje twoja firma i czego potrzebujesz.",
+        "privacyStart": "Akceptuję ",
+        "privacyLink": "politykę prywatności",
+        "privacyEnd": " i wyrażam zgodę na przetwarzanie danych w celu obsługi zapytania.",
+        "submit": "Wyślij wiadomość",
+        "sending": "Wysyłanie...",
+        "success": "Wysłano pomyślnie!",
+        "successDesc": "Dziękuję za wiadomość. Skontaktuję się z Tobą w ciągu najbliższych 24 godzin.",
+        "sendAnother": "Napisz kolejną wiadomość"
+      },
+      "description": "Postaw pierwszy krok, wypełnij formularz. Skontaktuję się z Tobą w ciągu 24 godzin, aby omówić Twój projekt. Otrzymasz ode mnie bezpłatną wycenę i konkretny plan działania.",
+      "call": "Zadzwoń",
+      "write": "Napisz do mnie",
+      "hours": "Godziny pracy"
+    },
+    "footer": {
+      "copy": "Wszelkie prawa zastrzeżone. Design & Code by",
+      "description": "Projektowanie i wdrażanie nowoczesnych stron internetowych (Goleniów, Szczecin, Stargard, Nowogard) z pasją do perfekcji i dbałością o SEO.",
+      "shortcuts": "Na skróty",
+      "info": "Informacje",
+      "contact": "Kontakt",
+      "privacy": "Polityka prywatności"
+    },
+    "technologies": {
+      "badge": "TECHNOLOGIE",
+      "title": "To w czym pracujemy najlepiej"
+    },
+    "portfolio": {
+      "badge": "REALIZACJE",
+      "title": "Nasze ",
+      "titleHighlight": "Projekty",
+      "subtitle": "Każdy projekt jest indywidualnie dobierany do potrzeb klienta, od unikalnego designu po czysty i zoptymalizowany kod."
+    },
+    "projectsPage": {
+      "badge": "PORTFOLIO",
+      "title": "Nasze ",
+      "titleHighlight": "Najlepsze",
+      "titleEnd": " Prace",
+      "subtitle": "Zobacz jak pomogliśmy zrealizować cele naszym klientom, łącząc przemyślany nowoczesny design z niezrównaną szybkością działania.",
+      "viewProject": "Zobacz projekt",
+      "websiteOnline": "Strona online",
+      "metaTitle": "Realizacje"
+    }
+  }
+}

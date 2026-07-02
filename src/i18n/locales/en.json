@@ -1,0 +1,324 @@
+{
+  "translation": {
+    "nav": {
+      "projects": "Portfolio",
+      "about": "About Me",
+      "services": "Offer",
+      "process": "Process",
+      "contact": "Contact",
+      "freeQuote": "Free Quote"
+    },
+    "hero": {
+      "title": "We create websites that make money for ",
+      "titleHighlight": "your business.",
+      "subtitle": "We design and deploy websites that not only look great but, above all, rank high on Google and generate new clients.",
+      "ctaPrimary": "Free Quote",
+      "ctaSecondary": "View Projects",
+      "scroll": "SCROLL"
+    },
+    "about": {
+      "badge": "ABOUT ME",
+      "title": "I create websites that ",
+      "titleHighlight": [
+        "attract.",
+        "earn.",
+        "sell.",
+        "convert."
+      ],
+      "subtitle": "Hi, I'm Alex! I'm 19 years old and a programming school graduate. For me, programming is more than just writing code - it's a real sales tool.",
+      "description1": "I don't use sluggish templates (like WordPress). I build from scratch using a powerful tech stack (including React and TypeScript) so your website is unbeatably fast and drives profits.",
+      "description2": "A website is an investment in your company's growth. I believe in simple rules, transparency, and a partnership free of confusing tech jargon.",
+      "cta": "Let's talk about your business",
+      "features": {
+        "location": {
+          "title": "Local collaboration",
+          "description": "I operate in the areas of Szczecin, Goleniów, Nowogard, and Stargard. I'm happy to meet in person to discuss your project."
+        },
+        "quality": {
+          "title": "Uncompromising quality",
+          "description": "I code using the latest technologies (Vite, Supabase, Tailwind, Vercel). You are guaranteed security and reliability."
+        },
+        "approach": {
+          "title": "Tailored approach",
+          "description": "No rigid pricing. You get a fast, free quote and a dedicated solution tailored to your budget."
+        }
+      }
+    },
+    "projects": {
+      "badge": "Projects",
+      "title": "Projects that drive business",
+      "subtitle": "See the websites we've created to help companies get more clients from Google search.",
+      "viewCase": "View Live",
+      "viewMore": "See More"
+    },
+    "services": {
+      "badge": "HOW I CAN HELP",
+      "title": "Comprehensive solutions that ",
+      "titleHighlight": "drive",
+      "titleEnd": " your business.",
+      "subtitle": "From fast landing pages to complex systems. I guarantee precise coding, modern design, and measurable results powered by the latest technologies.",
+      "list": [
+        {
+          "id": "landing_page",
+          "title": "Business & Landing Pages",
+          "description": "Fast, single-page sites created to maximize conversions and collect leads. Ideal for a start, event promotion, or a single service. No unnecessary code, lightning-fast loading.",
+          "tags": [
+            "React",
+            "Vite",
+            "High Conversion"
+          ]
+        },
+        {
+          "id": "cms",
+          "title": "Content Management Systems (CMS)",
+          "description": "Custom-designed platforms with an intuitive admin panel. They allow for independent content management, adding blog articles and photos without programming knowledge.",
+          "tags": [
+            "Supabase",
+            "Tailwind CSS",
+            "Scalability"
+          ]
+        },
+        {
+          "id": "seo",
+          "title": "Advanced SEO & Visibility",
+          "description": "I build websites optimized for Google algorithms from the first line of code. I improve loading speed (Core Web Vitals) and ensure perfect semantics to help you outpace the competition.",
+          "tags": [
+            "Technical SEO",
+            "Core Web Vitals",
+            "Semantic HTML"
+          ]
+        },
+        {
+          "id": "webapp",
+          "title": "Advanced Web Applications",
+          "description": "I go beyond standard websites. I create custom applications with login, databases, and third-party system integrations (API), e.g., dedicated client portals or booking systems.",
+          "tags": [
+            "TypeScript",
+            "API integrations",
+            "Vercel"
+          ]
+        },
+        {
+          "id": "redesign",
+          "title": "Website Redesign",
+          "description": "Has your website stopped selling or is it too slow on mobile? I will conduct a technical audit, propose a new UX/UI layout, and rewrite it in modern technologies, maintaining Google rankings.",
+          "tags": [
+            "UX/UI Audit",
+            "Migration",
+            "Optimization"
+          ]
+        },
+        {
+          "id": "marketing",
+          "title": "Marketing and Analytics",
+          "description": "I combine a great technological product with precise customer targeting. I configure analytics and run paid ad campaigns that generate real traffic and a fast return on investment.",
+          "tags": [
+            "Google Ads",
+            "Meta Ads",
+            "Analytics"
+          ]
+        }
+      ],
+      "contactPrompt": "Didn't find what you are looking for, or need a custom quote?",
+      "contactButton": "Let's talk about your project"
+    },
+    "forWho": {
+      "badge": "Is this for you?",
+      "title": "Who is this offer for?",
+      "subtitle": "Collaboration Diagnostics",
+      "heading": "Let's see if we are a ",
+      "headingHighlight": "good match.",
+      "desc": "I don't aim to work with everyone. I engage in projects treated as an investment in business growth, where quality is a priority, not an addition.",
+      "goodFitTitle": "We are a good fit if:",
+      "goodFit": [
+        {
+          "title": "The website should earn money",
+          "description": "You treat your website as a sales tool. You expect a return on investment and a professional online image.",
+          "number": "1."
+        },
+        {
+          "title": "Business partnership",
+          "description": "You are looking for a partner, not an 'executor'. You have time for a short conversation to jointly outline the strategy.",
+          "number": "2."
+        },
+        {
+          "title": "Investment in quality",
+          "description": "You understand that a good application costs money, but thanks to speed and usability, it pays for itself.",
+          "number": "3."
+        }
+      ],
+      "badFitTitle": "We are NOT a good fit if:",
+      "badFit": [
+        {
+          "title": "What is the cheapest?",
+          "description": "You only care about finding the cheapest option on the market for 100$, regardless of quality and sales.",
+          "number": "1."
+        },
+        {
+          "title": "Project 'for yesterday'",
+          "description": "You expect immediate results 'off hand'. You don't have time for a preliminary analysis of your company.",
+          "number": "2."
+        },
+        {
+          "title": "Website 'just to be there'",
+          "description": "You are not interested in acquiring new clients from the internet. You are just looking for a dead business card.",
+          "number": "3."
+        }
+      ]
+    },
+    "process": {
+      "badge": "How we work",
+      "title": "We turn chaos ",
+      "steps": [
+        {
+          "phase": "01 / CONSULTATION",
+          "title": "Analysis and Goals",
+          "desc": "We start with a no-obligation conversation – live or online. I thoroughly analyze your industry, competitors' activities, and your clients' expectations. Together we define the business goals the new website should achieve. This is a solid foundation without which we do not start working.",
+          "tags": [
+            "Market Analysis",
+            "Business Brief",
+            "Project Goals"
+          ]
+        },
+        {
+          "phase": "02 / DESIGN",
+          "title": "Concept and Wireframes",
+          "desc": "I translate our arrangements into the first visualizations before writing a line of code. Step by step, I explain the proposed solutions and check if they fit your vision. At this stage, we discuss and make corrections until the project is 100% in line with your expectations.",
+          "tags": [
+            "Visual Mockups",
+            "Consultations",
+            "Applying Corrections"
+          ]
+        },
+        {
+          "phase": "03 / CODING",
+          "title": "Development & Optimization",
+          "desc": "This is where the magic happens. I turn approved designs into a fully functional website using the latest technologies. I take care of every detail – from smooth animations to optimization of loading speed and perfect displaying on mobile devices.",
+          "tags": [
+            "Frontend Dev",
+            "Mobile Optimization",
+            "Core Web Vitals"
+          ]
+        },
+        {
+          "phase": "04 / TESTING",
+          "title": "Quality Control",
+          "desc": "Before we show the site to the world, it goes through a rigorous testing process. I check its performance in various browsers, test forms, and verify the correct display on all possible screen resolutions. You receive a fully functioning version for final verification.",
+          "tags": [
+            "Cross-browser QA",
+            "Responsive Check",
+            "Final Review"
+          ]
+        },
+        {
+          "phase": "05 / DEPLOYMENT",
+          "title": "Publication and Support",
+          "desc": "When you fully accept the look and feel of the site, and the financial formalities are closed, I publish the finished product on reliable servers. However, my role does not end here. I remain at your disposal - helping with operations, implementing any fixes, and ready to further develop the site in the future.",
+          "tags": [
+            "Web Publishing",
+            "Tech Support",
+            "Project Development"
+          ]
+        }
+      ],
+      "titleLight": "into seamless ",
+      "titleHighlight": "execution."
+    },
+    "testimonials": {
+      "badge": "Testimonials",
+      "title": "What my clients say?",
+      "subtitle": "Proof that the process really works."
+    },
+    "faq": {
+      "badge": "Common Questions",
+      "title": "Frequently Asked ",
+      "items": [
+        {
+          "question": "How much does a website cost?",
+          "answer": "My project budgets usually range from 1500 to 5000 PLN. The final amount always depends on your requirements and the chosen type of site (a Landing Page will be cheaper than an extensive site with a CMS). You will receive an exact, free quote from me before work begins."
+        },
+        {
+          "question": "Will I be able to edit the content on the website myself?",
+          "answer": "Yes. I also create websites equipped with a dedicated, intuitive CMS (Content Management System). This allows you to update texts, replace photos, or add posts independently without needing to contact me and without programming knowledge."
+        },
+        {
+          "question": "Do you help with SEO and advertising?",
+          "answer": "Absolutely. Building the website is just half the success. Technically, I implement the latest SEO structures, so the site loads instantly and is favored by algorithms. I also offer comprehensive management of paid Google Ads and Meta Ads campaigns to instantly bring clients to your business."
+        },
+        {
+          "question": "How long does a project take?",
+          "answer": "A simple Landing Page is usually a matter of 7-14 days. Extensive sites with a CMS and multiple subpages take from 3 to 5 weeks. We always agree on an exact schedule before starting."
+        },
+        {
+          "question": "Will my site work correctly on mobile phones?",
+          "answer": "Absolutely yes. I often start designing with the mobile version (mobile-first). I guarantee the site will be 100% responsive and perfectly tailored for smartphones, tablets, and large screens."
+        },
+        {
+          "question": "What technologies do you use?",
+          "answer": "I don't use slow builders with a thousand plugins. I code from scratch using a modern tech stack: Vite, React, TypeScript, Supabase, Tailwind CSS. This ensures maximum security and performance speed."
+        },
+        {
+          "question": "What is the collaboration process like?",
+          "answer": "We start with a meeting (in person or online) where I get to know your business. Then I prepare a strategy and graphic design. After your approval, I program the website, connect it to a domain, and conduct a brief user training for you."
+        }
+      ],
+      "titleHighlight": "Questions"
+    },
+    "contact": {
+      "badge": "Contact",
+      "title": "Let's build your advantage.",
+      "subtitle": "Fill out the form. We will get back to you within 24 hours with a meeting proposal.",
+      "form": {
+        "name": "Full Name / Company",
+        "namePlaceholder": "John Doe",
+        "phone": "Phone Number (Optional)",
+        "phonePlaceholder": "+1 000 000 000",
+        "email": "Email",
+        "emailPlaceholder": "contact@yourcompany.com",
+        "message": "Message",
+        "messagePlaceholder": "Write what you struggle with or describe your project...",
+        "messageHelp": "If you don't know what to type, just describe what your company does and what you need.",
+        "privacyStart": "I accept the ",
+        "privacyLink": "privacy policy",
+        "privacyEnd": " and consent to data processing for the purpose of handling this inquiry.",
+        "submit": "Send message",
+        "sending": "Sending...",
+        "success": "Sent successfully!",
+        "successDesc": "Thank you for your message. I will contact you within 24 hours.",
+        "sendAnother": "Send another message"
+      },
+      "description": "Take the first step, fill out the form. I will contact you within 24 hours to discuss your project. You will receive a free quote and a concrete action plan.",
+      "call": "Call me",
+      "write": "Write to me",
+      "hours": "Working hours"
+    },
+    "footer": {
+      "copy": "All rights reserved. Design & Code by",
+      "description": "Designing and implementing modern websites and web applications with a passion for perfection and detail.",
+      "shortcuts": "Shortcuts",
+      "info": "Information",
+      "contact": "Contact",
+      "privacy": "Privacy Policy"
+    },
+    "technologies": {
+      "badge": "TECHNOLOGIES",
+      "title": "Technologies we excel at"
+    },
+    "portfolio": {
+      "badge": "PORTFOLIO",
+      "title": "Our ",
+      "titleHighlight": "Projects",
+      "subtitle": "Each project is individually tailored to the client's needs, from unique design to clean and optimized code."
+    },
+    "projectsPage": {
+      "badge": "PORTFOLIO",
+      "title": "Our ",
+      "titleHighlight": "Best",
+      "titleEnd": " Works",
+      "subtitle": "See how we helped our clients achieve their goals by combining thoughtful modern design with unparalleled performance.",
+      "viewProject": "View project",
+      "websiteOnline": "Website online",
+      "metaTitle": "Portfolio"
+    }
+  }
+}
