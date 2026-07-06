@@ -14,15 +14,13 @@ import { Link } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 
 // Schemat formularza walidacji
-
-const { t } = useTranslation()
 const contactFormValidationSchema = z.object({
-  name: z.string().min(2, t("contact.form.validation.name")),
-  email: z.email("Nieprawidłowy adres email"),
+  name: z.string().min(2, { error: "contact.form.validation.name" }),
+  email: z.email({ error: "contact.form.validation.email" }),
   phone: z.string().optional(),
-  message: z.string().min(10, "Wiadomość jest za krótka"),
+  message: z.string().min(10, { error: "contact.form.validation.message" }),
   privacy: z.boolean().refine((val) => val === true, {
-    message: "Musisz zaakceptować politykę prywatności",
+    message: "contact.form.validation.privacy",
   }),
 });
 
@@ -34,6 +32,7 @@ const ContactFormComponent = () => {
   const { t } = useTranslation()
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
   // Definiowanie pól formularza
   const {
     register,
@@ -123,7 +122,7 @@ const ContactFormComponent = () => {
                 placeholder={t("contact.form.namePlaceholder")}
                 className={`bg-background h-12 rounded-xl border border-border/60 dark:border-white/10 focus:border-primary focus:ring-primary/20 ${errors.name ? "border-destructive focus:border-destructive focus:ring-destructive/20 ring-1 ring-destructive" : ""}`}
               />
-              {errors.name && <span className="text-xs text-destructive ml-1">{errors.name.message}</span>}
+              {errors.name && <span className="text-xs text-destructive ml-1">{t(String(errors.name.message))}</span>}
             </div>
             <div className="flex flex-col gap-2">
               <Label htmlFor="phone" className="text-xs uppercase tracking-wider text-muted-foreground ml-1">
@@ -147,7 +146,7 @@ const ContactFormComponent = () => {
               placeholder={t("contact.form.emailPlaceholder")}
               className={`bg-background h-12 rounded-xl border border-border/60 dark:border-white/10 focus:border-primary focus:ring-primary/20 ${errors.email ? "border-destructive focus:border-destructive focus:ring-destructive/20 ring-1 ring-destructive" : ""}`}
             />
-            {errors.email && <span className="text-xs text-destructive ml-1">{errors.email.message}</span>}
+            {errors.email && <span className="text-xs text-destructive ml-1">{t(String(errors.email.message))}</span>}
           </div>
 
           <div className="flex flex-col gap-2">
@@ -158,7 +157,7 @@ const ContactFormComponent = () => {
               placeholder={t("contact.form.messagePlaceholder")}
               className={`bg-background min-h-[140px] resize-y rounded-xl border border-border/60 dark:border-white/10 focus:border-primary focus:ring-primary/20 ${errors.message ? "border-destructive focus:border-destructive focus:ring-destructive/20 ring-1 ring-destructive" : ""}`}
             />
-            {errors.message && <span className="text-xs text-destructive ml-1">{errors.message.message}</span>}
+            {errors.message && <span className="text-xs text-destructive ml-1">{t(String(errors.message.message))}</span>}
             <p className="text-xs text-muted-foreground italic mt-1 ml-1">
               {t("contact.form.messageHelp")}
             </p>
@@ -177,7 +176,7 @@ const ContactFormComponent = () => {
               <Label htmlFor="privacy" className="text-sm text-foreground/80 cursor-pointer font-normal leading-tight">
                 {t("contact.form.privacyStart")}<Link to="/privacy" className="text-primary hover:underline">{t("contact.form.privacyLink")}</Link>{t("contact.form.privacyEnd")}
               </Label>
-              {errors.privacy && <span className="text-xs text-destructive mt-1">{errors.privacy.message}</span>}
+              {errors.privacy && <span className="text-xs text-destructive mt-1">{t(String(errors.privacy.message))}</span>}
             </div>
           </div>
 
