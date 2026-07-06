@@ -12,8 +12,8 @@ import { Send, Phone, Mail, Clock } from "lucide-react";
 import { companyData } from "../../data/company";
 import { Link } from "react-router-dom";
 
-// Setup form validation schema
-const formSchema = z.object({
+// Schemat formularza walidacji
+const contactFormValidationSchema = z.object({
   name: z.string().min(2, "Imię jest wymagane"),
   email: z.email("Nieprawidłowy adres email"),
   phone: z.string().optional(),
@@ -25,7 +25,23 @@ const formSchema = z.object({
 
 
 
-type FormValues = z.infer<typeof formSchema>;
+type ContactFormValues = z.infer<typeof contactFormValidationSchema>;
+
+
+const ContactFormComponent = () => {
+
+  const { t } = useTranslation()
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  // const
+
+
+  return (
+    <div>
+      <h1>Form</h1>
+    </div>
+  )
+}
+
 
 export function Contact() {
   const { t } = useTranslation();
@@ -38,8 +54,8 @@ export function Contact() {
     reset,
     watch,
     formState: { errors },
-  } = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormValidationSchema),
     defaultValues: {
       privacy: false,
     }
@@ -47,7 +63,7 @@ export function Contact() {
 
   const privacyAccepted = watch("privacy");
 
-  const onSubmit = async (_data: FormValues) => {
+  const onSubmit = async (_data: ContactFormValues) => {
     setIsSubmitting(true);
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
