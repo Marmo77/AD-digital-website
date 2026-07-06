@@ -47,6 +47,11 @@ const ContactFormComponent = () => {
     }
   });
 
+  // Website ID: X w env jest, aby leak prevention, to jest id strony na serwerze
+  const websiteID = process.env.REACT_APP_WEBSITE_ID;
+  console.log("Website ID:", websiteID);
+
+
   const privacyAccepted = watch("privacy");
   // walidacja po przeslaniu
   const onSubmit = async (data: ContactFormValues) => {
