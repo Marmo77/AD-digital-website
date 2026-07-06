@@ -9,20 +9,21 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Label } from "../ui/label";
 import { Send, Phone, Mail, Clock } from "lucide-react";
-import { BadgeCustom } from "../ui/badge-custom";
 import { companyData } from "../../data/company";
 import { Link } from "react-router-dom";
 
 // Setup form validation schema
 const formSchema = z.object({
   name: z.string().min(2, "Imię jest wymagane"),
-  email: z.string().email("Nieprawidłowy adres email"),
+  email: z.email("Nieprawidłowy adres email"),
   phone: z.string().optional(),
   message: z.string().min(10, "Wiadomość jest za krótka"),
   privacy: z.boolean().refine((val) => val === true, {
     message: "Musisz zaakceptować politykę prywatności",
   }),
 });
+
+
 
 type FormValues = z.infer<typeof formSchema>;
 
@@ -53,7 +54,7 @@ export function Contact() {
     setIsSubmitting(false);
     setIsSuccess(true);
     reset();
-    
+
     // Reset success message after 5 seconds
     setTimeout(() => setIsSuccess(false), 5000);
   };
@@ -64,11 +65,11 @@ export function Contact() {
       <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-[1100px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-12 relative z-10">
-        
+
         {/* Left Info side */}
         <div className="flex flex-col justify-start pt-2 gap-12">
           <div className="flex flex-col items-start text-left">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -76,8 +77,8 @@ export function Contact() {
             >
               {t("contact.badge")}
             </motion.span>
-            
-            <motion.h2 
+
+            <motion.h2
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -86,7 +87,7 @@ export function Contact() {
             >
               {t("contact.title")}
             </motion.h2>
-                 <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -97,59 +98,59 @@ export function Contact() {
             </motion.p>
           </div>
 
-          <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col gap-8"
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col gap-8"
           >
-              <a href={`mailto:${companyData.email}`} className="flex items-center gap-6 group w-fit">
-                <div className="w-16 h-16 bg-background border border-primary/20 rounded-2xl flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all shadow-lg group-hover:shadow-primary/10">
-                  <Mail className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">{t("contact.write")}</p>
-                  <p className="text-xl md:text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">{companyData.email}</p>
-                </div>
-              </a>
+            <a href={`mailto:${companyData.email}`} className="flex items-center gap-6 group w-fit">
+              <div className="w-16 h-16 bg-background border border-primary/20 rounded-2xl flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all shadow-lg group-hover:shadow-primary/10">
+                <Mail className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground mb-1">{t("contact.write")}</p>
+                <p className="text-xl md:text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">{companyData.email}</p>
+              </div>
+            </a>
 
-              <a href={`tel:${companyData.phone.replace(/\s+/g, '')}`} className="flex items-center gap-6 group w-fit">
-                <div className="w-16 h-16 bg-background border border-primary/20 rounded-2xl flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all shadow-lg group-hover:shadow-primary/10">
-                  <Phone className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">{t("contact.call")}</p>
-                  <p className="text-xl md:text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">{companyData.phone}</p>
-                </div>
-              </a>
+            <a href={`tel:${companyData.phone.replace(/\s+/g, '')}`} className="flex items-center gap-6 group w-fit">
+              <div className="w-16 h-16 bg-background border border-primary/20 rounded-2xl flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all shadow-lg group-hover:shadow-primary/10">
+                <Phone className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground mb-1">{t("contact.call")}</p>
+                <p className="text-xl md:text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">{companyData.phone}</p>
+              </div>
+            </a>
 
-              <div className="flex items-start gap-6 group w-fit mt-2">
-                <div className="w-16 h-16 bg-background border border-primary/20 rounded-2xl flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all shadow-lg group-hover:shadow-primary/10 shrink-0">
-                  <Clock className="w-6 h-6 text-primary" />
-                </div>
-                <div className="flex flex-col pt-1">
-                  <p className="text-sm text-muted-foreground mb-1.5">{t("contact.hours")}</p>
-                  <div className="flex flex-col gap-1">
-                    {companyData.hours.split(', ').map(line => (
-                     <p key={line} className="text-base font-medium text-foreground tracking-tight group-hover:text-primary transition-colors">{line}</p>
-                    ))}
-                  </div>
+            <div className="flex items-start gap-6 group w-fit mt-2">
+              <div className="w-16 h-16 bg-background border border-primary/20 rounded-2xl flex items-center justify-center group-hover:border-primary/50 group-hover:bg-primary/5 transition-all shadow-lg group-hover:shadow-primary/10 shrink-0">
+                <Clock className="w-6 h-6 text-primary" />
+              </div>
+              <div className="flex flex-col pt-1">
+                <p className="text-sm text-muted-foreground mb-1.5">{t("contact.hours")}</p>
+                <div className="flex flex-col gap-1">
+                  {companyData.hours.split(', ').map(line => (
+                    <p key={line} className="text-base font-medium text-foreground tracking-tight group-hover:text-primary transition-colors">{line}</p>
+                  ))}
                 </div>
               </div>
+            </div>
           </motion.div>
         </div>
 
         {/* Right Form Side */}
         <motion.div
-           initial={{ opacity: 0, x: 20 }}
-           whileInView={{ opacity: 1, x: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.6, delay: 0.1 }}
-           className="bg-background border border-primary/30 dark:border-primary/60 p-8 md:p-10 rounded-2xl shadow-xl hover:border-primary/60 dark:hover:border-primary transition-colors relative"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="bg-background border border-primary/30 dark:border-primary/60 p-8 md:p-10 rounded-2xl shadow-xl hover:border-primary/60 dark:hover:border-primary transition-colors relative"
         >
           {isSuccess ? (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col items-center justify-center text-center h-full min-h-[400px] gap-6"
@@ -159,7 +160,7 @@ export function Contact() {
               </div>
               <h3 className="text-3xl font-bold tracking-tight">{t("contact.form.success")}</h3>
               <p className="text-muted-foreground text-lg max-w-sm mx-auto">{t("contact.form.successDesc")}</p>
-              <Button 
+              <Button
                 onClick={() => {
                   reset();
                   setIsSuccess(false);
@@ -252,8 +253,8 @@ export function Contact() {
                 ) : (
                   <>
                     <span className="relative z-10 flex items-center">
-                        {t("contact.form.submit")}
-                        <Send className="w-5 h-5 ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+                      {t("contact.form.submit")}
+                      <Send className="w-5 h-5 ml-2 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </>
                 )}
@@ -261,7 +262,7 @@ export function Contact() {
             </form>
           )}
         </motion.div>
-        
+
       </div>
     </section>
   );
