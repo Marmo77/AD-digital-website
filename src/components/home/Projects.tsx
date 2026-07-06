@@ -42,7 +42,7 @@ export function Projects() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 lg:gap-x-16 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 lg:gap-x-12 mb-24">
           {projectsData.slice(0, 4).map((project, index) => (
             <motion.div
               key={project.id}
@@ -53,7 +53,7 @@ export function Projects() {
               className="group outline-none flex flex-col gap-5"
             >
               {/* Image Container with precise styling from design */}
-              <Link to={`/realizacje/${project.id}`} className="block w-[96%] lg:w-[92%] mx-auto aspect-4/3 rounded-[2.5rem] overflow-hidden bg-muted relative transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
+              <Link to={`/realizacje/${project.id}`} className="block w-[96%] lg:w-[92%] mx-auto aspect-3/2 rounded-[2.5rem] overflow-hidden bg-muted relative transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
                 <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
                   <div className="w-full h-full pointer-events-auto">
                     <BlobCursor

@@ -4,7 +4,7 @@ export interface Project {
   category: string;
   highlight: string;
   description: string;
-  url: string;
+  url?: string;
   image: string;
   backgroundImage?: string;
   link: string;
@@ -38,6 +38,7 @@ export const projectsData: Project[] = [
     description: "Przejrzysta witryna multiagencji ubezpieczeniowej z czytelną ofertą polis oraz formularzem szybkiego kontaktu.",
     url: "nova-ubezpieczenia.pl",
     image: "/nova_ubezpieczenia.jpg",
+    backgroundImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
     link: "https://nova-ubezpieczenia-szczecin.vercel.app/#contact",
     client: "Nova Ubezpieczenia Sp. z o.o.",
     challenge: "Klienci mieli trudności z odnalezieniem właściwych form ubezpieczenia w gąszczu niezrozumiałych ofert.",
@@ -51,7 +52,8 @@ export const projectsData: Project[] = [
     highlight: "-1.2s ŁADOWANIE",
     description: "Strona warsztatu samochodowego z opisem usług diagnostycznych oraz wygodnym modułem rezerwacji terminu w serwisie.",
     url: "auto-scan-goleniow.pl",
-    image: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: "/auto_scan.jpg",
+    backgroundImage: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     link: "https://auto-scan-goleniow.vercel.app/uslugi/serwis",
     client: "Serwis Auto-Scan Goleniów",
     challenge: "Brak widoczności w internecie oraz brak możliwości sprawnego umawiania terminów napraw poza godzinami pracy.",
@@ -65,7 +67,8 @@ export const projectsData: Project[] = [
     highlight: "+85% ZAPYTAŃ",
     description: "Estetyczna witryna salonu meblowego z galerią aranżacji oraz ofertą mebli tapicerowanych szytych na wymiar.",
     url: "meblex-szczecin.pl",
-    image: "https://images.unsplash.com/photo-1687180498602-5a1046defaa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: "/meblex.jpg",
+    backgroundImage: "https://images.unsplash.com/photo-1687180498602-5a1046defaa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
     link: "https://meblex-szczecin.vercel.app/",
     client: "Meblex Salon Producenta",
     challenge: "Firma potrzebowała wizytówki prezentującej portfolio mebli robionych na wymiar, by zmniejszyć wysiłek w początkowej fazie wyceny.",

@@ -54,7 +54,7 @@ export function ProjectsPage() {
               className="group flex flex-col gap-6"
             >
               {/* Image Container */}
-              <Link to={`/realizacje/${project.id}`} className="block w-[95%] lg:w-[90%] mx-auto aspect-4/3 rounded-[2.5rem] overflow-hidden bg-muted relative transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
+              <Link to={`/realizacje/${project.id}`} className="block w-[95%] lg:w-[90%] mx-auto aspect-3/2 rounded-[2.5rem] overflow-hidden bg-muted relative transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
                 <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
                   <div className="w-full h-full pointer-events-auto">
                     <BlobCursor
