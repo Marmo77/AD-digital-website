@@ -48,45 +48,50 @@ const ContactFormComponent = () => {
     }
   });
 
-  // Website ID: X w env jest, aby leak prevention, to jest id strony na serwerze
 
 
   const privacyAccepted = watch("privacy");
   // walidacja po przeslaniu
   const onSubmit = async (_data: ContactFormValues) => {
     setIsSubmitting(true);
-    // Fake API call
-    //await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    // Supabase connection
-
+    // Website ID: X w env jest, aby leak prevention, to jest id strony na serwerze
+    const websiteID = import.meta.env.VITE_WEBSITE_ID;
+    // Łączenie się z bazą danych supabase
     const supabase = createClient(
       import.meta.env.VITE_SUPABASE_URL,
       import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
     )
-    console.log('TABLE =', import.meta.env.VITE_SUPABASE_TABLE_NAME);
-    console.log('URL =', import.meta.env.VITE_SUPABASE_URL);
-    console.log('KEY =', import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
 
-
+    // Insert Do Bazy danych
     const { data, error } = await supabase
       .from(import.meta.env.VITE_SUPABASE_TABLE_NAME)
-      .select("*")
+      .insert([{
+        'full_name': _data.name,
+        'email': _data.email,
+        'phone': _data.phone,
+        'message': _data.message,
+        'strony_id': websiteID,
+      }])
 
     if (data) {
-      console.log("Data inserted successfully:", data);
+      console.log("DANE ZAWSANE POMYSLNIE DO SUPABASE")
+      console.log(data)
     }
+
     if (error) {
-      console.log("ERROR:", error)
+      console.log("WYWALILO BLAD!!!")
+      console.log(error)
     }
+    // opoznienie aby się przesyłało tak smooth
+    setTimeout(() => {
 
-
+    }, 2000)
 
     setIsSubmitting(false);
     setIsSuccess(true);
     reset();
 
-    setTimeout(() => setIsSuccess(false), 5000);
+    setTimeout(() => setIsSuccess(false), 8000);
   }
   return (
     <>
