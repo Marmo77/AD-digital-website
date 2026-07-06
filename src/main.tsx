@@ -5,12 +5,14 @@ import App from './App.tsx';
 import './index.css';
 import './i18n/config';
 import { ThemeProvider } from './components/theme-provider';
+import { Analytics } from "@vercel/analytics/react";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HelmetProvider>
       <ThemeProvider defaultTheme="light" storageKey="weblex-theme-v2">
         <App />
+        <Analytics />
       </ThemeProvider>
     </HelmetProvider>
   </StrictMode>
