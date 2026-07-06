@@ -6,6 +6,7 @@ export interface Project {
   description: string;
   url: string;
   image: string;
+  backgroundImage?: string;
   link: string;
   client?: string;
   challenge?: string;
@@ -21,9 +22,10 @@ export const projectsData: Project[] = [
     highlight: "+120% REZERWACJI",
     description: "Klimatyczna strona gastropubu z autorskimi burgerami, kartą piw kraftowych oraz prostym systemem rezerwacji stolika.",
     url: "burgerszczecin.pl",
-    image: "https://images.unsplash.com/photo-1563551342926-21cc8d785013?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: "/burger_szczecin.jpg",
+    backgroundImage: 'https://images.unsplash.com/photo-1563551342926-21cc8d785013?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     link: "https://www.burgerszczecin.pl/",
-    client: "Burger Restaurant & Bar",
+    client: "Burger Szczecin - Restaurant & Bar",
     challenge: "Stara strona nie była responsywna i nie wspierała mobilnych rezerwacji, co skutkowało utratą młodszej klienteli.",
     solution: "Wdrożono nowoczesny framework z optymalizacją pod urządzenia mobilne, integrując czytelne menu oraz bezpośredni system rezerwacyjny bez przeładowania strony.",
     results: ["+120% wzrostu rezerwacji online", "Poprawa prędkości ładowania o 2 sekundy", "Zauważalny wzrost ruchu z urządzeń mobilnych"]
@@ -35,7 +37,7 @@ export const projectsData: Project[] = [
     highlight: "+45% LEADÓW",
     description: "Przejrzysta witryna multiagencji ubezpieczeniowej z czytelną ofertą polis oraz formularzem szybkiego kontaktu.",
     url: "nova-ubezpieczenia.pl",
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: "/nova_ubezpieczenia.jpg",
     link: "https://nova-ubezpieczenia-szczecin.vercel.app/#contact",
     client: "Nova Ubezpieczenia Sp. z o.o.",
     challenge: "Klienci mieli trudności z odnalezieniem właściwych form ubezpieczenia w gąszczu niezrozumiałych ofert.",

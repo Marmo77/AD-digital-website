@@ -23,7 +23,7 @@ export function Projects() {
           >
             {t("portfolio.badge")}
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -31,7 +31,7 @@ export function Projects() {
           >
             {t("portfolio.title")} <span className="relative inline-block"><span className="text-primary font-black ml-1 relative z-10 px-1">{t("portfolio.titleHighlight")}</span><span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -rotate-2 rounded-sm" /></span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -53,28 +53,28 @@ export function Projects() {
               className="group outline-none flex flex-col gap-5"
             >
               {/* Image Container with precise styling from design */}
-              <Link to={`/realizacje/${project.id}`} className="block w-[96%] lg:w-[92%] mx-auto aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-muted relative transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
+              <Link to={`/realizacje/${project.id}`} className="block w-[96%] lg:w-[92%] mx-auto aspect-4/3 rounded-[2.5rem] overflow-hidden bg-muted relative transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
                 <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                   <div className="w-full h-full pointer-events-auto">
-                     <BlobCursor 
-                       blobType="circle" 
-                       fillColor="#14B8A6" 
-                       opacities={[0.3, 0.2, 0.1]}
-                       sizes={[80, 150, 100]}
-                     />
-                   </div>
+                  <div className="w-full h-full pointer-events-auto">
+                    <BlobCursor
+                      blobType="circle"
+                      fillColor="#14B8A6"
+                      opacities={[0.3, 0.2, 0.1]}
+                      sizes={[80, 150, 100]}
+                    />
+                  </div>
                 </div>
-                
+
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
                   loading="lazy"
                 />
-
+                <div className="pointer-events-none absolute inset-0 rounded-inherit backdrop-blur-[2px] [mask-image:radial-gradient(circle,transparent_45%,black_100%)] bg-black/15" />
                 <div className="absolute inset-0 z-20 pointer-events-none bg-black/10 transition-opacity duration-500 group-hover:opacity-0" />
               </Link>
-              
+
               {/* Content matching screenshot */}
               <div className="flex flex-col gap-2 px-1 w-[96%] lg:w-[92%] mx-auto">
                 <Link to={`/realizacje/${project.id}`}>
@@ -96,14 +96,14 @@ export function Projects() {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="flex justify-center"
         >
           <Link to="/realizacje" className="group">
-             <Button size="lg" className="h-14 px-8 text-base bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/90 transition-all duration-300 ease-in-out cursor-pointer hover:shadow-[0_0_20px_rgba(45,212,191,0.4)]">
+            <Button size="lg" className="h-14 px-8 text-base bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/90 transition-all duration-300 ease-in-out cursor-pointer hover:shadow-[0_0_20px_rgba(45,212,191,0.4)]">
               <span className="relative z-10 flex items-center">
                 {t("projects.viewMore")}
                 <ArrowUpRight className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300 ease-in-out" />
