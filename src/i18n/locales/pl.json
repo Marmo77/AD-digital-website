@@ -285,7 +285,13 @@
         "sending": "Wysyłanie...",
         "success": "Wysłano pomyślnie!",
         "successDesc": "Dziękuję za wiadomość. Skontaktuję się z Tobą w ciągu najbliższych 24 godzin.",
-        "sendAnother": "Napisz kolejną wiadomość"
+        "sendAnother": "Napisz kolejną wiadomość",
+        "validation": {
+          "name": "Imię jest wymagane",
+          "email": "Nieprawidłowy adres email",
+          "message": "Wiadomość jest za krótka",
+          "privacy": "Musisz zaakceptować politykę prywatności"
+        }
       },
       "description": "Postaw pierwszy krok, wypełnij formularz. Skontaktuję się z Tobą w ciągu 24 godzin, aby omówić Twój projekt. Otrzymasz ode mnie bezpłatną wycenę i konkretny plan działania.",
       "call": "Zadzwoń",

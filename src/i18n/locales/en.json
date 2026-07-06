@@ -285,7 +285,13 @@
         "sending": "Sending...",
         "success": "Sent successfully!",
         "successDesc": "Thank you for your message. I will contact you within 24 hours.",
-        "sendAnother": "Send another message"
+        "sendAnother": "Send another message",
+        "validation": {
+          "name": "Name is required",
+          "email": "Invalid email address",
+          "message": "Message is too short",
+          "privacy": "You must accept the privacy policy"
+        }
       },
       "description": "Take the first step, fill out the form. I will contact you within 24 hours to discuss your project. You will receive a free quote and a concrete action plan.",
       "call": "Call me",

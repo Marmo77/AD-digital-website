@@ -14,8 +14,10 @@ import { Link } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 
 // Schemat formularza walidacji
+
+const { t } = useTranslation()
 const contactFormValidationSchema = z.object({
-  name: z.string().min(2, "Imię jest wymagane"),
+  name: z.string().min(2, t("contact.form.validation.name")),
   email: z.email("Nieprawidłowy adres email"),
   phone: z.string().optional(),
   message: z.string().min(10, "Wiadomość jest za krótka"),
@@ -32,7 +34,6 @@ const ContactFormComponent = () => {
   const { t } = useTranslation()
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-
   // Definiowanie pól formularza
   const {
     register,
@@ -73,25 +74,17 @@ const ContactFormComponent = () => {
         'strony_id': websiteID,
       }])
 
-    if (data) {
-      console.log("DANE ZAWSANE POMYSLNIE DO SUPABASE")
-      console.log(data)
-    }
-
     if (error) {
-      console.log("WYWALILO BLAD!!!")
-      console.log(error)
+      alert("Wystąpił błąd podczas wysyłania danych do bazy danych. Skontaktuj się z nami telefonicznie lub mailowo.");
+      console.error("Supabase error:", error);
+      reset();
+      setIsSubmitting(false);
+    } else {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      reset();
+      setTimeout(() => setIsSuccess(false), 6000);
     }
-    // opoznienie aby się przesyłało tak smooth
-    setTimeout(() => {
-
-    }, 2000)
-
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    reset();
-
-    setTimeout(() => setIsSuccess(false), 8000);
   }
   return (
     <>
