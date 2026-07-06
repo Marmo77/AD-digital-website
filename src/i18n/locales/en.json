@@ -296,7 +296,12 @@
       "description": "Take the first step, fill out the form. I will contact you within 24 hours to discuss your project. You will receive a free quote and a concrete action plan.",
       "call": "Call me",
       "write": "Write to me",
-      "hours": "Working hours"
+      "hours": "Working hours",
+      "workingHours": [
+        "Mon-Thu: 11:00-17:00",
+        "Fri-Sat: 10:00-14:00",
+        "Sun: closed"
+      ]
     },
     "footer": {
       "copy": "All rights reserved. Design & Code by",

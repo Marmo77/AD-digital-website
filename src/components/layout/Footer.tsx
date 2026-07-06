@@ -15,7 +15,7 @@ export function Footer() {
       <div className="absolute bottom-0 left-1/2 w-[800px] h-[300px] bg-primary/5 rounded-full blur-[120px] -translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative z-10">
-        
+
         {/* Brand */}
         <div className="flex flex-col items-center md:items-start gap-4">
           <Logo />
@@ -49,8 +49,8 @@ export function Footer() {
             <div className="flex items-start gap-2">
               <Clock className="w-4 h-4 mt-0.5 text-primary" />
               <div className="flex flex-col text-xs leading-5">
-                {companyData.hours.split(', ').map(line => (
-                  <span key={line}>{line}</span>
+                {(t("contact.workingHours", { returnObjects: true }) as string[]).map((line, idx) => (
+                  <p key={idx} className="text-foreground tracking-tight ">{line}</p>
                 ))}
               </div>
             </div>
@@ -66,7 +66,7 @@ export function Footer() {
           <a href={`tel:${companyData.phone.replace(/\s+/g, '')}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
             {companyData.phone}
           </a>
-          
+
           <div className="flex items-center gap-4 mt-4">
             <a href={companyData.socials.github} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/5 hover:border-primary/50 transition-all">
               <Github className="w-4 h-4" />

@@ -296,7 +296,12 @@
       "description": "Postaw pierwszy krok, wypełnij formularz. Skontaktuję się z Tobą w ciągu 24 godzin, aby omówić Twój projekt. Otrzymasz ode mnie bezpłatną wycenę i konkretny plan działania.",
       "call": "Zadzwoń",
       "write": "Napisz do mnie",
-      "hours": "Godziny pracy"
+      "hours": "Godziny pracy",
+      "workingHours": [
+        "Pon-Czw: 11:00-17:00",
+        "Pt-Sob: 10:00-14:00",
+        "Niedz: nieczynne"
+      ]
     },
     "footer": {
       "copy": "Wszelkie prawa zastrzeżone. Design & Code by",

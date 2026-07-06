@@ -1,15 +1,14 @@
 export const companyData = {
   name: "AD digital",
   role: "Agencja Interaktywna",
-  email: "hello@weblex.pl",
-  phone: "+48 123 456 789",
+  email: "aleksydobrodziej@gmail.com",
+  phone: "+48 510 378 629",
   location: "Szczecin",
-  address: "ul. Przykładowa 12, 70-001 Szczecin",
-  hours: "Pon-Czw: 11:00-17:00, Pt-Sob: 10:00-14:00, Niedz: nieczynne",
+  address: "--- --- ---",
   socials: {
-    github: "https://github.com/weblex",
-    instagram: "https://instagram.com/weblex",
-    facebook: "https://facebook.com/weblex",
+    github: "https://github.com/Marmo77",
+    instagram: "https://www.instagram.com/dobrodziejaleksy",
+    facebook: "https://www.facebook.com/aleksy.dobrodziej.1/",
   },
   nav: [
     { id: "projects", i18nKey: "nav.projects" },

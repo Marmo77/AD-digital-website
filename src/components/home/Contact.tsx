@@ -283,8 +283,9 @@ export function Contact() {
               <div className="flex flex-col pt-1">
                 <p className="text-sm text-muted-foreground mb-1.5">{t("contact.hours")}</p>
                 <div className="flex flex-col gap-1">
-                  {companyData.hours.split(', ').map(line => (
-                    <p key={line} className="text-base font-medium text-foreground tracking-tight group-hover:text-primary transition-colors">{line}</p>
+                  {/* Godziny pracy */}
+                  {(t("contact.workingHours", { returnObjects: true }) as string[]).map((line, idx) => (
+                    <p key={idx} className="text-base font-medium text-foreground tracking-tight group-hover:text-primary transition-colors">{line}</p>
                   ))}
                 </div>
               </div>
