@@ -70,6 +70,7 @@ export function ProjectsPage() {
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+
                 />
 
                 <div className="absolute inset-0 z-20 pointer-events-none bg-black/10 transition-opacity duration-500 group-hover:opacity-0" />
