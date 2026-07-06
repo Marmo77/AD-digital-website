@@ -11,6 +11,7 @@ import { Label } from "../ui/label";
 import { Send, Phone, Mail, Clock } from "lucide-react";
 import { companyData } from "../../data/company";
 import { Link } from "react-router-dom";
+import { createClient } from "@supabase/supabase-js";
 
 // Schemat formularza walidacji
 const contactFormValidationSchema = z.object({
@@ -48,16 +49,39 @@ const ContactFormComponent = () => {
   });
 
   // Website ID: X w env jest, aby leak prevention, to jest id strony na serwerze
-  const websiteID = process.env.REACT_APP_WEBSITE_ID;
-  console.log("Website ID:", websiteID);
 
 
   const privacyAccepted = watch("privacy");
   // walidacja po przeslaniu
-  const onSubmit = async (data: ContactFormValues) => {
+  const onSubmit = async (_data: ContactFormValues) => {
     setIsSubmitting(true);
     // Fake API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    //await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    // Supabase connection
+
+    const supabase = createClient(
+      import.meta.env.VITE_SUPABASE_URL,
+      import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
+    )
+    console.log('TABLE =', import.meta.env.VITE_SUPABASE_TABLE_NAME);
+    console.log('URL =', import.meta.env.VITE_SUPABASE_URL);
+    console.log('KEY =', import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
+
+
+    const { data, error } = await supabase
+      .from(import.meta.env.VITE_SUPABASE_TABLE_NAME)
+      .select("*")
+
+    if (data) {
+      console.log("Data inserted successfully:", data);
+    }
+    if (error) {
+      console.log("ERROR:", error)
+    }
+
+
+
     setIsSubmitting(false);
     setIsSuccess(true);
     reset();
