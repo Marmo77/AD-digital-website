@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { companyData } from "../../data/company";
-import { Github, Instagram, Facebook, MapPin, Clock } from "lucide-react";
+import { Github, Instagram, Facebook, MapPin, Clock, ArrowUpRight } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import { Logo } from "../ui/Logo";
@@ -22,6 +22,15 @@ export function Footer() {
           <p className="text-muted-foreground text-sm max-w-xs text-center md:text-left mt-2">
             {t("footer.description")}
           </p>
+          <a
+            href="https://aleksydobrodziej.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 inline-flex items-center gap-2 rounded-full border border-primary/20 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all group"
+          >
+            {t("footer.founder")}
+            <ArrowUpRight className="w-4 h-4 opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
         </div>
 
         {/* Links */}
