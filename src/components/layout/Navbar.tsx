@@ -47,7 +47,14 @@ export function Navbar() {
   }, [location.pathname]);
 
   const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === "en" ? "pl" : "en");
+    const next = i18n.language === "en" ? "pl" : "en";
+    i18n.changeLanguage(next);
+    // Zapamiętaj wybór użytkownika, aby autodetekcja kraju go nie nadpisywała
+    try {
+      localStorage.setItem("ad-lang", next);
+    } catch {
+      /* localStorage niedostępny – ignorujemy */
+    }
   };
 
   const bgOpacity = useTransform(scrollY, [0, 50], [0, 0.95]);

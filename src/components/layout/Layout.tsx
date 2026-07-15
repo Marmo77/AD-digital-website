@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
@@ -12,6 +13,40 @@ export function Layout() {
   const { pathname } = useLocation();
   // Jedno źródło prawdy dla adresu kanonicznego (unika zduplikowanych <link rel="canonical">)
   const canonicalUrl = `${companyData.url}${pathname === "/" ? "/" : pathname}`;
+
+  // Automatyczny język na podstawie kraju (tylko przy 1. wizycie – ręczny wybór ma priorytet).
+  useEffect(() => {
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem("ad-lang");
+    } catch {
+      /* localStorage niedostępny */
+    }
+
+    // Użytkownik dokonał już wyboru – uszanuj go i nie wykrywaj kraju.
+    if (stored) {
+      if (stored !== i18n.language) i18n.changeLanguage(stored);
+      return;
+    }
+
+    let cancelled = false;
+    fetch("/api/geo")
+      .then((r) => r.json())
+      .then((data) => {
+        if (cancelled) return;
+        const country = data && data.country;
+        // Kraj inny niż Polska (i rozpoznany) -> angielski. Domyślnie zostaje polski.
+        if (country && country !== "PL") i18n.changeLanguage("en");
+      })
+      .catch(() => {
+        /* brak /api/geo (np. lokalnie) – zostaje język domyślny */
+      });
+
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="relative bg-background min-h-screen flex flex-col text-foreground overflow-x-hidden">
