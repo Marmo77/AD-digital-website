@@ -18,8 +18,12 @@ export default async function handler(req: any, res: any) {
   const webhookUrl = process.env.LEADS_WEBHOOK_URL;
   const token = process.env.LEADS_TOKEN;
   if (!webhookUrl || !token) {
-    console.error("Missing LEADS_WEBHOOK_URL or LEADS_TOKEN env var");
-    res.status(500).json({ ok: false, error: "server_misconfigured" });
+    const missing = [
+      !webhookUrl && "LEADS_WEBHOOK_URL",
+      !token && "LEADS_TOKEN",
+    ].filter(Boolean);
+    console.error("Missing env var(s):", missing.join(", "));
+    res.status(500).json({ ok: false, error: "server_misconfigured", missing });
     return;
   }
 
@@ -71,8 +75,10 @@ export default async function handler(req: any, res: any) {
     }
 
     if (!upstream.ok || data.ok === false) {
-      console.error("Apps Script upstream error:", upstream.status, text.slice(0, 500));
-      res.status(502).json({ ok: false, error: "upstream_error" });
+      const detail = data.error || text.slice(0, 300);
+      console.error("Apps Script upstream error:", upstream.status, detail);
+      // Zwracamy szczegóły tymczasowo, aby zdiagnozować problem (do usunięcia po naprawie)
+      res.status(502).json({ ok: false, error: "upstream_error", status: upstream.status, detail });
       return;
     }
 
