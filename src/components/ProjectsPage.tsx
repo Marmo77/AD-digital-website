@@ -68,7 +68,7 @@ export function ProjectsPage() {
 
                 <ProjectImage
                   src={project.image}
-                  alt={project.title}
+                  alt={t(`projectsData.${project.id}.title`)}
                   className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
 
                 />
@@ -80,16 +80,16 @@ export function ProjectsPage() {
               <div className="flex flex-col gap-3 px-2 w-[95%] lg:w-[90%] mx-auto">
                 <Link to={`/realizacje/${project.id}`}>
                   <h3 className="text-3xl font-bold tracking-tight text-foreground transition-colors hover:text-primary">
-                    {project.title}
+                    {t(`projectsData.${project.id}.title`)}
                   </h3>
                 </Link>
                 <div className="flex items-center gap-3 text-xs font-bold tracking-widest uppercase">
-                  <span className="text-muted-foreground">{project.category}</span>
+                  <span className="text-muted-foreground">{t(`projectsData.${project.id}.category`)}</span>
                   <span className="w-1 h-1 rounded-full bg-border" />
-                  <span className="text-primary">{project.highlight}</span>
+                  <span className="text-primary">{t(`projectsData.${project.id}.highlight`)}</span>
                 </div>
                 <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
-                  {project.description}
+                  {t(`projectsData.${project.id}.description`)}
                 </p>
 
                 {/* Actions */}

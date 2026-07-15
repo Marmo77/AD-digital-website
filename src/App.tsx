@@ -2,12 +2,12 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './components/Home';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import { ProjectsPage } from './components/ProjectsPage';
-import { ProjectSchema } from './components/ProjectSchema';
-import { Layout } from './components/layout/Layout';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Home from "./components/Home";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import { ProjectsPage } from "./components/ProjectsPage";
+import { ProjectSchema } from "./components/ProjectSchema";
+import { Layout } from "./components/layout/Layout";
 
 export default function App() {
   return (

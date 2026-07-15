@@ -67,7 +67,7 @@ export function Projects() {
 
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={t(`projectsData.${project.id}.title`)}
                   className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
                   loading="lazy"
                 />
@@ -79,17 +79,17 @@ export function Projects() {
               <div className="flex flex-col gap-2 px-1 w-[96%] lg:w-[92%] mx-auto">
                 <Link to={`/realizacje/${project.id}`}>
                   <h3 className="text-3xl font-bold tracking-tight text-foreground transition-colors hover:text-primary">
-                    {project.title}
+                    {t(`projectsData.${project.id}.title`)}
                   </h3>
                 </Link>
                 <div className="flex items-center gap-3 text-xs font-bold tracking-widest uppercase">
-                  <span className="text-muted-foreground">{project.category}</span>
+                  <span className="text-muted-foreground">{t(`projectsData.${project.id}.category`)}</span>
                   <span className="w-1 h-1 rounded-full bg-border" />
-                  <span className="text-primary">{project.highlight}</span>
+                  <span className="text-primary">{t(`projectsData.${project.id}.highlight`)}</span>
                 </div>
                 {/* Optional short description */}
                 <Link to={`/realizacje/${project.id}`} className="mt-2 text-sm text-muted-foreground line-clamp-2 leading-relaxed max-w-[90%] hover:text-foreground/80 transition-colors">
-                  {project.description}
+                  {t(`projectsData.${project.id}.description`)}
                 </Link>
               </div>
             </motion.div>

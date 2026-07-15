@@ -304,7 +304,7 @@
       ]
     },
     "footer": {
-      "copy": "All rights reserved. Design & Code by",
+      "copy": "All rights reserved. Design & code: AD digital.",
       "description": "Designing and implementing modern websites and web applications with a passion for perfection and detail.",
       "shortcuts": "Shortcuts",
       "info": "Information",
@@ -330,6 +330,73 @@
       "viewProject": "View project",
       "websiteOnline": "Website online",
       "metaTitle": "Portfolio"
+    },
+    "projectDetail": {
+      "back": "Back to portfolio",
+      "clientLabel": "Project for client:",
+      "viewOnline": "View live website",
+      "visit": "Visit website",
+      "challenge": "Challenge",
+      "solution": "Solution",
+      "results": "Key results"
+    },
+    "projectsData": {
+      "burgerszczecin": {
+        "title": "Burger Gastropub",
+        "category": "Gastronomy",
+        "highlight": "Online booking",
+        "description": "An atmospheric gastropub website with signature burgers, a craft beer menu, and a simple table booking system.",
+        "client": "Burger Szczecin - Restaurant & Bar",
+        "challenge": "The old website was not responsive and did not support mobile bookings, resulting in the loss of younger customers.",
+        "solution": "We implemented a modern framework optimized for mobile devices, integrating a clear menu and a direct booking system without page reloads.",
+        "results": [
+          "Growth in online bookings",
+          "Noticeably faster page loading",
+          "More traffic from mobile devices"
+        ]
+      },
+      "nova-ubezpieczenia": {
+        "title": "Insurance Agency",
+        "category": "Finance",
+        "highlight": "More leads",
+        "description": "A clear website for a multi-agency insurance broker with a readable policy offer and a quick contact form.",
+        "client": "Nova Ubezpieczenia Sp. z o.o.",
+        "challenge": "Clients had trouble finding the right insurance types among a thicket of confusing offers.",
+        "solution": "We simplified the client journey from landing on the site to filling out the form, using clear offer sections and direct CTAs.",
+        "results": [
+          "More valuable inquiry requests",
+          "Lower bounce rate",
+          "Better visibility in local search results"
+        ]
+      },
+      "nord-car": {
+        "title": "Car Service",
+        "category": "Automotive",
+        "highlight": "Fast loading",
+        "description": "A website for a car workshop with a description of diagnostic services and a convenient module for booking a service appointment.",
+        "client": "NORD CAR SERWIS",
+        "challenge": "No online visibility and no way to efficiently book repair appointments outside of working hours.",
+        "solution": "We built an ultra-fast single-page web application (SPA) with a booking form for a specific appointment date.",
+        "results": [
+          "Fast loading (green Core Web Vitals)",
+          "Convenient online appointment booking",
+          "A professional online image for the workshop"
+        ]
+      },
+      "meblex": {
+        "title": "Furniture Showroom",
+        "category": "E-commerce",
+        "highlight": "More inquiries",
+        "description": "An elegant furniture showroom website with a gallery of arrangements and an offer of made-to-measure upholstered furniture.",
+        "client": "Meblex Salon Producenta",
+        "challenge": "The company needed a showcase presenting its portfolio of made-to-measure furniture to reduce effort in the early quoting phase.",
+        "solution": "An extensive categorized gallery and educational modules presenting materials, together with a quick contact form.",
+        "results": [
+          "More free-quote inquiries",
+          "Higher engagement on portfolio subpages",
+          "A clear presentation of made-to-measure furniture"
+        ]
+      }
     }
   }
 }

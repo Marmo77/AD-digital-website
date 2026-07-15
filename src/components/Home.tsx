@@ -13,7 +13,45 @@ import { DotPattern } from "./ui/dot-pattern";
 import { companyData } from "../data/company";
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const faqItems = t("faq.items", { returnObjects: true }) as { question: string; answer: string }[];
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": `${companyData.url}/#business`,
+      name: companyData.name,
+      description: t("footer.description"),
+      url: companyData.url,
+      image: `${companyData.url}/fallback.jpg`,
+      logo: `${companyData.url}/logo.svg`,
+      email: companyData.email,
+      telephone: companyData.phone,
+      priceRange: "1500 - 5000 PLN",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: companyData.location,
+        addressCountry: "PL",
+      },
+      areaServed: ["Szczecin", "Goleniów", "Stargard", "Nowogard"],
+      sameAs: [
+        companyData.socials.instagram,
+        companyData.socials.facebook,
+        companyData.socials.github,
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: (Array.isArray(faqItems) ? faqItems : []).map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    },
+  ];
 
   return (
     <>
@@ -29,6 +67,8 @@ export default function Home() {
           name="keywords"
           content="tworzenie stron internetowych Szczecin, strony internetowe Szczecin, strony www Szczecin, strony dla firm Szczecin, ADdigital, darmowa wycena strony, tworzenie stron Goleniów, tworzenie stron Stargard, tworzenie stron Nowogard, wizytówki, CMS, sklepy internetowe"
         />
+        <meta property="og:locale" content={i18n.language === "en" ? "en_US" : "pl_PL"} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
       {/* Scrolling Dot Pattern below Hero */}

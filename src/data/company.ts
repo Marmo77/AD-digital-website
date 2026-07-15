@@ -1,6 +1,7 @@
 export const companyData = {
   name: "AD digital",
   role: "Agencja Interaktywna",
+  url: "https://addigital.pl",
   email: "aleksydobrodziej@gmail.com",
   phone: "+48 510 378 629",
   location: "Szczecin",

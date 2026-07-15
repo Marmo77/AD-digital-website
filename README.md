@@ -28,7 +28,7 @@ Strona produkcyjna (Live): **[https://addigital.vercel.app/](https://addigital.v
 
 Strona **ADdigital** to w pełni responsywna, zoptymalizowana pod kątem SEO i nowoczesna wizytówka agencji interaktywnej. Projekt stawia na wyjątkowe wrażenia wizualne (Rich Aesthetics) dzięki płynnym animacjom, mikrointerakcjom oraz trybowi ciemnemu/jasnemu.
 
-Witryna jest w pełni przygotowana do internacjonalizacji i obsługuje formularz kontaktowy bezpośrednio zintegrowany z bazą danych **Supabase**, pozwalający na zbieranie leadów z rozróżnieniem identyfikatorów poszczególnych serwisów (`strony_id`), zapobiegając wyciekowi danych.
+Witryna jest w pełni przygotowana do internacjonalizacji i obsługuje formularz kontaktowy zintegrowany z **Google Sheets** (przez funkcję serverless + Google Apps Script), zapisujący leady w arkuszu i wysyłający powiadomienie e-mail o każdym nowym zgłoszeniu.
 
 ---
 
@@ -37,7 +37,7 @@ Witryna jest w pełni przygotowana do internacjonalizacji i obsługuje formularz
 *   **Płynne animacje i przejścia**: Wykorzystanie GSAP oraz Framer Motion w celu stworzenia przyciągającego wzrok, dynamicznego interfejsu (Interactive & Alive).
 *   **Wielojęzyczność (i18n)**: Pełne wsparcie dla lokalizacji dzięki bibliotece `i18next`.
 *   **Tryb Ciemny / Jasny (Dark/Light Mode)**: Płynne przełączanie motywów z zapamiętywaniem wyboru użytkownika.
-*   **Integracja z Supabase**: Formularz kontaktowy przesyła zgłoszenia bezpośrednio do tabeli Supabase w czasie rzeczywistym z obsługą stanów ładowania, sukcesu i błędów.
+*   **Integracja z Google Sheets**: Formularz kontaktowy przesyła zgłoszenia przez funkcję serverless `/api/lead` do Google Apps Script, który zapisuje wiersz w arkuszu i wysyła powiadomienie e-mail (z obsługą stanów ładowania, sukcesu i błędów oraz honeypotem antyspamowym).
 *   **Zgodność z SEO**: Unikalna struktura nagłówków, integracja `react-helmet-async` (meta tagi, tytuły, słowa kluczowe na poszczególnych podstronach).
 *   **Pełna Walidacja Formularzy**: Wykorzystanie `react-hook-form` wraz ze schematami walidacji `zod`.
 
@@ -64,8 +64,9 @@ Witryna jest w pełni przygotowana do internacjonalizacji i obsługuje formularz
 *   **i18next** + **react-i18next** (obsługa tłumaczeń)
 *   **React Helmet Async** (dynamiczne zarządzanie tagami `<head>` i SEO)
 
-### Backend-as-a-Service:
-*   **Supabase Client (`@supabase/supabase-js`)** (bezpieczne zapisywanie danych formularza kontaktowego)
+### Backend (leady):
+*   **Vercel Serverless Function (`api/lead.ts`)** – proxy formularza (walidacja, honeypot, ukrycie sekretów)
+*   **Google Apps Script + Google Sheets** – zapis leadów w arkuszu i powiadomienia e-mail
 
 ---
 
@@ -96,20 +97,20 @@ src/
 
 ## 🔑 Zmienne środowiskowe
 
-Projekt wymaga konfiguracji zmiennych środowiskowych do działania integracji z Supabase oraz identyfikacji witryny. Utwórz lokalnie plik `.env.datas` w katalogu głównym:
+Formularz kontaktowy wysyła leady przez funkcję serverless [`api/lead.ts`](api/lead.ts) do Google Apps Script (zapis w arkuszu + powiadomienie e-mail). Wymagane zmienne to zmienne **serwerowe** (bez prefiksu `VITE_`), ustawiane w panelu Vercel (Settings → Environment Variables):
 
 ```env
-# Supabase Configuration
-VITE_SUPABASE_URL="https://twoj-projekt.supabase.co"
-VITE_SUPABASE_PUBLISHABLE_KEY="twoj-klucz-publiczny-anon-key"
-VITE_SUPABASE_TABLE_NAME="nazwa-tabeli-z-kontaktami"
+# Adres wdrożenia Google Apps Script (kończy się na /exec)
+LEADS_WEBHOOK_URL="https://script.google.com/macros/s/XXXXX/exec"
 
-# Website ID for Tracking/Lead Prevention
-VITE_WEBSITE_ID="1"
-REACT_APP_WEBSITE_ID="1"
+# Współdzielony sekret – identyczny jak SHARED_TOKEN w skrypcie Apps Script
+LEADS_TOKEN="wlasny-losowy-token"
+
+# Identyfikator witryny zapisywany w arkuszu (kolumna website_id)
+LEADS_WEBSITE_ID="1"
 ```
 
-*Zmienne środowiskowe są wczytywane podczas konfiguracji Vite (za pomocą pliku `vite.config.ts`), a te zaczynające się od prefiksu `VITE_` są automatycznie udostępniane w kodzie przeglądarki poprzez obiekt `import.meta.env`.*
+*Zmienne bez prefiksu `VITE_` są dostępne wyłącznie po stronie serwera (funkcja `/api/lead`) i nie trafiają do bundla przeglądarki. Do lokalnego testu funkcji użyj `vercel dev`.*
 
 ---
 
@@ -127,7 +128,7 @@ REACT_APP_WEBSITE_ID="1"
     ```
 
 3.  **Skonfiguruj plik zmiennych środowiskowych**:
-    Stwórz plik `.env.datas` na bazie [.env.example](.env.example) i uzupełnij poprawne dane dostępowe Supabase.
+    Ustaw zmienne z [.env.example](.env.example) (`LEADS_WEBHOOK_URL`, `LEADS_TOKEN`, `LEADS_WEBSITE_ID`) w panelu Vercel. Do lokalnego testu funkcji `/api` użyj `vercel dev`.
 
 4.  **Uruchom serwer deweloperski**:
     ```bash

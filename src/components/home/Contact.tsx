@@ -11,7 +11,6 @@ import { Label } from "../ui/label";
 import { Send, Phone, Mail, Clock } from "lucide-react";
 import { companyData } from "../../data/company";
 import { Link } from "react-router-dom";
-import { createClient } from "@supabase/supabase-js";
 
 // Schemat formularza walidacji
 const contactFormValidationSchema = z.object({
@@ -19,6 +18,8 @@ const contactFormValidationSchema = z.object({
   email: z.email({ error: "contact.form.validation.email" }),
   phone: z.string().optional(),
   message: z.string().min(10, { error: "contact.form.validation.message" }),
+  // Honeypot antyspamowy – pole ukryte, ludzie go nie wypełniają
+  company: z.string().optional(),
   privacy: z.boolean().refine((val) => val === true, {
     message: "contact.form.validation.privacy",
   }),
@@ -51,38 +52,35 @@ const ContactFormComponent = () => {
 
 
   const privacyAccepted = watch("privacy");
-  // walidacja po przeslaniu
+  // Wysyłka do funkcji serverless /api/lead -> Google Apps Script (arkusz + e-mail)
   const onSubmit = async (_data: ContactFormValues) => {
     setIsSubmitting(true);
-    // Website ID: X w env jest, aby leak prevention, to jest id strony na serwerze
-    const websiteID = import.meta.env.VITE_WEBSITE_ID;
-    // Łączenie się z bazą danych supabase
-    const supabase = createClient(
-      import.meta.env.VITE_SUPABASE_URL,
-      import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
-    )
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullname: _data.name,
+          email: _data.email,
+          phone: _data.phone,
+          message: _data.message,
+          company: _data.company, // honeypot
+        }),
+      });
 
-    // Insert Do Bazy danych
-    const { data, error } = await supabase
-      .from(import.meta.env.VITE_SUPABASE_TABLE_NAME)
-      .insert([{
-        'full_name': _data.name,
-        'email': _data.email,
-        'phone': _data.phone,
-        'message': _data.message,
-        'strony_id': websiteID,
-      }])
+      const result = await res.json().catch(() => ({ ok: false }));
+      if (!res.ok || !result.ok) {
+        throw new Error(result.error || "request_failed");
+      }
 
-    if (error) {
-      alert("Wystąpił błąd podczas wysyłania danych do bazy danych. Skontaktuj się z nami telefonicznie lub mailowo.");
-      console.error("Supabase error:", error);
-      reset();
-      setIsSubmitting(false);
-    } else {
-      setIsSubmitting(false);
       setIsSuccess(true);
       reset();
       setTimeout(() => setIsSuccess(false), 6000);
+    } catch (error) {
+      alert("Wystąpił błąd podczas wysyłania wiadomości. Skontaktuj się z nami telefonicznie lub mailowo.");
+      console.error("Lead submit error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   }
   return (
@@ -111,6 +109,18 @@ const ContactFormComponent = () => {
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
+          {/* Honeypot antyspamowy – ukryty przed użytkownikami, wypełniają go tylko boty */}
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor="company">Company</label>
+            <input
+              id="company"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              {...register("company")}
+            />
+          </div>
+
           <div className="grid md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
               <Label htmlFor="name" className="text-xs uppercase tracking-wider text-muted-foreground ml-1">
