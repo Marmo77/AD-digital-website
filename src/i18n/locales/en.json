@@ -6,7 +6,10 @@
       "services": "Offer",
       "process": "Process",
       "contact": "Contact",
-      "freeQuote": "Free Quote"
+      "freeQuote": "Free Quote",
+      "allProjects": "All projects",
+      "appearance": "Appearance",
+      "language": "Language"
     },
     "hero": {
       "title": "We create websites that make money for ",

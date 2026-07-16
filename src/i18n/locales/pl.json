@@ -6,7 +6,10 @@
       "services": "Oferta",
       "process": "Proces",
       "contact": "Kontakt",
-      "freeQuote": "Darmowa wycena"
+      "freeQuote": "Darmowa wycena",
+      "allProjects": "Wszystkie realizacje",
+      "appearance": "Wygląd",
+      "language": "Język"
     },
     "hero": {
       "title": "Tworzymy strony, które zarabiają dla ",

@@ -141,10 +141,10 @@ export function Navbar() {
                         className="absolute top-10 left-1/2 -translate-x-1/2 mt-2 w-48 bg-background border border-border/50 rounded-xl shadow-xl overflow-hidden py-2 px-1"
                       >
                         <HashLink smooth to="/#projects" className="block px-4 py-2 text-sm text-foreground/80 hover:bg-primary/10 hover:text-primary rounded-md transition-colors font-medium" onClick={() => setProjectsDropdownOpen(false)}>
-                          Realizacje
+                          {t("nav.projects")}
                         </HashLink>
                         <Link to="/realizacje" className="block px-4 py-2 text-sm text-foreground/80 hover:bg-primary/10 hover:text-primary rounded-md transition-colors font-medium" onClick={() => setProjectsDropdownOpen(false)}>
-                          Wszystkie realizacje
+                          {t("nav.allProjects")}
                         </Link>
                       </motion.div>
                     )}
@@ -216,12 +216,12 @@ export function Navbar() {
                   </HashLink>
                   {item.isDropdown && (
                     <div className="flex flex-col gap-3 pl-8">
-                      <Link 
-                        to="/realizacje" 
+                      <Link
+                        to="/realizacje"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors"
                       >
-                        Wszystkie realizacje
+                        {t("nav.allProjects")}
                       </Link>
                     </div>
                   )}
@@ -231,7 +231,7 @@ export function Navbar() {
 
             <div className="flex flex-col gap-6 mt-12">
               <div className="flex items-center justify-between border-t border-border pt-6">
-                <span className="text-sm font-medium text-muted-foreground">Wygląd</span>
+                <span className="text-sm font-medium text-muted-foreground">{t("nav.appearance")}</span>
                 <button
                   onClick={() => setTheme(isDark ? "light" : "dark")}
                   className="w-12 h-12 rounded-full flex items-center justify-center bg-secondary text-foreground hover:text-primary transition-colors cursor-pointer"
@@ -241,7 +241,7 @@ export function Navbar() {
               </div>
 
               <div className="flex items-center justify-between border-t border-border pt-6">
-                <span className="text-sm font-medium text-muted-foreground">Język</span>
+                <span className="text-sm font-medium text-muted-foreground">{t("nav.language")}</span>
                  <button
                   onClick={toggleLanguage}
                   className="flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-sm font-semibold text-foreground hover:text-primary transition-colors cursor-pointer"
@@ -259,7 +259,7 @@ export function Navbar() {
                   setMobileMenuOpen(false);
                 }}
               >
-                Darmowa Wycena
+                {t("nav.freeQuote")}
               </HashLink>
             </div>
           </motion.div>
