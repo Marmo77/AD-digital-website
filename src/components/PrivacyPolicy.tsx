@@ -7,7 +7,8 @@ export default function PrivacyPolicy() {
   return (
     <main className="w-full max-w-3xl mx-auto py-32 px-4 sm:px-6 lg:px-8 relative z-10">
       <Helmet>
-        <title>Polityka prywatności | {companyData.name}</title>
+        {/* Tytuł jako jeden string: Helmet gubi <title> z wieloma wyrażeniami {} */}
+        <title>{`Polityka prywatności | ${companyData.name}`}</title>
         <meta
           name="description"
           content="Polityka prywatności ADdigital: zasady przetwarzania i ochrony danych osobowych przekazanych przez formularz kontaktowy."

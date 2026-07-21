@@ -26,9 +26,16 @@ export function ThemeProvider({
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  )
+  // Inicjalizator useState wykonuje się podczas renderowania, także przy
+  // prerenderingu, gdzie localStorage nie istnieje. Stąd zabezpieczenie.
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return defaultTheme
+    try {
+      return (localStorage.getItem(storageKey) as Theme) || defaultTheme
+    } catch {
+      return defaultTheme
+    }
+  })
 
   useEffect(() => {
     const root = window.document.documentElement
@@ -51,7 +58,11 @@ export function ThemeProvider({
   const value = {
     theme,
     setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme)
+      try {
+        localStorage.setItem(storageKey, theme)
+      } catch {
+        /* localStorage niedostępny */
+      }
       setTheme(theme)
     },
   }
