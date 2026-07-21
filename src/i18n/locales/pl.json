@@ -479,13 +479,22 @@
       "metaTitle": "Realizacje"
     },
     "projectDetail": {
-      "back": "Wróć do realizacji",
-      "clientLabel": "Projekt dla klienta:",
-      "viewOnline": "Zobacz stronę online",
+      "back": "Wróć do wszystkich realizacji",
+      "clientLabel": "Klient",
+      "viewOnline": "Otwórz stronę",
       "visit": "Odwiedź stronę",
-      "challenge": "Wyzwanie",
-      "solution": "Rozwiązanie",
-      "results": "Główne efekty"
+      "overview": "Przegląd",
+      "features": "Kluczowe elementy",
+      "results": "Efekty",
+      "tech": "Technologie",
+      "links": "Linki",
+      "industry": "Branża",
+      "prev": "Poprzednia",
+      "next": "Następna",
+      "otherProjects": "Zobacz pozostałe realizacje",
+      "ctaTitle": "Chcesz podobne efekty u siebie?",
+      "ctaText": "Sprawdzimy, jak dziś wygląda Twoja widoczność w Google i co da się poprawić. Wycena jest bezpłatna.",
+      "ctaButton": "Darmowa wycena"
     },
     "projectsData": {
       "burgerszczecin": {
@@ -494,8 +503,29 @@
         "highlight": "Rezerwacje online",
         "description": "Klimatyczna strona gastropubu z autorskimi burgerami, kartą piw kraftowych oraz prostym systemem rezerwacji stolika.",
         "client": "Burger Szczecin - Restaurant & Bar",
-        "challenge": "Stara strona nie była responsywna i nie wspierała mobilnych rezerwacji, co skutkowało utratą młodszej klienteli.",
-        "solution": "Wdrożono nowoczesny framework z optymalizacją pod urządzenia mobilne, integrując czytelne menu oraz bezpośredni system rezerwacyjny bez przeładowania strony.",
+        "overviewTitle": "Klimat lokalu przeniesiony do internetu",
+        "overview": [
+          "Gastropub miał wierną publiczność na miejscu, ale w internecie praktycznie nie istniał. Stara strona nie działała poprawnie na telefonach, a rezerwacja stolika wymagała telefonu w godzinach otwarcia, co odcinało młodszych gości.",
+          "Zbudowaliśmy lekką witrynę, która oddaje klimat miejsca i prowadzi gościa prosto do rezerwacji. Kartę dań i piw można przeglądać jedną ręką w telefonie, a stolik rezerwuje się bez przeładowania strony."
+        ],
+        "features": [
+          {
+            "title": "Rezerwacja o każdej porze",
+            "description": "Gość rezerwuje stolik również po zamknięciu lokalu, bez czekania na odebranie telefonu."
+          },
+          {
+            "title": "Karta pod kciuk",
+            "description": "Menu i karta piw kraftowych czytelne na telefonie bez powiększania i przewijania w bok."
+          },
+          {
+            "title": "Widoczność w wyszukiwarce",
+            "description": "Optymalizacja pod lokalne frazy gastronomiczne oraz Wizytówka Google z aktualnym menu."
+          },
+          {
+            "title": "Klimat zamiast szablonu",
+            "description": "Ciemna, nastrojowa oprawa dopasowana do wnętrza lokalu, a nie gotowy motyw z biblioteki."
+          }
+        ],
         "results": [
           "Wzrost liczby rezerwacji online",
           "Zauważalnie szybsze ładowanie strony",
@@ -508,8 +538,29 @@
         "highlight": "Więcej leadów",
         "description": "Przejrzysta witryna multiagencji ubezpieczeniowej z czytelną ofertą polis oraz formularzem szybkiego kontaktu.",
         "client": "Nova Ubezpieczenia Sp. z o.o.",
-        "challenge": "Klienci mieli trudności z odnalezieniem właściwych form ubezpieczenia w gąszczu niezrozumiałych ofert.",
-        "solution": "Uproszczono ścieżkę klienta od wejścia na stronę do wypełnienia formularza. Zastosowano przejrzyste sekcje ofert oraz bezpośrednie CTA.",
+        "overviewTitle": "Ubezpieczenia wytłumaczone prostym językiem",
+        "overview": [
+          "Multiagencja miała w ofercie kilkanaście rodzajów polis, ale klient wchodzący na stronę tonął w branżowym żargonie i nie wiedział, od czego zacząć. Zapytania spływały rzadko i były przypadkowe.",
+          "Uporządkowaliśmy ofertę w czytelne sekcje i przepisaliśmy ją zrozumiałym językiem. Ścieżka od wejścia do wysłania zapytania skróciła się do kilku kliknięć, a formularz zbiera od razu informacje potrzebne do wyceny polisy."
+        ],
+        "features": [
+          {
+            "title": "Oferta bez żargonu",
+            "description": "Rodzaje polis opisane językiem klienta, z jasnym wskazaniem, dla kogo są przeznaczone."
+          },
+          {
+            "title": "Krótka ścieżka do kontaktu",
+            "description": "Formularz szybkiego zapytania dostępny z każdej sekcji, bez zbędnych pól."
+          },
+          {
+            "title": "Zaufanie od pierwszego wejrzenia",
+            "description": "Spokojna, uporządkowana oprawa budująca wiarygodność w branży finansowej."
+          },
+          {
+            "title": "Widoczność lokalna",
+            "description": "Optymalizacja pod frazy ubezpieczeniowe w regionie oraz konfiguracja Wizytówki Google."
+          }
+        ],
         "results": [
           "Więcej wartościowych zapytań ofertowych",
           "Niższy współczynnik odrzuceń",
@@ -522,8 +573,29 @@
         "highlight": "Szybkie ładowanie",
         "description": "Strona warsztatu samochodowego z opisem usług diagnostycznych oraz wygodnym modułem rezerwacji terminu w serwisie.",
         "client": "NORD CAR SERWIS",
-        "challenge": "Brak widoczności w internecie oraz brak możliwości sprawnego umawiania terminów napraw poza godzinami pracy.",
-        "solution": "Stworzono ultrawydajną aplikację internetową typu SPA, w której wdrożono formularz rezerwacyjny na konkretny termin.",
+        "overviewTitle": "Warsztat, który przyjmuje zapisy przez całą dobę",
+        "overview": [
+          "Serwis praktycznie nie istniał w internecie, a terminy napraw dało się umówić wyłącznie telefonicznie w godzinach pracy. Klienci, którzy szukali warsztatu wieczorem, trafiali do konkurencji.",
+          "Zbudowaliśmy błyskawicznie działającą stronę z modułem rezerwacji konkretnego terminu. Kierowca opisuje usterkę i wybiera dogodny dzień o dowolnej porze, a warsztat rano ma gotową listę zgłoszeń."
+        ],
+        "features": [
+          {
+            "title": "Zapisy poza godzinami pracy",
+            "description": "Rezerwacja terminu wieczorem i w weekend, gdy klient realnie szuka warsztatu."
+          },
+          {
+            "title": "Czytelny opis usług",
+            "description": "Diagnostyka i naprawy wyjaśnione tak, żeby kierowca wiedział, czego się spodziewać."
+          },
+          {
+            "title": "Nacisk na szybkość",
+            "description": "Lekki kod i zoptymalizowane zdjęcia, dzięki czemu strona ładuje się natychmiast również w słabym zasięgu."
+          },
+          {
+            "title": "Obecność na Mapach",
+            "description": "Wizytówka Google z godzinami i dojazdem, bo klienci szukają warsztatu w drodze."
+          }
+        ],
         "results": [
           "Szybkie ładowanie (Core Web Vitals na zielono)",
           "Wygodne umawianie terminów online",
@@ -536,8 +608,29 @@
         "highlight": "Więcej zapytań",
         "description": "Estetyczna witryna salonu meblowego z galerią aranżacji oraz ofertą mebli tapicerowanych szytych na wymiar.",
         "client": "Meblex Salon Producenta",
-        "challenge": "Firma potrzebowała wizytówki prezentującej portfolio mebli robionych na wymiar, by zmniejszyć wysiłek w początkowej fazie wyceny.",
-        "solution": "Rozbudowana galeria z kategoryzacją oraz moduły edukacyjne prezentujące materiały, wraz z wdrożeniem szybkiej formy kontaktu.",
+        "overviewTitle": "Meble na wymiar pokazane jak w salonie",
+        "overview": [
+          "Salon produkuje meble tapicerowane na wymiar, więc każda rozmowa z klientem zaczynała się od tłumaczenia możliwości, materiałów i tego, jak wygląda proces zamówienia. Bez portfolio w sieci wycena pochłaniała mnóstwo czasu.",
+          "Przygotowaliśmy rozbudowaną galerię aranżacji z podziałem na kategorie oraz sekcje wyjaśniające materiały i wykończenia. Klient przychodzi po wycenę już zorientowany, a rozmowa zaczyna się od konkretów."
+        ],
+        "features": [
+          {
+            "title": "Galeria z kategoriami",
+            "description": "Aranżacje pogrupowane tak, żeby klient szybko trafił na to, czego szuka."
+          },
+          {
+            "title": "Materiały wyjaśnione obrazem",
+            "description": "Sekcje prezentujące tkaniny i wykończenia, które wcześniej trzeba było tłumaczyć przy każdej rozmowie."
+          },
+          {
+            "title": "Krótsza droga do wyceny",
+            "description": "Formularz zapytania powiązany z konkretną realizacją z galerii."
+          },
+          {
+            "title": "Nacisk na zdjęcia",
+            "description": "Zoptymalizowane, ale wysokiej jakości fotografie, bo w meblach decyduje wrażenie wizualne."
+          }
+        ],
         "results": [
           "Więcej zapytań o darmową wycenę",
           "Większe zaangażowanie na podstronach z realizacjami",

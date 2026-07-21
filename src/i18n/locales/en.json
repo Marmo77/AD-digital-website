@@ -479,13 +479,22 @@
       "metaTitle": "Portfolio"
     },
     "projectDetail": {
-      "back": "Back to portfolio",
-      "clientLabel": "Project for client:",
-      "viewOnline": "View live website",
+      "back": "Back to all projects",
+      "clientLabel": "Client",
+      "viewOnline": "Open website",
       "visit": "Visit website",
-      "challenge": "Challenge",
-      "solution": "Solution",
-      "results": "Key results"
+      "overview": "Overview",
+      "features": "Key elements",
+      "results": "Results",
+      "tech": "Technologies",
+      "links": "Links",
+      "industry": "Industry",
+      "prev": "Previous",
+      "next": "Next",
+      "otherProjects": "See our other projects",
+      "ctaTitle": "Want similar results for your business?",
+      "ctaText": "We will check how your visibility in Google looks today and what can be improved. The quote is free.",
+      "ctaButton": "Free quote"
     },
     "projectsData": {
       "burgerszczecin": {
@@ -494,8 +503,29 @@
         "highlight": "Online booking",
         "description": "An atmospheric gastropub website with signature burgers, a craft beer menu, and a simple table booking system.",
         "client": "Burger Szczecin - Restaurant & Bar",
-        "challenge": "The old website was not responsive and did not support mobile bookings, resulting in the loss of younger customers.",
-        "solution": "We implemented a modern framework optimized for mobile devices, integrating a clear menu and a direct booking system without page reloads.",
+        "overviewTitle": "The atmosphere of the place, moved online",
+        "overview": [
+          "The gastropub had a loyal crowd on site but barely existed online. The old website did not work properly on phones, and booking a table required a call during opening hours, which cut off younger guests.",
+          "We built a lightweight site that captures the mood of the place and leads guests straight to a booking. The food and craft beer menus can be browsed one-handed on a phone, and a table is booked without any page reload."
+        ],
+        "features": [
+          {
+            "title": "Booking at any hour",
+            "description": "Guests reserve a table even after closing time, without waiting for someone to pick up the phone."
+          },
+          {
+            "title": "A menu built for thumbs",
+            "description": "Food and craft beer menus readable on a phone without zooming or sideways scrolling."
+          },
+          {
+            "title": "Visibility in search",
+            "description": "Optimization for local restaurant keywords plus a Google Business Profile with an up-to-date menu."
+          },
+          {
+            "title": "Character instead of a template",
+            "description": "A dark, moody design matched to the venue's interior rather than an off-the-shelf theme."
+          }
+        ],
         "results": [
           "Growth in online bookings",
           "Noticeably faster page loading",
@@ -508,8 +538,29 @@
         "highlight": "More leads",
         "description": "A clear website for a multi-agency insurance broker with a readable policy offer and a quick contact form.",
         "client": "Nova Ubezpieczenia Sp. z o.o.",
-        "challenge": "Clients had trouble finding the right insurance types among a thicket of confusing offers.",
-        "solution": "We simplified the client journey from landing on the site to filling out the form, using clear offer sections and direct CTAs.",
+        "overviewTitle": "Insurance explained in plain language",
+        "overview": [
+          "The agency offered more than a dozen types of policies, but visitors drowned in industry jargon and had no idea where to start. Inquiries came in rarely and at random.",
+          "We organized the offer into clear sections and rewrote it in language clients actually use. The path from landing to sending an inquiry shrank to a few clicks, and the form collects exactly what is needed to price a policy."
+        ],
+        "features": [
+          {
+            "title": "An offer without jargon",
+            "description": "Policy types described in the client's language, with a clear note on who each one is for."
+          },
+          {
+            "title": "A short path to contact",
+            "description": "A quick inquiry form available from every section, with no unnecessary fields."
+          },
+          {
+            "title": "Trust at first glance",
+            "description": "A calm, orderly design that builds credibility in the financial sector."
+          },
+          {
+            "title": "Local visibility",
+            "description": "Optimization for regional insurance keywords and a configured Google Business Profile."
+          }
+        ],
         "results": [
           "More valuable inquiry requests",
           "Lower bounce rate",
@@ -522,8 +573,29 @@
         "highlight": "Fast loading",
         "description": "A website for a car workshop with a description of diagnostic services and a convenient module for booking a service appointment.",
         "client": "NORD CAR SERWIS",
-        "challenge": "No online visibility and no way to efficiently book repair appointments outside of working hours.",
-        "solution": "We built an ultra-fast single-page web application (SPA) with a booking form for a specific appointment date.",
+        "overviewTitle": "A workshop that takes bookings around the clock",
+        "overview": [
+          "The workshop barely existed online, and repair slots could only be booked by phone during working hours. Drivers searching for a garage in the evening ended up with the competition.",
+          "We built a lightning-fast site with a module for booking a specific slot. The driver describes the fault and picks a convenient day at any hour, and the workshop starts the morning with a ready list of requests."
+        ],
+        "features": [
+          {
+            "title": "Bookings after hours",
+            "description": "Slots reserved in the evening and at weekends, when drivers actually look for a garage."
+          },
+          {
+            "title": "Services explained clearly",
+            "description": "Diagnostics and repairs described so the driver knows what to expect."
+          },
+          {
+            "title": "Built for speed",
+            "description": "Lightweight code and optimized images, so the site loads instantly even on a weak connection."
+          },
+          {
+            "title": "Presence on Maps",
+            "description": "A Google Business Profile with hours and directions, because drivers search on the move."
+          }
+        ],
         "results": [
           "Fast loading (green Core Web Vitals)",
           "Convenient online appointment booking",
@@ -536,8 +608,29 @@
         "highlight": "More inquiries",
         "description": "An elegant furniture showroom website with a gallery of arrangements and an offer of made-to-measure upholstered furniture.",
         "client": "Meblex Salon Producenta",
-        "challenge": "The company needed a showcase presenting its portfolio of made-to-measure furniture to reduce effort in the early quoting phase.",
-        "solution": "An extensive categorized gallery and educational modules presenting materials, together with a quick contact form.",
+        "overviewTitle": "Made-to-measure furniture shown like in a showroom",
+        "overview": [
+          "The showroom makes upholstered furniture to order, so every conversation started by explaining options, materials and how the ordering process works. Without an online portfolio, quoting ate up a huge amount of time.",
+          "We prepared an extensive, categorized gallery of arrangements plus sections explaining materials and finishes. Clients now arrive already informed, and the conversation starts with specifics."
+        ],
+        "features": [
+          {
+            "title": "A categorized gallery",
+            "description": "Arrangements grouped so clients quickly find exactly what they are looking for."
+          },
+          {
+            "title": "Materials explained visually",
+            "description": "Sections presenting fabrics and finishes that previously had to be explained in every conversation."
+          },
+          {
+            "title": "A shorter path to a quote",
+            "description": "An inquiry form linked to the specific piece from the gallery."
+          },
+          {
+            "title": "Photography first",
+            "description": "Optimized but high-quality photos, because in furniture the visual impression decides."
+          }
+        ],
         "results": [
           "More free-quote inquiries",
           "Higher engagement on portfolio subpages",

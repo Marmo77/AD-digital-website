@@ -109,24 +109,14 @@ export function Navbar() {
     { id: "contact", label: t("nav.contact"), href: "/#contact" },
   ];
 
-  const isProjectDetailPage =
-    location.pathname.startsWith("/realizacje/") &&
-    location.pathname !== "/realizacje" &&
-    location.pathname !== "/realizacje/";
-  const isDarkHeroContext = isProjectDetailPage && !isScrolled;
-  const navTextColor = isDarkHeroContext
-    ? "text-white"
-    : "text-foreground/90 dark:text-foreground/80";
-  const navTextHoverColor = isDarkHeroContext
-    ? "hover:text-[#14B8A6]"
-    : "hover:text-primary";
-  const logoTextColor = isDarkHeroContext
-    ? "text-white/90"
-    : "text-foreground/80";
-  const iconColor = isDarkHeroContext ? "text-white" : "text-foreground/80";
-  const iconHoverClass = isDarkHeroContext
-    ? "hover:text-[#14B8A6] hover:bg-white/10"
-    : "hover:text-primary hover:bg-primary/10";
+  // Podstrony realizacji mają teraz jasny nagłówek, więc nawigacja wszędzie
+  // używa standardowych kolorów (wcześniej wymuszała biały tekst).
+  const isDarkHeroContext = false;
+  const navTextColor = "text-foreground/90 dark:text-foreground/80";
+  const navTextHoverColor = "hover:text-primary";
+  const logoTextColor = "text-foreground/80";
+  const iconColor = "text-foreground/80";
+  const iconHoverClass = "hover:text-primary hover:bg-primary/10";
 
   return (
     <>
