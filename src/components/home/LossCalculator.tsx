@@ -5,7 +5,7 @@ import { ArrowRight, TrendingDown } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
 
 const VALUE = { min: 100, max: 5000, step: 50, default: 400 };
-const CLIENTS = { min: 1, max: 30, step: 1, default: 5 };
+const CLIENTS = { min: 1, max: 30, step: 1, default: 8 };
 
 type SliderRowProps = {
   id: string;
@@ -69,6 +69,7 @@ export function LossCalculator() {
 
   // Eskalacja w czasie działa mocniej niż pojedyncza kwota
   const periods = [
+    { key: "day", amount: daily },
     { key: "month", amount: monthly },
     { key: "quarter", amount: monthly * 3 },
     { key: "year", amount: monthly * 12 },
@@ -80,11 +81,13 @@ export function LossCalculator() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="relative rounded-3xl border border-primary/30 bg-background p-8 md:p-10 shadow-[0_20px_50px_rgba(45,212,191,0.12)] overflow-hidden"
+      className="relative rounded-3xl border border-primary/30 bg-background shadow-[0_20px_50px_rgba(45,212,191,0.12)] overflow-hidden"
     >
+      {/* Pasek akcentu zamiast jednolitej ramki */}
+      <div className="h-1.5 w-full bg-gradient-to-r from-primary via-primary to-primary/40" />
       <div className="absolute -top-24 -right-24 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="relative z-10">
+      <div className="relative z-10 p-8 md:p-10">
         <div className="flex items-center gap-2 mb-3">
           <TrendingDown className="w-4 h-4 text-primary" />
           <span className="text-xs font-bold tracking-widest text-primary uppercase font-mono">
@@ -123,40 +126,47 @@ export function LossCalculator() {
           />
         </div>
 
-        {/* Wynik jako narastająca oś czasu */}
+        {/* Wynik: każdy okres jako osobny wiersz, narastająco */}
         <div className="border-t border-border/50 pt-7">
-          <p className="text-xs font-bold tracking-widest text-muted-foreground uppercase mb-5">
+          <p className="text-xs font-bold tracking-widest text-muted-foreground uppercase mb-4">
             {t("problem.calculator.resultLabel")}
           </p>
 
-          <div className="grid grid-cols-3 gap-3">
-            {periods.map((p, idx) => (
-              <div
-                key={p.key}
-                className={`rounded-2xl px-3 py-4 text-center transition-colors ${
-                  idx === periods.length - 1
-                    ? "bg-primary/10 border border-primary/30"
-                    : "bg-secondary/40"
-                }`}
-              >
-                <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground mb-1.5">
-                  {t(`problem.calculator.periods.${p.key}`)}
-                </p>
-                <p
-                  className={`font-black tracking-tighter tabular-nums leading-none ${
-                    idx === periods.length - 1
-                      ? "text-2xl md:text-3xl text-primary"
-                      : "text-lg md:text-xl text-foreground/80"
+          <div className="flex flex-col rounded-2xl border border-border/50 overflow-hidden">
+            {periods.map((p, idx) => {
+              const isLast = idx === periods.length - 1;
+              return (
+                <div
+                  key={p.key}
+                  className={`flex items-center justify-between gap-4 px-5 transition-colors ${
+                    isLast
+                      ? "bg-primary/10 border-t border-primary/30 py-5"
+                      : "bg-secondary/25 border-b border-border/40 py-3.5"
                   }`}
                 >
-                  {money(p.amount)}
-                </p>
-              </div>
-            ))}
+                  <span
+                    className={`font-semibold uppercase tracking-wide ${
+                      isLast ? "text-sm text-foreground" : "text-xs text-muted-foreground"
+                    }`}
+                  >
+                    {t(`problem.calculator.periods.${p.key}`)}
+                  </span>
+                  <span
+                    className={`font-black tracking-tighter tabular-nums leading-none ${
+                      isLast
+                        ? "text-3xl md:text-4xl text-primary"
+                        : "text-lg md:text-xl text-foreground/75"
+                    }`}
+                  >
+                    {money(p.amount)}
+                  </span>
+                </div>
+              );
+            })}
           </div>
 
           <p className="text-sm text-muted-foreground mt-5 leading-relaxed">
-            {t("problem.calculator.dailyNote", { amount: money(daily) })}
+            {t("problem.calculator.punchline")}
           </p>
         </div>
 

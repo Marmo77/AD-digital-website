@@ -82,18 +82,19 @@
       "statsSource": "Industry data (Google / Think with Google).",
       "calculator": {
         "badge": "DO THE MATH",
-        "title": "What is invisibility costing you?",
-        "intro": "Move the sliders and enter your own numbers. The result is money that currently goes to your competitors.",
+        "title": "Being invisible has a price tag",
+        "intro": "Set two numbers from your business and we will show you the scale. We conservatively assume 8 clients a month by default.",
         "valueLabel": "How much do you earn per client?",
         "clientsLabel": "How many clients a month are you losing?",
         "clientsUnit": "clients",
-        "resultLabel": "That much goes to your competitors",
+        "resultLabel": "This is what you lose",
         "periods": {
-          "month": "In a month",
-          "quarter": "In a quarter",
-          "year": "In a year"
+          "day": "Per day",
+          "month": "Per month",
+          "quarter": "Per quarter",
+          "year": "Per year"
         },
-        "dailyNote": "That is roughly {{amount}} for every day nobody can find you.",
+        "punchline": "This money does not disappear. It goes to the company your client found instead of you.",
         "cta": "Win those clients back",
         "disclaimer": "An estimate based on your own numbers. No commitment, no upfront payment."
       },

@@ -3,9 +3,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import { Button } from "../ui/button";
-import BlobCursor from "../ui/blob-cursor";
 import { Link } from "react-router-dom";
 import { projectsData } from "../../data/projects";
+import { ProjectImage } from "../ui/ProjectImage";
 
 export function Projects() {
   const { t } = useTranslation();
@@ -42,58 +42,71 @@ export function Projects() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 lg:gap-x-12 mb-24">
-          {projectsData.slice(0, 4).map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="group outline-none flex flex-col gap-5"
-            >
-              {/* Image Container with precise styling from design */}
-              <Link to={`/realizacje/${project.id}`} className="block w-[96%] lg:w-[92%] mx-auto aspect-3/2 rounded-[2.5rem] overflow-hidden bg-muted relative transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
-                <div className="absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                  <div className="w-full h-full pointer-events-auto">
-                    <BlobCursor
-                      blobType="circle"
-                      fillColor="#14B8A6"
-                      opacities={[0.3, 0.2, 0.1]}
-                      sizes={[80, 150, 100]}
-                    />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-24">
+          {projectsData.slice(0, 4).map((project, index) => {
+            const title = t(`projectsData.${project.id}.title`);
+            return (
+              <motion.article
+                key={project.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="group flex flex-col rounded-3xl border border-border/50 bg-white dark:bg-background overflow-hidden hover:border-primary/40 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-500"
+              >
+                {/* Podgląd: gif -> image -> fallback */}
+                <Link
+                  to={`/realizacje/${project.id}`}
+                  className="block overflow-hidden bg-muted relative"
+                >
+                  <ProjectImage
+                    src={project.gif || project.image}
+                    fallbacks={[project.image]}
+                    alt={title}
+                    className="w-full h-auto object-cover aspect-16/10 transition-transform duration-[1.2s] group-hover:scale-105"
+                  />
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-background/90 backdrop-blur-sm text-[11px] font-bold tracking-widest uppercase text-primary">
+                    {t(`projectsData.${project.id}.highlight`)}
+                  </span>
+                </Link>
+
+                <div className="flex flex-col gap-3 p-6 md:p-7 flex-1">
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tech.slice(0, 3).map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-0.5 rounded-full border border-border/60 bg-secondary/30 text-[10px] font-mono text-muted-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-                </div>
 
-                <img
-                  src={project.image}
-                  alt={t(`projectsData.${project.id}.title`)}
-                  className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="pointer-events-none absolute inset-0 rounded-inherit backdrop-blur-[2px] [mask-image:radial-gradient(circle,transparent_45%,black_100%)] bg-black/15" />
-                <div className="absolute inset-0 z-20 pointer-events-none bg-black/10 transition-opacity duration-500 group-hover:opacity-0" />
-              </Link>
+                  <span className="text-[11px] font-bold tracking-widest uppercase text-muted-foreground">
+                    {t(`projectsData.${project.id}.category`)}
+                  </span>
 
-              {/* Content matching screenshot */}
-              <div className="flex flex-col gap-2 px-1 w-[96%] lg:w-[92%] mx-auto">
-                <Link to={`/realizacje/${project.id}`}>
-                  <h3 className="text-3xl font-bold tracking-tight text-foreground transition-colors hover:text-primary">
-                    {t(`projectsData.${project.id}.title`)}
-                  </h3>
-                </Link>
-                <div className="flex items-center gap-3 text-xs font-bold tracking-widest uppercase">
-                  <span className="text-muted-foreground">{t(`projectsData.${project.id}.category`)}</span>
-                  <span className="w-1 h-1 rounded-full bg-border" />
-                  <span className="text-primary">{t(`projectsData.${project.id}.highlight`)}</span>
+                  <Link to={`/realizacje/${project.id}`}>
+                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+                      {title}
+                    </h3>
+                  </Link>
+
+                  <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
+                    {t(`projectsData.${project.id}.description`)}
+                  </p>
+
+                  <Link
+                    to={`/realizacje/${project.id}`}
+                    className="mt-auto pt-3 inline-flex items-center gap-1.5 text-sm font-bold text-foreground group-hover:text-primary transition-colors"
+                  >
+                    {t("projectsPage.viewProject")}
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </Link>
                 </div>
-                {/* Optional short description */}
-                <Link to={`/realizacje/${project.id}`} className="mt-2 text-sm text-muted-foreground line-clamp-2 leading-relaxed max-w-[90%] hover:text-foreground/80 transition-colors">
-                  {t(`projectsData.${project.id}.description`)}
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+              </motion.article>
+            );
+          })}
         </div>
 
         <motion.div

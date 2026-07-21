@@ -82,18 +82,19 @@
       "statsSource": "Dane branżowe (Google / Think with Google).",
       "calculator": {
         "badge": "POLICZ TO SAM",
-        "title": "Ile kosztuje Cię brak widoczności?",
-        "intro": "Przesuń suwaki i wpisz swoje realia. Wynik to pieniądze, które zostają dziś u konkurencji.",
+        "title": "Twoja niewidoczność ma swoją cenę",
+        "intro": "Ustaw dwie liczby ze swojej firmy, a pokażemy skalę. Domyślnie zakładamy ostrożne 8 klientów miesięcznie.",
         "valueLabel": "Ile zarabiasz na jednym kliencie?",
         "clientsLabel": "Ilu klientów miesięcznie tracisz?",
         "clientsUnit": "klientów",
-        "resultLabel": "Tyle zostaje u konkurencji",
+        "resultLabel": "Tyle tracisz",
         "periods": {
-          "month": "W miesiąc",
-          "quarter": "W kwartał",
-          "year": "W rok"
+          "day": "Dziennie",
+          "month": "Miesięcznie",
+          "quarter": "Kwartalnie",
+          "year": "Rocznie"
         },
-        "dailyNote": "To około {{amount}} każdego dnia, w którym nikt Cię nie znajduje.",
+        "punchline": "Te pieniądze nie znikają. Trafiają do firmy, którą klient znalazł zamiast Ciebie.",
         "cta": "Odzyskaj tych klientów",
         "disclaimer": "Szacunek na podstawie Twoich danych. Bez zobowiązań i bez zaliczki."
       },
