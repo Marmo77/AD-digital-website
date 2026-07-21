@@ -61,7 +61,7 @@ export function Projects() {
                 >
                   <ProjectImage
                     src={project.gif || project.image}
-                    fallbacks={[project.image]}
+                    fallbacks={[project.image, project.imageFallback]}
                     alt={title}
                     className="w-full h-auto object-cover aspect-16/10 transition-transform duration-[1.2s] group-hover:scale-105"
                   />

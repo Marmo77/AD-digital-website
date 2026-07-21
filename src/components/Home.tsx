@@ -27,7 +27,7 @@ export default function Home() {
       name: companyData.name,
       description: t("footer.description"),
       url: companyData.url,
-      image: `${companyData.url}/fallback.jpg`,
+      image: `${companyData.url}/images/addigital.jpg`,
       logo: `${companyData.url}/logo.svg`,
       email: companyData.email,
       telephone: companyData.phone,

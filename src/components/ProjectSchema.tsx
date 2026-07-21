@@ -38,9 +38,8 @@ export function ProjectSchema() {
 
   const pageTitle = `${title} | ${t("nav.projects")} | ${companyData.name}`;
   const pageUrl = `${companyData.url}/realizacje/${project.id}`;
-  const imageUrl = project.image.startsWith("http")
-    ? project.image
-    : `${companyData.url}${project.image}`;
+  // Do og:image i schema swiadomie jpg, bo scrapery social mediow slabo obsluguja webp
+  const imageUrl = `${companyData.url}${project.imageFallback}`;
 
   const jsonLd = [
     {
@@ -146,7 +145,7 @@ export function ProjectSchema() {
         >
           <ProjectImage
             src={project.gif || project.image}
-            fallbacks={[project.image]}
+            fallbacks={[project.image, project.imageFallback]}
             alt={title}
             className="w-full h-auto object-cover aspect-16/9"
           />

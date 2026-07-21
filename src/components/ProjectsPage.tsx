@@ -14,6 +14,10 @@ export function ProjectsPage() {
     <main className="flex-1 w-full relative z-10 pt-32 pb-24 text-foreground bg-background">
       <Helmet>
         <title>ADdigital: Realizacje | Tworzenie Stron Internetowych Szczecin</title>
+        <meta
+          name="description"
+          content="Realizacje ADdigital: strony internetowe dla firm ze Szczecina, Goleniowa, Stargardu i Nowogardu wraz z pozycjonowaniem i Wizytówką Google."
+        />
       </Helmet>
 
       <div className="container max-w-6xl mx-auto px-6">
@@ -130,7 +134,7 @@ export function ProjectsPage() {
                 >
                   <ProjectImage
                     src={project.gif || project.image}
-                    fallbacks={[project.image]}
+                    fallbacks={[project.image, project.imageFallback]}
                     alt={title}
                     className="w-full h-auto object-cover aspect-16/10 transition-transform duration-[1.2s] group-hover:scale-105"
                   />

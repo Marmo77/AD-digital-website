@@ -457,7 +457,8 @@
       "shortcuts": "Shortcuts",
       "info": "Information",
       "contact": "Contact",
-      "privacy": "Privacy Policy"
+      "privacy": "Privacy Policy",
+      "cities": "Areas we serve"
     },
     "technologies": {
       "badge": "TECHNOLOGIES",
@@ -478,6 +479,67 @@
       "viewProject": "View project",
       "websiteOnline": "Website online",
       "metaTitle": "Portfolio"
+    },
+    "cityPage": {
+      "badge": "AREA WE SERVE",
+      "servicesTitle": "What we do for businesses in this area",
+      "proofTitle": "A project from the area",
+      "proofCta": "See this project",
+      "nearbyTitle": "We also work in",
+      "ctaTitle": "Let's check how visible your business is",
+      "ctaText": "Tell us what you do and we will check which keywords you currently show up for and what can be improved. The quote is free and comes with no obligation.",
+      "ctaButton": "Free quote",
+      "otherCities": "Other cities"
+    },
+    "cities": {
+      "szczecin": {
+        "name": "Szczecin",
+        "title": "Websites in Szczecin",
+        "metaTitle": "Websites in Szczecin - web design and local SEO | ADdigital",
+        "metaDescription": "Web design in Szczecin plus local SEO and Google Business Profile. Websites that genuinely bring in clients. Free quote.",
+        "lead": "Szczecin is the most competitive market in the region. Agencies with over a decade of experience compete for keywords like \"websites Szczecin\", so a pretty site alone is not enough here.",
+        "paragraphs": [
+          "In a large city, clients rarely go past the first page of results. If your business is not there, it effectively does not exist, even with the best offer in town. That is why in Szczecin projects we work on technical SEO and the Google Business Profile from day one.",
+          "We mostly serve hospitality, services and retail here, industries where clients search fast and pick one of the first options. Loading time on mobile, complete information on Google Maps and a clear path to contact all decide the outcome."
+        ],
+        "localNote": "We are happy to meet in person in Szczecin to discuss the project face to face."
+      },
+      "goleniow": {
+        "name": "Goleniów",
+        "title": "Websites in Goleniów",
+        "metaTitle": "Websites in Goleniów - web design and local SEO | ADdigital",
+        "metaDescription": "Web design in Goleniów, local SEO and Google Business Profile for service businesses. Free quote within 24 hours.",
+        "lead": "Goleniów is our home turf. We know this market well enough to see that many local businesses still rely purely on word of mouth and are practically invisible in Google.",
+        "paragraphs": [
+          "In a smaller town, competition in search is far weaker than in Szczecin, and that is a huge opportunity. A well-optimized Google Business Profile and a site built for local keywords can push a business to the top faster and with less effort than in a big city.",
+          "We work here with workshops, services and trades, where clients search for something specific and nearby. Often the most important result is not website traffic but phone calls from Google Maps, made by people looking for a service within a few kilometres."
+        ],
+        "localNote": "We operate from here daily, so meeting on site is never a problem."
+      },
+      "stargard": {
+        "name": "Stargard",
+        "title": "Websites in Stargard",
+        "metaTitle": "Websites in Stargard - web design and local SEO | ADdigital",
+        "metaDescription": "Web design in Stargard together with local SEO and Google Business Profile. Websites for businesses that want to be found.",
+        "lead": "Stargard has strong local retail and manufacturing, where buying decisions are often made after reviewing an offer online, even if the deal itself closes in person.",
+        "paragraphs": [
+          "A client planning a larger purchase checks the company online first: they look for photos, reviews and specifics. Without a proper online portfolio, every conversation starts by explaining the basics instead of the details that matter.",
+          "That is why in Stargard projects we lean heavily on presenting the offer: project galleries, clear descriptions and fast-loading images. On top of that we optimize for keywords with the city name and set up a Google Business Profile with current hours and directions."
+        ],
+        "localNote": "We serve Stargard and the surrounding towns, remotely as well."
+      },
+      "nowogard": {
+        "name": "Nowogard",
+        "title": "Websites in Nowogard",
+        "metaTitle": "Websites in Nowogard - web design and local SEO | ADdigital",
+        "metaDescription": "Web design in Nowogard, local SEO and Google Business Profile. Visibility for small and medium businesses. Free quote.",
+        "lead": "In Nowogard many businesses still have no website at all, or one built years ago that does not work properly on a phone.",
+        "paragraphs": [
+          "This is exactly the situation where a relatively small investment produces a clearly visible effect. When search competition is low, a properly built site and a completed Google Business Profile can noticeably change the number of inquiries.",
+          "We focus here on the fundamentals that actually work: the business must be found in Google and on Maps, have up-to-date contact details, a readable offer and a site that opens instantly even on a weaker connection."
+        ],
+        "localNote": "We serve Nowogard both on site and remotely."
+      }
     },
     "projectDetail": {
       "back": "Back to all projects",

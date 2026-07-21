@@ -7,11 +7,12 @@ export interface Project {
   url: string;
   /** Pełny link do strony klienta (na żywo) */
   link: string;
-  /** Statyczny podgląd */
+  /** Główny podgląd statyczny (webp, lekki) */
   image: string;
-  /** Animowany podgląd; ma pierwszeństwo przed image, z fallbackiem gdy go brak */
+  /** Zapasowy podgląd (jpg) dla przeglądarek i crawlerow bez webp */
+  imageFallback: string;
+  /** Animowany podgląd; ma pierwszeństwo przed image */
   gif?: string;
-  backgroundImage?: string;
   /** Stos technologiczny pokazywany w panelu bocznym realizacji */
   tech: string[];
 }
@@ -21,40 +22,36 @@ export const projectsData: Project[] = [
     id: "burgerszczecin",
     url: "burgerszczecin.pl",
     link: "https://www.burgerszczecin.pl/",
-    image: "/burger_szczecin.jpg",
-    gif: "/burger_szczecin.gif",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1563551342926-21cc8d785013?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: "/images/bistroburger.webp",
+    imageFallback: "/images/bistroburger.jpg",
+    gif: "/gifs/bistroburger.gif",
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
   },
   {
     id: "nova-ubezpieczenia",
     url: "nova-ubezpieczenia.pl",
     link: "https://www.nova-ubezpieczenia.pl/",
-    image: "/nova_ubezpieczenia.jpg",
-    gif: "/nova_ubezpieczenia.gif",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/novaubezpieczenia.webp",
+    imageFallback: "/images/novaubezpieczenia.jpg",
+    gif: "/gifs/novaubezpieczenia.gif",
     tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
   },
   {
     id: "nord-car",
     url: "nord-car.pl",
     link: "https://nord-car.pl/",
-    image: "/nord_car.jpg",
-    gif: "/nord_car.gif",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1625047509168-a7026f36de04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: "/images/nordcar.webp",
+    imageFallback: "/images/nordcar.jpg",
+    gif: "/gifs/nordcar.gif",
     tech: ["React", "Vite", "Tailwind CSS", "Vercel"],
   },
   {
     id: "meblex",
     url: "meblex-szczecin.pl",
     link: "https://www.meblex-szczecin.pl/",
-    image: "/meblex.jpg",
-    gif: "/meblex.gif",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1687180498602-5a1046defaa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    image: "/images/meblexszczecin.webp",
+    imageFallback: "/images/meblexszczecin.jpg",
+    gif: "/gifs/meblexszczecin.gif",
     tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
 ];

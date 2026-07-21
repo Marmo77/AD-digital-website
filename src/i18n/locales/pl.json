@@ -457,7 +457,8 @@
       "shortcuts": "Na skróty",
       "info": "Informacje",
       "contact": "Kontakt",
-      "privacy": "Polityka prywatności"
+      "privacy": "Polityka prywatności",
+      "cities": "Obsługiwane miasta"
     },
     "technologies": {
       "badge": "TECHNOLOGIE",
@@ -478,6 +479,67 @@
       "viewProject": "Zobacz projekt",
       "websiteOnline": "Strona online",
       "metaTitle": "Realizacje"
+    },
+    "cityPage": {
+      "badge": "OBSŁUGIWANY REJON",
+      "servicesTitle": "Co robimy dla firm z tego rejonu",
+      "proofTitle": "Realizacja z okolicy",
+      "proofCta": "Zobacz tę realizację",
+      "nearbyTitle": "Działamy również w",
+      "ctaTitle": "Sprawdźmy, jak widać Twoją firmę",
+      "ctaText": "Powiedz nam, czym się zajmujesz, a sprawdzimy, na jakich frazach jesteś dziś widoczny i co da się poprawić. Wycena jest bezpłatna i niezobowiązująca.",
+      "ctaButton": "Darmowa wycena",
+      "otherCities": "Pozostałe miasta"
+    },
+    "cities": {
+      "szczecin": {
+        "name": "Szczecin",
+        "title": "Strony internetowe Szczecin",
+        "metaTitle": "Strony internetowe Szczecin - tworzenie stron i pozycjonowanie | ADdigital",
+        "metaDescription": "Tworzenie stron internetowych w Szczecinie oraz pozycjonowanie lokalne i Wizytówka Google. Strony, które realnie sprowadzają klientów. Darmowa wycena.",
+        "lead": "Szczecin to najbardziej konkurencyjny rynek w regionie. Na frazy takie jak \"strony internetowe Szczecin\" walczą agencje z kilkunastoletnim stażem, więc sama ładna strona tu nie wystarczy.",
+        "paragraphs": [
+          "W dużym mieście klient rzadko schodzi poniżej pierwszej strony wyników. Jeśli Twojej firmy tam nie ma, praktycznie nie istnieje, nawet jeśli masz najlepszą ofertę w mieście. Dlatego przy projektach szczecińskich od początku pracujemy nad techniczną stroną SEO i Wizytówką Google.",
+          "Obsługujemy tu głównie gastronomię, usługi i handel, czyli branże, w których klient szuka szybko i wybiera jedną z pierwszych propozycji. Liczy się czas ładowania na telefonie, komplet informacji w Mapach Google i czytelna ścieżka do kontaktu."
+        ],
+        "localNote": "Chętnie spotkamy się osobiście na terenie Szczecina, żeby omówić projekt na żywo."
+      },
+      "goleniow": {
+        "name": "Goleniów",
+        "title": "Strony internetowe Goleniów",
+        "metaTitle": "Strony internetowe Goleniów - tworzenie stron i pozycjonowanie | ADdigital",
+        "metaDescription": "Tworzenie stron internetowych w Goleniowie, pozycjonowanie lokalne i Wizytówka Google dla firm usługowych. Bezpłatna wycena w 24 godziny.",
+        "lead": "Goleniów to nasze podwórko. Znamy tutejszy rynek na tyle dobrze, żeby wiedzieć, że wiele firm wciąż opiera się wyłącznie na poleceniach, a w Google praktycznie ich nie widać.",
+        "paragraphs": [
+          "W mniejszym mieście konkurencja w wyszukiwarce jest znacznie słabsza niż w Szczecinie, co jest ogromną szansą. Dobrze zoptymalizowana Wizytówka Google i strona pod lokalne frazy potrafią wypchnąć firmę na czołowe pozycje szybciej i mniejszym nakładem niż w dużym mieście.",
+          "Pracujemy tu z warsztatami, usługami i rzemiosłem, gdzie klient szuka konkretnie i lokalnie. Często najważniejszym efektem nie jest ruch na stronie, tylko telefony z Map Google od osób, które szukały usługi w promieniu kilku kilometrów."
+        ],
+        "localNote": "Działamy stąd na co dzień, więc spotkanie na miejscu nie jest problemem."
+      },
+      "stargard": {
+        "name": "Stargard",
+        "title": "Strony internetowe Stargard",
+        "metaTitle": "Strony internetowe Stargard - tworzenie stron i pozycjonowanie | ADdigital",
+        "metaDescription": "Tworzenie stron internetowych w Stargardzie wraz z pozycjonowaniem lokalnym i Wizytówką Google. Strony dla firm, które chcą być znalezione.",
+        "lead": "Stargard to miasto z silnym lokalnym handlem i produkcją, gdzie decyzje zakupowe zapadają często po obejrzeniu oferty w internecie, nawet jeśli finalizuje się je na miejscu.",
+        "paragraphs": [
+          "Klient, który planuje większy zakup, najpierw sprawdza firmę w sieci: szuka zdjęć, opinii i konkretów. Brak porządnego portfolio online oznacza, że rozmowa zaczyna się od tłumaczenia podstaw, zamiast od konkretów.",
+          "Dlatego przy stargardzkich projektach mocno stawiamy na prezentację oferty: galerie realizacji, czytelne opisy i szybkie ładowanie zdjęć. Do tego dokładamy optymalizację pod frazy z nazwą miasta oraz Wizytówkę Google z aktualnymi godzinami i dojazdem."
+        ],
+        "localNote": "Obsługujemy Stargard i okoliczne miejscowości, także zdalnie."
+      },
+      "nowogard": {
+        "name": "Nowogard",
+        "title": "Strony internetowe Nowogard",
+        "metaTitle": "Strony internetowe Nowogard - tworzenie stron i pozycjonowanie | ADdigital",
+        "metaDescription": "Tworzenie stron internetowych w Nowogardzie, pozycjonowanie lokalne oraz Wizytówka Google. Widoczność dla małych i średnich firm. Darmowa wycena.",
+        "lead": "W Nowogardzie wiele firm nadal nie ma własnej strony albo ma taką, która powstała lata temu i nie działa poprawnie na telefonie.",
+        "paragraphs": [
+          "To sytuacja, w której stosunkowo niewielka inwestycja daje wyraźnie widoczny efekt. Gdy konkurencja w wyszukiwarce jest niewielka, poprawnie zrobiona strona i uzupełniona Wizytówka Google potrafią zauważalnie zmienić liczbę zapytań.",
+          "Skupiamy się tu na podstawach, które realnie działają: firma ma być znaleziona w Google i na Mapach, mieć aktualne dane kontaktowe, czytelną ofertę i stronę, która otwiera się natychmiast również przy słabszym zasięgu."
+        ],
+        "localNote": "Nowogard obsługujemy zarówno na miejscu, jak i zdalnie."
+      }
     },
     "projectDetail": {
       "back": "Wróć do wszystkich realizacji",
