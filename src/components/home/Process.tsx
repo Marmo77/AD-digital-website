@@ -7,7 +7,7 @@ const REFINED_PROCESS = [
   {
     phase: "01 / KONSULTACJA",
     title: "Analiza i cele",
-    desc: "Zaczynamy od niezobowiązującej rozmowy – na żywo lub online. Dokładnie analizuję Twoją branżę, działania konkurencji oraz oczekiwania Twoich klientów. Wspólnie definiujemy cele biznesowe, które ma realizować nowa strona. To solidny fundament, bez którego nie ruszamy z pracą.",
+    desc: "Zaczynamy od niezobowiązującej rozmowy - na żywo lub online. Dokładnie analizuję Twoją branżę, działania konkurencji oraz oczekiwania Twoich klientów. Wspólnie definiujemy cele biznesowe, które ma realizować nowa strona. To solidny fundament, bez którego nie ruszamy z pracą.",
     tags: ["Analiza Rynku", "Brief Biznesowy", "Cele Projektu"],
     colorHex: "rgba(45, 212, 191, 0.15)", // Tailwind teal-400
     visual: () => (
@@ -185,7 +185,7 @@ const REFINED_PROCESS = [
   {
     phase: "05 / WDROŻENIE",
     title: "Publikacja i Wsparcie",
-    desc: "Gdy w pełni zaakceptujesz wygląd i działanie strony, a formalności finansowe zostaną dopięte, publikuję gotowy produkt na niezawodnych serwerach. Moja rola jednak się tu nie kończy. Pozostaję do Twojej dyspozycji – pomagam w obsłudze, wdrażam ewentualne poprawki i jestem gotowy na dalszą rozbudowę strony w przyszłości.",
+    desc: "Gdy w pełni zaakceptujesz wygląd i działanie strony, a formalności finansowe zostaną dopięte, publikuję gotowy produkt na niezawodnych serwerach. Moja rola jednak się tu nie kończy. Pozostaję do Twojej dyspozycji - pomagam w obsłudze, wdrażam ewentualne poprawki i jestem gotowy na dalszą rozbudowę strony w przyszłości.",
     tags: ["Publikacja w Sieci", "Wsparcie Techniczne", "Rozwój Projektu"],
     colorHex: "rgba(45, 212, 191, 0.15)",
     visual: () => (

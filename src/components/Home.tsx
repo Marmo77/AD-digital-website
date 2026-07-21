@@ -1,7 +1,9 @@
 import { Hero } from "./home/Hero";
+import { Problem } from "./home/Problem";
 import { ForWho } from "./home/ForWho";
 import { Services } from "./home/Services";
 import { Process } from "./home/Process";
+import { Included } from "./home/Included";
 import { Projects } from "./home/Projects";
 import { About } from "./home/About";
 import { Testimonials } from "./home/Testimonials";
@@ -25,7 +27,7 @@ export default function Home() {
       name: companyData.name,
       description: t("footer.description"),
       url: companyData.url,
-      image: `${companyData.url}/fallback.jpg`,
+      image: `${companyData.url}/images/addigital.jpg`,
       logo: `${companyData.url}/logo.svg`,
       email: companyData.email,
       telephone: companyData.phone,
@@ -86,11 +88,14 @@ export default function Home() {
       <div className="relative z-10 w-full">
         <main>
           <Hero />
-          <Projects />
-          <About />
+          <Problem />
           <Services />
-          <ForWho />
+          <Projects />
           <Process />
+          <Included />
+          <About />
+          <ForWho />
+          {/* Opinie wracają dopiero, gdy będą prawdziwe (obecnie placeholdery) */}
           {/* <Testimonials /> */}
           <FAQ />
           <Contact />

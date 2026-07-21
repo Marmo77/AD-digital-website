@@ -14,7 +14,7 @@ export function Layout() {
   // Jedno źródło prawdy dla adresu kanonicznego (unika zduplikowanych <link rel="canonical">)
   const canonicalUrl = `${companyData.url}${pathname === "/" ? "/" : pathname}`;
 
-  // Automatyczny język na podstawie kraju (tylko przy 1. wizycie – ręczny wybór ma priorytet).
+  // Automatyczny język na podstawie kraju (tylko przy 1. wizycie - ręczny wybór ma priorytet).
   useEffect(() => {
     let stored: string | null = null;
     try {
@@ -23,7 +23,7 @@ export function Layout() {
       /* localStorage niedostępny */
     }
 
-    // Użytkownik dokonał już wyboru – uszanuj go i nie wykrywaj kraju.
+    // Użytkownik dokonał już wyboru - uszanuj go i nie wykrywaj kraju.
     if (stored) {
       if (stored !== i18n.language) i18n.changeLanguage(stored);
       return;
@@ -39,7 +39,7 @@ export function Layout() {
         if (country && country !== "PL") i18n.changeLanguage("en");
       })
       .catch(() => {
-        /* brak /api/geo (np. lokalnie) – zostaje język domyślny */
+        /* brak /api/geo (np. lokalnie) - zostaje język domyślny */
       });
 
     return () => {

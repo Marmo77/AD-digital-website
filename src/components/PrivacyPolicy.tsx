@@ -1,10 +1,20 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { companyData } from "../data/company";
 
 export default function PrivacyPolicy() {
   return (
     <main className="w-full max-w-3xl mx-auto py-32 px-4 sm:px-6 lg:px-8 relative z-10">
+      <Helmet>
+        <title>Polityka prywatności | {companyData.name}</title>
+        <meta
+          name="description"
+          content="Polityka prywatności ADdigital: zasady przetwarzania i ochrony danych osobowych przekazanych przez formularz kontaktowy."
+        />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
+
       <Link 
         to="/" 
         className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-12"

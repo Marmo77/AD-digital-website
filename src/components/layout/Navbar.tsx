@@ -31,14 +31,16 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       if (location.pathname !== "/") return;
+      // Kolejność musi odpowiadać kolejności sekcji w DOM (Home.tsx)
       const sections = [
         "home",
-        "projects",
-        "about",
+        "problem",
         "services",
-        "forwho",
+        "projects",
         "process",
-        "testimonials",
+        "included",
+        "about",
+        "forwho",
         "faq",
         "contact",
       ];
@@ -53,12 +55,15 @@ export function Navbar() {
           const elementTop =
             element.getBoundingClientRect().top + window.scrollY;
           if (elementTop <= scrollPosition) {
+            // Sekcje bez własnego linku w menu podświetlają najbliższy poprzedzający punkt nawigacji
             currentSection =
-              section === "forwho"
+              section === "problem"
                 ? "services"
-                : section === "testimonials" || section === "faq"
-                  ? "contact"
-                  : section;
+                : section === "forwho"
+                  ? "about"
+                  : section === "faq"
+                    ? "contact"
+                    : section;
           }
         }
       }
@@ -77,7 +82,7 @@ export function Navbar() {
     try {
       localStorage.setItem("ad-lang", next);
     } catch {
-      /* localStorage niedostępny – ignorujemy */
+      /* localStorage niedostępny - ignorujemy */
     }
   };
 
@@ -89,37 +94,29 @@ export function Navbar() {
   const backdropBlur = useMotionTemplate`blur(${blurValue}px)`;
   const borderColor = useMotionTemplate`hsl(var(--foreground) / ${borderOpacity})`;
 
+  // Kolejność odpowiada kolejności sekcji na stronie (Home.tsx)
   const navLinks = [
+    { id: "services", label: t("nav.services"), href: "/#services" },
     {
       id: "projects",
       label: t("nav.projects"),
       href: "/#projects",
       isDropdown: true,
     },
-    { id: "about", label: t("nav.about"), href: "/#about" },
-    { id: "services", label: t("nav.services"), href: "/#services" },
     { id: "process", label: t("nav.process"), href: "/#process" },
+    { id: "included", label: t("nav.included"), href: "/#included" },
+    { id: "about", label: t("nav.about"), href: "/#about" },
     { id: "contact", label: t("nav.contact"), href: "/#contact" },
   ];
 
-  const isProjectDetailPage =
-    location.pathname.startsWith("/realizacje/") &&
-    location.pathname !== "/realizacje" &&
-    location.pathname !== "/realizacje/";
-  const isDarkHeroContext = isProjectDetailPage && !isScrolled;
-  const navTextColor = isDarkHeroContext
-    ? "text-white"
-    : "text-foreground/90 dark:text-foreground/80";
-  const navTextHoverColor = isDarkHeroContext
-    ? "hover:text-[#14B8A6]"
-    : "hover:text-primary";
-  const logoTextColor = isDarkHeroContext
-    ? "text-white/90"
-    : "text-foreground/80";
-  const iconColor = isDarkHeroContext ? "text-white" : "text-foreground/80";
-  const iconHoverClass = isDarkHeroContext
-    ? "hover:text-[#14B8A6] hover:bg-white/10"
-    : "hover:text-primary hover:bg-primary/10";
+  // Podstrony realizacji mają teraz jasny nagłówek, więc nawigacja wszędzie
+  // używa standardowych kolorów (wcześniej wymuszała biały tekst).
+  const isDarkHeroContext = false;
+  const navTextColor = "text-foreground/90 dark:text-foreground/80";
+  const navTextHoverColor = "hover:text-primary";
+  const logoTextColor = "text-foreground/80";
+  const iconColor = "text-foreground/80";
+  const iconHoverClass = "hover:text-primary hover:bg-primary/10";
 
   return (
     <>
@@ -157,7 +154,8 @@ export function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8 absolute left-1/2 -translate-x-1/2">
+          {/* flex-1 zamiast absolutnego wyśrodkowania: nawigacja nie może nachodzić na logo ani prawą stronę */}
+          <nav className="hidden lg:flex flex-1 items-center justify-center gap-5 xl:gap-7 min-w-0">
             {navLinks.map((item) => (
               <div
                 key={item.id}
@@ -217,7 +215,7 @@ export function Navbar() {
           </nav>
 
           {/* Desktop Right Side */}
-          <div className="hidden md:flex items-center gap-2 sm:gap-4">
+          <div className="hidden lg:flex items-center gap-2 sm:gap-4">
             <button
               onClick={() => setTheme(isDark ? "light" : "dark")}
               className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 active:scale-95 cursor-pointer ${iconColor} ${iconHoverClass} ${isDarkHeroContext ? "" : "hover:shadow-[0_0_5px_rgba(45,212,191,0.2)]"}`}
@@ -246,7 +244,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center relative z-[60]">
+          <div className="lg:hidden flex items-center relative z-[60]">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`p-2 -mr-2 transition-colors focus:outline-none ${iconColor} ${navTextHoverColor}`}
@@ -270,7 +268,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 bg-background pt-24 pb-6 px-6 flex flex-col md:hidden overflow-y-auto no-scrollbar"
+            className="fixed inset-0 z-50 bg-background pt-24 pb-6 px-6 flex flex-col lg:hidden overflow-y-auto no-scrollbar"
           >
             <nav className="flex flex-col gap-6 mb-auto">
               {navLinks.map((item) => (

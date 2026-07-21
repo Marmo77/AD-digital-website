@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { companyData } from "../../data/company";
+import { citiesData } from "../../data/cities";
 import {
   Github,
   Instagram,
@@ -157,8 +158,26 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Obsługiwane miasta: bez tych linków Google nie zaindeksuje podstron lokalnych */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 pt-8 border-t border-border/40 relative z-10">
+        <h4 className="font-semibold text-foreground tracking-wide uppercase text-sm text-center md:text-left mb-4">
+          {t("footer.cities")}
+        </h4>
+        <nav className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-3">
+          {citiesData.map((city) => (
+            <Link
+              key={city.id}
+              to={`/${city.slug}`}
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              {t(`cities.${city.id}.title`)}
+            </Link>
+          ))}
+        </nav>
+      </div>
+
       {/* Copyright */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-border/40 flex md:flex-row flex-col items-center justify-between text-center gap-2 relative z-10 text-xs text-muted-foreground">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-border/40 flex md:flex-row flex-col items-center justify-between text-center gap-2 relative z-10 text-xs text-muted-foreground">
         <div className="flex md:flex-row flex-col gap-2">
           <p className="text-xs text-muted-foreground">
             © {currentYear} {companyData.name}.

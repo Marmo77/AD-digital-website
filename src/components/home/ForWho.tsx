@@ -1,59 +1,114 @@
 import { useTranslation } from "react-i18next";
-import { Check, X, ShieldCheck, HeartHandshake, AlertTriangle, Activity } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { motion } from "framer-motion";
 
-const goodFitPoints = [
-  {
-    title: "Strona ma zarabiać",
-    description: "Traktujesz WWW jako narzędzie sprzedażowe. Oczekujesz zwrotu z inwestycji i profesjonalnego wizerunku w sieci.",
-    icon: Activity,
-    number: "1."
-  },
-  {
-    title: "Partnerstwo biznesowe",
-    description: "Szukasz partnera, a nie \"wykonawcy\". Masz czas na krótką rozmowę, by wspólnie nakreślić strategię.",
-    icon: HeartHandshake,
-    number: "2."
-  },
-  {
-    title: "Inwestycja w jakość",
-    description: "Rozumiesz, że dobra aplikacja kosztuje, ale dzięki szybkości i użyteczności, zarabia na siebie.",
-    icon: ShieldCheck,
-    number: "3."
-  }
-];
+type FitPoint = { title: string; description: string; number: string };
 
-const badFitPoints = [
-  {
-    title: "A najtaniej to ile?",
-    description: "Zależy Ci tylko na tym, by znaleźć najtańszą opcję na rynku za 500 zł, bez względu na jakość i sprzedaż.",
-    icon: X,
-    number: "1."
-  },
-  {
-    title: "Projekt \"na wczoraj\"",
-    description: "Oczekujesz natychmiastowych efektów \"od ręki\". Nie masz czasu na wstępną analizę swojej firmy.",
-    icon: AlertTriangle,
-    number: "2."
-  },
-  {
-    title: "Strona \"tylko żeby była\"",
-    description: "Nie interesuje Cię pozyskiwanie nowych klientów z internetu. Szukasz po prostu martwej wizytówki.",
-    icon: X,
-    number: "3."
-  }
-];
+type FitPanelProps = {
+  variant: "good" | "bad";
+  label: string;
+  points: FitPoint[];
+};
+
+function FitPanel({ variant, label, points }: FitPanelProps) {
+  const isGood = variant === "good";
+  const Icon = isGood ? Check : X;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.7, delay: isGood ? 0 : 0.12, ease: [0.16, 1, 0.3, 1] }}
+      className={`relative rounded-[2rem] border overflow-hidden ${
+        isGood
+          ? "border-primary/30 bg-primary/[0.03] shadow-[0_20px_60px_rgba(45,212,191,0.1)]"
+          : "border-border/60 bg-secondary/20"
+      }`}
+    >
+      {/* Poświata tylko po dobrej stronie, żeby wzrok szedł tam pierwszy */}
+      {isGood && (
+        <div className="absolute -top-32 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-[110px] pointer-events-none" />
+      )}
+
+      <div className="relative z-10 p-7 md:p-9">
+        {/* Nagłówek panelu */}
+        <div className="flex items-center gap-3 pb-6 mb-2 border-b border-border/50">
+          <span
+            className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
+              isGood ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+            }`}
+          >
+            <Icon className="w-4 h-4" strokeWidth={3} />
+          </span>
+          <h3
+            className={`text-sm md:text-base font-bold tracking-tight ${
+              isGood ? "text-foreground" : "text-muted-foreground"
+            }`}
+          >
+            {label}
+          </h3>
+        </div>
+
+        {/* Punkty */}
+        <ul className="flex flex-col">
+          {points.map((point, idx) => (
+            <li
+              key={idx}
+              className="group relative flex gap-5 py-6 border-b border-border/40 last:border-b-0 transition-transform duration-300 hover:translate-x-1"
+            >
+              {/* Akcent rosnący przy najechaniu */}
+              <span
+                className={`absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-0 group-hover:h-2/3 transition-all duration-300 rounded-full ${
+                  isGood ? "bg-primary" : "bg-muted-foreground/40"
+                }`}
+              />
+
+              <span
+                className={`text-4xl md:text-5xl font-black font-mono leading-none tabular-nums shrink-0 transition-colors duration-300 pl-3 ${
+                  isGood
+                    ? "text-primary/25 group-hover:text-primary"
+                    : "text-muted-foreground/20 group-hover:text-muted-foreground/50"
+                }`}
+              >
+                {String(idx + 1).padStart(2, "0")}
+              </span>
+
+              <div className="min-w-0">
+                <h4
+                  className={`text-lg font-bold tracking-tight mb-1.5 transition-colors ${
+                    isGood
+                      ? "text-foreground group-hover:text-primary"
+                      : "text-foreground/70"
+                  }`}
+                >
+                  {point.title}
+                </h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {point.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.div>
+  );
+}
 
 export function ForWho() {
   const { t } = useTranslation();
-  
-  const goodFitPoints = t("forWho.goodFit", { returnObjects: true }) as Array<{title: string, description: string, number: string}>;
-  const badFitPoints = t("forWho.badFit", { returnObjects: true }) as Array<{title: string, description: string, number: string}>;
+
+  const goodFitPoints = t("forWho.goodFit", { returnObjects: true }) as FitPoint[];
+  const badFitPoints = t("forWho.badFit", { returnObjects: true }) as FitPoint[];
 
   return (
-    <section id="forwho" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 overflow-hidden">
-      <div className="text-center mb-20 relative z-10">
-        <motion.span 
+    <section
+      id="forwho"
+      className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10"
+    >
+      <div className="text-center mb-16 md:mb-20 relative z-10">
+        <motion.span
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -61,158 +116,45 @@ export function ForWho() {
         >
           {t("forWho.subtitle")}
         </motion.span>
-        
-        <motion.h2 
+
+        <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-5xl lg:text-5xl font-heading font-bold tracking-tight mb-6 text-foreground"
+          className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-foreground"
         >
-          {t("forWho.heading")} <span className="text-primary">{t("forWho.headingHighlight")}</span>
+          {t("forWho.heading")}
+          <span className="relative inline-block">
+            <span className="text-primary font-black relative z-10 px-1">
+              {t("forWho.headingHighlight")}
+            </span>
+            <span className="absolute bottom-2 left-0 w-full h-4 bg-primary/20 -rotate-2 rounded-sm" />
+          </span>
         </motion.h2>
-        
-        <motion.p 
+
+        <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-muted-foreground max-w-2xl mx-auto text-lg md:text-xl max-w-3xl leading-relaxed"
+          className="text-muted-foreground mx-auto text-lg md:text-xl max-w-3xl leading-relaxed"
         >
           {t("forWho.desc")}
         </motion.p>
       </div>
 
-      <div className="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-12 md:gap-8 relative z-10">
-        
-        {/* GREEN CONTAINER */}
-        <div className="relative flex justify-center md:justify-end pr-0 md:pr-4">
-          <div className="absolute inset-0 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
-          
-          <div className="flex flex-col relative w-full items-center md:items-end gap-6 md:gap-0">
-            
-            {/* Box 1 (Top) */}
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="relative z-10 w-full max-w-[320px] bg-background border border-primary/30 p-6 rounded-2xl shadow-xl hover:border-primary/80 transition-colors md:mr-0 group"
-            >
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl font-bold font-mono text-primary/20 group-hover:text-primary/40 transition-colors">{goodFitPoints[0].number}</span>
-                <div>
-                  <h4 className="text-lg font-bold mb-2 text-foreground">{goodFitPoints[0].title}</h4>
-                  <p className="text-sm text-muted-foreground">{goodFitPoints[0].description}</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Box 2 (Middle) */}
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="relative z-10 w-full max-w-[320px] bg-background border border-primary/30 p-6 rounded-2xl shadow-xl hover:border-primary/80 transition-colors md:mt-10 md:mr-8 group"
-            >
-              <div className="hidden md:block absolute -top-10 right-14 h-10 border-r-2 border-dashed border-primary/40 transition-colors" />
-              
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl font-bold font-mono text-primary/20 group-hover:text-primary/40 transition-colors">{goodFitPoints[1].number}</span>
-                <div>
-                  <h4 className="text-lg font-bold mb-2 text-foreground">{goodFitPoints[1].title}</h4>
-                  <p className="text-sm text-muted-foreground">{goodFitPoints[1].description}</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Box 3 (Bottom) */}
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0 }}
-              className="relative z-10 w-full max-w-[320px] bg-background border border-primary/30 p-6 rounded-2xl shadow-xl hover:border-primary/80 transition-colors md:mt-10 md:mr-16 group"
-            >
-              <div className="hidden md:block absolute -top-10 right-14 h-10 border-r-2 border-dashed border-primary/40 transition-colors" />
-
-              <div className="flex gap-4 items-start">
-                <span className="text-4xl font-bold font-mono text-primary/20 group-hover:text-primary/40 transition-colors">{goodFitPoints[2].number}</span>
-                <div>
-                  <h4 className="text-lg font-bold mb-2 text-foreground">{goodFitPoints[2].title}</h4>
-                  <p className="text-sm text-muted-foreground">{goodFitPoints[2].description}</p>
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
-        </div>
-
-        {/* RED CONTAINER */}
-        <div className="relative flex justify-center md:justify-start pl-0 md:pl-4">
-          <div className="absolute inset-0 bg-destructive/5 rounded-full blur-[100px] pointer-events-none" />
-          
-          <div className="flex flex-col relative w-full items-center md:items-start gap-6 md:gap-0">
-            
-            {/* Box 1 (Top) */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0 }}
-              className="relative z-10 w-full max-w-[320px] bg-background/50 backdrop-blur-sm border border-destructive/20 p-6 rounded-2xl hover:border-destructive/40 transition-colors ml-0 group"
-            >
-              <div className="flex gap-4 items-start opacity-70 group-hover:opacity-100 transition-opacity">
-                <span className="text-4xl font-bold font-mono text-destructive/20 group-hover:text-destructive/40 transition-colors">{badFitPoints[0].number}</span>
-                <div>
-                  <h4 className="text-lg font-bold mb-2 text-foreground">{badFitPoints[0].title}</h4>
-                  <p className="text-sm text-muted-foreground">{badFitPoints[0].description}</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Box 2 (Middle) */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="relative z-10 w-full max-w-[320px] bg-background/50 backdrop-blur-sm border border-destructive/20 p-6 rounded-2xl hover:border-destructive/40 transition-colors md:mt-10 md:ml-8 group"
-            >
-              <div className="hidden md:block absolute -top-10 left-10 h-10 border-l-2 border-dashed border-destructive/30 transition-colors" />
-
-              <div className="flex gap-4 items-start opacity-70 group-hover:opacity-100 transition-opacity">
-                <span className="text-4xl font-bold font-mono text-destructive/20 group-hover:text-destructive/40 transition-colors">{badFitPoints[1].number}</span>
-                <div>
-                  <h4 className="text-lg font-bold mb-2 text-foreground">{badFitPoints[1].title}</h4>
-                  <p className="text-sm text-muted-foreground">{badFitPoints[1].description}</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Box 3 (Bottom) */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="relative z-10 w-full max-w-[320px] bg-background/50 backdrop-blur-sm border border-destructive/20 p-6 rounded-2xl hover:border-destructive/40 transition-colors md:mt-10 md:ml-16 group"
-            >
-              <div className="hidden md:block absolute -top-10 left-10 h-10 border-l-2 border-dashed border-destructive/30 transition-colors" />
-
-              <div className="flex gap-4 items-start opacity-70 group-hover:opacity-100 transition-opacity">
-                <span className="text-4xl font-bold font-mono text-destructive/20 group-hover:text-destructive/40 transition-colors">{badFitPoints[2].number}</span>
-                <div>
-                  <h4 className="text-lg font-bold mb-2 text-foreground">{badFitPoints[2].title}</h4>
-                  <p className="text-sm text-muted-foreground">{badFitPoints[2].description}</p>
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
-        </div>
-
+      <div className="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-6 lg:gap-8 items-start relative z-10">
+        <FitPanel
+          variant="good"
+          label={t("forWho.goodFitTitle")}
+          points={Array.isArray(goodFitPoints) ? goodFitPoints : []}
+        />
+        <FitPanel
+          variant="bad"
+          label={t("forWho.badFitTitle")}
+          points={Array.isArray(badFitPoints) ? badFitPoints : []}
+        />
       </div>
     </section>
   );

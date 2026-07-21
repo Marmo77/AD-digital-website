@@ -18,7 +18,7 @@ const contactFormValidationSchema = z.object({
   email: z.email({ error: "contact.form.validation.email" }),
   phone: z.string().optional(),
   message: z.string().min(10, { error: "contact.form.validation.message" }),
-  // Honeypot antyspamowy – pole ukryte, ludzie go nie wypełniają
+  // Honeypot antyspamowy - pole ukryte, ludzie go nie wypełniają
   company: z.string().optional(),
   privacy: z.boolean().refine((val) => val === true, {
     message: "contact.form.validation.privacy",
@@ -109,7 +109,7 @@ const ContactFormComponent = () => {
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
-          {/* Honeypot antyspamowy – ukryty przed użytkownikami, wypełniają go tylko boty */}
+          {/* Honeypot antyspamowy - ukryty przed użytkownikami, wypełniają go tylko boty */}
           <div className="hidden" aria-hidden="true">
             <label htmlFor="company">Company</label>
             <input

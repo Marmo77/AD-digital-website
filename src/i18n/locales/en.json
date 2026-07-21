@@ -5,6 +5,7 @@
       "about": "About Me",
       "services": "Offer",
       "process": "Process",
+      "included": "Scope",
       "contact": "Contact",
       "freeQuote": "Free Quote",
       "allProjects": "All projects",
@@ -14,7 +15,7 @@
     "hero": {
       "title": "We create websites that make money for ",
       "titleHighlight": "your business.",
-      "subtitle": "We design and deploy websites that not only look great but, above all, rank high on Google and generate new clients.",
+      "subtitle": "We do more than build a website. We make sure clients actually find you: Google rankings, Google Business Profile and Maps, plus the analytics that prove it works. We serve Szczecin, Goleniów, Stargard and Nowogard.",
       "ctaPrimary": "Free Quote",
       "ctaSecondary": "View Projects",
       "scroll": "SCROLL"
@@ -55,27 +56,151 @@
       "viewCase": "View Live",
       "viewMore": "See More"
     },
+    "problem": {
+      "badge": "BEFORE YOU ORDER A WEBSITE",
+      "title": "A website alone ",
+      "titleHighlight": "is not enough",
+      "titleEnd": ".",
+      "subtitle": "A website is a <b>shop</b>, and visibility in Google is <u>the street it stands on</u>. You can own the best premises in town, but built in the middle of nowhere it <i>will not bring you a single client</i>.",
+      "stats": [
+        {
+          "value": "46%",
+          "label": "of all Google searches are local",
+          "note": "Clients in your area search Google every single day."
+        },
+        {
+          "value": "76%",
+          "label": "of people searching locally on a phone contact a business within 24 hours",
+          "note": "Visibility turns into a phone call almost immediately."
+        },
+        {
+          "value": "1%",
+          "label": "of users ever visit the second page of Google results",
+          "note": "If you are not on page one, you practically do not exist."
+        }
+      ],
+      "statsSource": "Industry data (Google / Think with Google).",
+      "calculator": {
+        "badge": "DO THE MATH",
+        "title": "Being invisible has a price tag",
+        "intro": "Set two numbers from your business and we will show you the scale. We conservatively assume 8 clients a month by default.",
+        "valueLabel": "How much do you earn per client?",
+        "clientsLabel": "How many clients a month are you losing?",
+        "clientsUnit": "clients",
+        "resultLabel": "This is what you lose",
+        "periods": {
+          "day": "Per day",
+          "month": "Per month",
+          "quarter": "Per quarter",
+          "year": "Per year"
+        },
+        "punchline": "This money does not disappear. It goes to the company your client found instead of you.",
+        "cta": "Win those clients back",
+        "disclaimer": "An estimate based on your own numbers. No commitment, no upfront payment."
+      },
+      "withoutTitle": "Without visibility",
+      "without": [
+        "A client searches for your service and sees your competition",
+        "The website exists, but nobody visits it",
+        "Your business is missing from Maps, so the phone stays silent",
+        "Nobody knows what works, because nothing is measured"
+      ],
+      "withTitle": "With visibility",
+      "with": [
+        "You show up when a client searches for your service nearby",
+        "The website actually works and collects inquiries",
+        "Your business appears on Google Maps and clients call you",
+        "You know exactly where clients come from and what pays off"
+      ],
+      "conclusion": "That is why we do not stop at the website. We handle everything that makes clients find you."
+    },
     "services": {
-      "badge": "HOW I CAN HELP",
-      "title": "Comprehensive solutions that ",
-      "titleHighlight": "drive",
-      "titleEnd": " your business.",
-      "subtitle": "From fast landing pages to complex systems. I guarantee precise coding, modern design, and measurable results powered by the latest technologies.",
+      "badge": "HOW WE HELP",
+      "title": "Not just a website, but ",
+      "titleHighlight": "visibility",
+      "titleEnd": " that brings in clients.",
+      "subtitle": "Three areas that together bring in clients.",
+      "pillars": [
+        {
+          "id": "visibility",
+          "title": "Visibility",
+          "tagline": "Without it nobody finds you",
+          "description": "Local SEO and your Google Business Profile make sure you are seen at all."
+        },
+        {
+          "id": "web",
+          "title": "Website",
+          "tagline": "Turns traffic into inquiries",
+          "description": "The tool that converts visits into contact and builds your brand's status."
+        },
+        {
+          "id": "data",
+          "title": "Data",
+          "tagline": "Proof that it works",
+          "description": "Search Console and Analytics show where your clients actually come from."
+        }
+      ],
+      "filters": {
+        "all": "All",
+        "visibility": "Visibility",
+        "web": "Website",
+        "data": "Data"
+      },
       "list": [
         {
+          "id": "seo",
+          "title": "Local SEO and rankings",
+          "description": "We make your business appear in Google when a client searches for your service nearby. We optimize the site for the algorithms from the first line of code, improve loading speed (Core Web Vitals) and semantics to outpace the competition.",
+          "tags": [
+            "Local SEO",
+            "Core Web Vitals",
+            "Semantic HTML"
+          ]
+        },
+        {
+          "id": "gmb",
+          "title": "Google Business Profile and Maps",
+          "description": "We set up and optimize your Google Business Profile so the company shows on Maps and in local results. It is the fastest route to calls from nearby clients, often faster than the website itself.",
+          "tags": [
+            "Business Profile",
+            "Google Maps",
+            "Reviews"
+          ]
+        },
+        {
+          "id": "analytics",
+          "title": "Analytics and Search Console",
+          "description": "We connect Google Analytics and Search Console so you know exactly where clients come from, which keywords they find you on and what actually works. Without it, SEO is guesswork.",
+          "tags": [
+            "Google Analytics",
+            "Search Console",
+            "Reports"
+          ]
+        },
+        {
+          "id": "ads",
+          "title": "Google Ads campaigns",
+          "description": "When you need clients right now, we launch paid campaigns. They bring traffic from day one and complement SEO, which works over the long run.",
+          "tags": [
+            "Google Ads",
+            "Meta Ads",
+            "Remarketing"
+          ]
+        },
+        {
           "id": "landing_page",
-          "title": "Business & Landing Pages",
-          "description": "Fast, single-page sites created to maximize conversions and collect leads. Ideal for a start, event promotion, or a single service. No unnecessary code, lightning-fast loading.",
+          "title": "Business and landing pages",
+          "description": "Fast, single-page sites built to maximize conversions and collect inquiries. Ideal for a start, an event promotion, or a single service. No unnecessary code, lightning-fast loading.",
           "tags": [
             "React",
             "Vite",
-            "High Conversion"
+            "High conversion"
           ]
         },
         {
           "id": "cms",
           "title": "Content Management Systems (CMS)",
-          "description": "Custom-designed platforms with an intuitive admin panel. They allow for independent content management, adding blog articles and photos without programming knowledge.",
+          "description": "Custom-designed platforms with an intuitive admin panel. You manage texts, add blog articles and photos without any programming knowledge. Regular content is fuel for SEO.",
           "tags": [
             "Supabase",
             "Tailwind CSS",
@@ -83,29 +208,9 @@
           ]
         },
         {
-          "id": "seo",
-          "title": "Advanced SEO & Visibility",
-          "description": "I build websites optimized for Google algorithms from the first line of code. I improve loading speed (Core Web Vitals) and ensure perfect semantics to help you outpace the competition.",
-          "tags": [
-            "Technical SEO",
-            "Core Web Vitals",
-            "Semantic HTML"
-          ]
-        },
-        {
-          "id": "webapp",
-          "title": "Advanced Web Applications",
-          "description": "I go beyond standard websites. I create custom applications with login, databases, and third-party system integrations (API), e.g., dedicated client portals or booking systems.",
-          "tags": [
-            "TypeScript",
-            "API integrations",
-            "Vercel"
-          ]
-        },
-        {
           "id": "redesign",
-          "title": "Website Redesign",
-          "description": "Has your website stopped selling or is it too slow on mobile? I will conduct a technical audit, propose a new UX/UI layout, and rewrite it in modern technologies, maintaining Google rankings.",
+          "title": "Website redesign",
+          "description": "Has your website stopped selling or is it too slow on mobile? We run a technical audit, propose a new UX/UI layout and rewrite it in modern technologies while maintaining your Google rankings.",
           "tags": [
             "UX/UI Audit",
             "Migration",
@@ -113,18 +218,52 @@
           ]
         },
         {
-          "id": "marketing",
-          "title": "Marketing and Analytics",
-          "description": "I combine a great technological product with precise customer targeting. I configure analytics and run paid ad campaigns that generate real traffic and a fast return on investment.",
+          "id": "webapp",
+          "title": "Advanced web applications",
+          "description": "We go beyond standard websites. We create custom applications with login, databases and third-party integrations (API), such as dedicated client portals or booking systems.",
           "tags": [
-            "Google Ads",
-            "Meta Ads",
-            "Analytics"
+            "TypeScript",
+            "API integrations",
+            "Vercel"
           ]
         }
       ],
-      "contactPrompt": "Didn't find what you are looking for, or need a custom quote?",
+      "contactPrompt": "Not sure where to start, or need a custom quote?",
       "contactButton": "Let's talk about your project"
+    },
+    "included": {
+      "badge": "SCOPE OF WORK",
+      "title": "You always get ",
+      "titleHighlight": "visibility",
+      "titleEnd": ".",
+      "subtitle": "We do not split visibility into packages. SEO, your Google Business Profile and analytics are part of every project, because without them a website simply does not work. Only the scope of the site itself differs.",
+      "alwaysTitle": "In every project",
+      "alwaysSubtitle": "Standard, nothing to buy separately",
+      "fomo": "Every month without these is clients going to somebody else. That is why we do not sell them separately or hide them behind a pricier package.",
+      "fomoHighlight": "Your competitors have had this for a long time.",
+      "always": [
+        "SEO optimization for your city and industry",
+        "Google Business Profile and presence on Maps",
+        "Google Search Console setup",
+        "Google Analytics and inquiry tracking",
+        "Fast loading (Core Web Vitals)",
+        "Fully responsive on mobile",
+        "Contact form that collects leads",
+        "Structured data and semantic code",
+        "Training and post-launch support"
+      ],
+      "optionalTitle": "Tailored to your needs",
+      "optionalSubtitle": "Priced individually, depending on scope",
+      "optional": [
+        "Content management system (CMS) and blog",
+        "Google Ads and Meta Ads campaigns",
+        "Online store or booking system",
+        "Dedicated web application with login",
+        "Extended content strategy for search",
+        "Ongoing care and monthly visibility reports"
+      ],
+      "note": "Every project is priced individually, because a simple business card site is a different job than a portal with a CMS and campaigns. Tell us what you need and we will prepare a concrete quote.",
+      "cta": "Request a quote"
     },
     "forWho": {
       "badge": "Is this for you?",
@@ -177,11 +316,11 @@
         {
           "phase": "01 / CONSULTATION",
           "title": "Analysis and Goals",
-          "desc": "We start with a no-obligation conversation – live or online. I thoroughly analyze your industry, competitors' activities, and your clients' expectations. Together we define the business goals the new website should achieve. This is a solid foundation without which we do not start working.",
+          "desc": "We start with a no-obligation conversation, live or online. We check how your visibility in Google looks today, who holds the top positions for your keywords and what your clients are searching for. Together we define the business goals. This is a solid foundation without which we do not start working.",
           "tags": [
-            "Market Analysis",
-            "Business Brief",
-            "Project Goals"
+            "Visibility audit",
+            "Google competitor analysis",
+            "Project goals"
           ]
         },
         {
@@ -197,31 +336,31 @@
         {
           "phase": "03 / CODING",
           "title": "Development & Optimization",
-          "desc": "This is where the magic happens. I turn approved designs into a fully functional website using the latest technologies. I take care of every detail – from smooth animations to optimization of loading speed and perfect displaying on mobile devices.",
+          "desc": "This is where the magic happens. We turn approved designs into a fully functional website using the latest technologies. From the first line of code we build it for Google's algorithms: semantic HTML, structured data, loading speed (Core Web Vitals) and perfect display on mobile devices.",
           "tags": [
-            "Frontend Dev",
-            "Mobile Optimization",
-            "Core Web Vitals"
+            "Technical SEO",
+            "Core Web Vitals",
+            "Mobile optimization"
           ]
         },
         {
           "phase": "04 / TESTING",
           "title": "Quality Control",
-          "desc": "Before we show the site to the world, it goes through a rigorous testing process. I check its performance in various browsers, test forms, and verify the correct display on all possible screen resolutions. You receive a fully functioning version for final verification.",
+          "desc": "Before we show the site to the world, it goes through rigorous testing. We check performance across browsers, test forms and verify the display on every resolution. We also confirm that Google correctly sees and indexes all subpages. You receive a fully working version for final approval.",
           "tags": [
             "Cross-browser QA",
-            "Responsive Check",
-            "Final Review"
+            "Indexing verification",
+            "Responsive testing"
           ]
         },
         {
           "phase": "05 / DEPLOYMENT",
           "title": "Publication and Support",
-          "desc": "When you fully accept the look and feel of the site, and the financial formalities are closed, I publish the finished product on reliable servers. However, my role does not end here. I remain at your disposal - helping with operations, implementing any fixes, and ready to further develop the site in the future.",
+          "desc": "We publish the site, and only now the real work on visibility begins. We submit the site to Google Search Console, connect Analytics, and set up and optimize your Google Business Profile so the company appears on Maps. Our role does not end here: we help with operations, monitor rankings and grow your visibility in the months that follow.",
           "tags": [
-            "Web Publishing",
-            "Tech Support",
-            "Project Development"
+            "Search Console",
+            "Google Business Profile",
+            "Analytics and care"
           ]
         }
       ],
@@ -238,32 +377,36 @@
       "title": "Frequently Asked ",
       "items": [
         {
-          "question": "How much does a website cost?",
-          "answer": "My project budgets usually range from 1500 to 5000 PLN. The final amount always depends on your requirements and the chosen type of site (a Landing Page will be cheaper than an extensive site with a CMS). You will receive an exact, free quote from me before work begins."
+          "question": "What is the difference between a website and SEO?",
+          "answer": "The website is the place a client lands on. SEO is how they get there in the first place. You can have a great site, but if it does not appear in Google, nobody will ever see it. That is why we treat both as one job and do not sell them separately."
         },
         {
-          "question": "Will I be able to edit the content on the website myself?",
-          "answer": "Yes. I also create websites equipped with a dedicated, intuitive CMS (Content Management System). This allows you to update texts, replace photos, or add posts independently without needing to contact me and without programming knowledge."
+          "question": "How much does a website with Google visibility cost?",
+          "answer": "Our project budgets usually range from 1500 to 5000 PLN. The final amount depends on scope: a simple business card site costs less than a platform with a CMS, blog or campaigns. SEO optimization, your Google Business Profile and analytics are included in every project, you do not pay extra for them. You get an exact, free quote before we start."
         },
         {
-          "question": "Do you help with SEO and advertising?",
-          "answer": "Absolutely. Building the website is just half the success. Technically, I implement the latest SEO structures, so the site loads instantly and is favored by algorithms. I also offer comprehensive management of paid Google Ads and Meta Ads campaigns to instantly bring clients to your business."
+          "question": "How quickly will I see results in Google?",
+          "answer": "Your Google Business Profile and Maps can bring the first calls within a few weeks. Organic SEO takes longer: first movements are usually visible after 1-3 months, while real positions on competitive keywords build over six months and beyond. If you need clients immediately, we add Google Ads campaigns."
+        },
+        {
+          "question": "Do you handle Google Business Profile and Maps?",
+          "answer": "Yes, it is one of the pillars of our work. We create or take over your Google Business Profile, complete it, optimize categories and description, and set everything so the company shows in local results and on Maps. For service businesses in smaller towns this is often a faster source of clients than the website itself."
+        },
+        {
+          "question": "Will I be able to edit the content myself?",
+          "answer": "Yes, if you choose a site with a content management system (CMS). You can update texts, replace photos and add blog posts without any programming knowledge. Regularly added content additionally strengthens your SEO."
+        },
+        {
+          "question": "Is this a one-off service or ongoing cooperation?",
+          "answer": "Building the site along with SEO, Google Business Profile and analytics setup is billed once. Visibility in Google is a process though, so many clients stay with us longer so we can watch rankings, develop content and report results. It is not mandatory, and the scope of that care is agreed individually."
         },
         {
           "question": "How long does a project take?",
-          "answer": "A simple Landing Page is usually a matter of 7-14 days. Extensive sites with a CMS and multiple subpages take from 3 to 5 weeks. We always agree on an exact schedule before starting."
-        },
-        {
-          "question": "Will my site work correctly on mobile phones?",
-          "answer": "Absolutely yes. I often start designing with the mobile version (mobile-first). I guarantee the site will be 100% responsive and perfectly tailored for smartphones, tablets, and large screens."
+          "answer": "A simple business card site is usually 7-14 days. An extensive platform with a CMS and multiple subpages takes 3 to 5 weeks. Search Console, Analytics and Google Business Profile setup happen during deployment. We agree the exact schedule before starting."
         },
         {
           "question": "What technologies do you use?",
-          "answer": "I don't use slow builders with a thousand plugins. I code from scratch using a modern tech stack: Vite, React, TypeScript, Supabase, Tailwind CSS. This ensures maximum security and performance speed."
-        },
-        {
-          "question": "What is the collaboration process like?",
-          "answer": "We start with a meeting (in person or online) where I get to know your business. Then I prepare a strategy and graphic design. After your approval, I program the website, connect it to a domain, and conduct a brief user training for you."
+          "answer": "We do not use slow builders with a thousand plugins. We code from scratch in a modern stack: Vite, React, TypeScript, Tailwind CSS and Supabase. As a result the sites load instantly, which Google rewards in search results, and they are secure."
         }
       ],
       "titleHighlight": "Questions"
@@ -314,7 +457,8 @@
       "shortcuts": "Shortcuts",
       "info": "Information",
       "contact": "Contact",
-      "privacy": "Privacy Policy"
+      "privacy": "Privacy Policy",
+      "cities": "Areas we serve"
     },
     "technologies": {
       "badge": "TECHNOLOGIES",
@@ -336,14 +480,84 @@
       "websiteOnline": "Website online",
       "metaTitle": "Portfolio"
     },
+    "cityPage": {
+      "badge": "AREA WE SERVE",
+      "servicesTitle": "What we do for businesses in this area",
+      "proofTitle": "A project from the area",
+      "proofCta": "See this project",
+      "nearbyTitle": "We also work in",
+      "ctaTitle": "Let's check how visible your business is",
+      "ctaText": "Tell us what you do and we will check which keywords you currently show up for and what can be improved. The quote is free and comes with no obligation.",
+      "ctaButton": "Free quote",
+      "otherCities": "Other cities"
+    },
+    "cities": {
+      "szczecin": {
+        "name": "Szczecin",
+        "title": "Websites in Szczecin",
+        "metaTitle": "Websites in Szczecin - web design and local SEO | ADdigital",
+        "metaDescription": "Web design in Szczecin plus local SEO and Google Business Profile. Websites that genuinely bring in clients. Free quote.",
+        "lead": "Szczecin is the most competitive market in the region. Agencies with over a decade of experience compete for keywords like \"websites Szczecin\", so a pretty site alone is not enough here.",
+        "paragraphs": [
+          "In a large city, clients rarely go past the first page of results. If your business is not there, it effectively does not exist, even with the best offer in town. That is why in Szczecin projects we work on technical SEO and the Google Business Profile from day one.",
+          "We mostly serve hospitality, services and retail here, industries where clients search fast and pick one of the first options. Loading time on mobile, complete information on Google Maps and a clear path to contact all decide the outcome."
+        ],
+        "localNote": "We are happy to meet in person in Szczecin to discuss the project face to face."
+      },
+      "goleniow": {
+        "name": "Goleniów",
+        "title": "Websites in Goleniów",
+        "metaTitle": "Websites in Goleniów - web design and local SEO | ADdigital",
+        "metaDescription": "Web design in Goleniów, local SEO and Google Business Profile for service businesses. Free quote within 24 hours.",
+        "lead": "Goleniów is our home turf. We know this market well enough to see that many local businesses still rely purely on word of mouth and are practically invisible in Google.",
+        "paragraphs": [
+          "In a smaller town, competition in search is far weaker than in Szczecin, and that is a huge opportunity. A well-optimized Google Business Profile and a site built for local keywords can push a business to the top faster and with less effort than in a big city.",
+          "We work here with workshops, services and trades, where clients search for something specific and nearby. Often the most important result is not website traffic but phone calls from Google Maps, made by people looking for a service within a few kilometres."
+        ],
+        "localNote": "We operate from here daily, so meeting on site is never a problem."
+      },
+      "stargard": {
+        "name": "Stargard",
+        "title": "Websites in Stargard",
+        "metaTitle": "Websites in Stargard - web design and local SEO | ADdigital",
+        "metaDescription": "Web design in Stargard together with local SEO and Google Business Profile. Websites for businesses that want to be found.",
+        "lead": "Stargard has strong local retail and manufacturing, where buying decisions are often made after reviewing an offer online, even if the deal itself closes in person.",
+        "paragraphs": [
+          "A client planning a larger purchase checks the company online first: they look for photos, reviews and specifics. Without a proper online portfolio, every conversation starts by explaining the basics instead of the details that matter.",
+          "That is why in Stargard projects we lean heavily on presenting the offer: project galleries, clear descriptions and fast-loading images. On top of that we optimize for keywords with the city name and set up a Google Business Profile with current hours and directions."
+        ],
+        "localNote": "We serve Stargard and the surrounding towns, remotely as well."
+      },
+      "nowogard": {
+        "name": "Nowogard",
+        "title": "Websites in Nowogard",
+        "metaTitle": "Websites in Nowogard - web design and local SEO | ADdigital",
+        "metaDescription": "Web design in Nowogard, local SEO and Google Business Profile. Visibility for small and medium businesses. Free quote.",
+        "lead": "In Nowogard many businesses still have no website at all, or one built years ago that does not work properly on a phone.",
+        "paragraphs": [
+          "This is exactly the situation where a relatively small investment produces a clearly visible effect. When search competition is low, a properly built site and a completed Google Business Profile can noticeably change the number of inquiries.",
+          "We focus here on the fundamentals that actually work: the business must be found in Google and on Maps, have up-to-date contact details, a readable offer and a site that opens instantly even on a weaker connection."
+        ],
+        "localNote": "We serve Nowogard both on site and remotely."
+      }
+    },
     "projectDetail": {
-      "back": "Back to portfolio",
-      "clientLabel": "Project for client:",
-      "viewOnline": "View live website",
+      "back": "Back to all projects",
+      "clientLabel": "Client",
+      "viewOnline": "Open website",
       "visit": "Visit website",
-      "challenge": "Challenge",
-      "solution": "Solution",
-      "results": "Key results"
+      "overview": "Overview",
+      "features": "Key elements",
+      "results": "Results",
+      "tech": "Technologies",
+      "links": "Links",
+      "industry": "Industry",
+      "prev": "Previous",
+      "next": "Next",
+      "otherProjects": "See our other projects",
+      "ctaTitle": "Want similar results for your business?",
+      "ctaText": "We will check how your visibility in Google looks today and what can be improved. The quote is free.",
+      "ctaButton": "Free quote"
     },
     "projectsData": {
       "burgerszczecin": {
@@ -352,8 +566,29 @@
         "highlight": "Online booking",
         "description": "An atmospheric gastropub website with signature burgers, a craft beer menu, and a simple table booking system.",
         "client": "Burger Szczecin - Restaurant & Bar",
-        "challenge": "The old website was not responsive and did not support mobile bookings, resulting in the loss of younger customers.",
-        "solution": "We implemented a modern framework optimized for mobile devices, integrating a clear menu and a direct booking system without page reloads.",
+        "overviewTitle": "The atmosphere of the place, moved online",
+        "overview": [
+          "The gastropub had a loyal crowd on site but barely existed online. The old website did not work properly on phones, and booking a table required a call during opening hours, which cut off younger guests.",
+          "We built a lightweight site that captures the mood of the place and leads guests straight to a booking. The food and craft beer menus can be browsed one-handed on a phone, and a table is booked without any page reload."
+        ],
+        "features": [
+          {
+            "title": "Booking at any hour",
+            "description": "Guests reserve a table even after closing time, without waiting for someone to pick up the phone."
+          },
+          {
+            "title": "A menu built for thumbs",
+            "description": "Food and craft beer menus readable on a phone without zooming or sideways scrolling."
+          },
+          {
+            "title": "Visibility in search",
+            "description": "Optimization for local restaurant keywords plus a Google Business Profile with an up-to-date menu."
+          },
+          {
+            "title": "Character instead of a template",
+            "description": "A dark, moody design matched to the venue's interior rather than an off-the-shelf theme."
+          }
+        ],
         "results": [
           "Growth in online bookings",
           "Noticeably faster page loading",
@@ -366,8 +601,29 @@
         "highlight": "More leads",
         "description": "A clear website for a multi-agency insurance broker with a readable policy offer and a quick contact form.",
         "client": "Nova Ubezpieczenia Sp. z o.o.",
-        "challenge": "Clients had trouble finding the right insurance types among a thicket of confusing offers.",
-        "solution": "We simplified the client journey from landing on the site to filling out the form, using clear offer sections and direct CTAs.",
+        "overviewTitle": "Insurance explained in plain language",
+        "overview": [
+          "The agency offered more than a dozen types of policies, but visitors drowned in industry jargon and had no idea where to start. Inquiries came in rarely and at random.",
+          "We organized the offer into clear sections and rewrote it in language clients actually use. The path from landing to sending an inquiry shrank to a few clicks, and the form collects exactly what is needed to price a policy."
+        ],
+        "features": [
+          {
+            "title": "An offer without jargon",
+            "description": "Policy types described in the client's language, with a clear note on who each one is for."
+          },
+          {
+            "title": "A short path to contact",
+            "description": "A quick inquiry form available from every section, with no unnecessary fields."
+          },
+          {
+            "title": "Trust at first glance",
+            "description": "A calm, orderly design that builds credibility in the financial sector."
+          },
+          {
+            "title": "Local visibility",
+            "description": "Optimization for regional insurance keywords and a configured Google Business Profile."
+          }
+        ],
         "results": [
           "More valuable inquiry requests",
           "Lower bounce rate",
@@ -380,8 +636,29 @@
         "highlight": "Fast loading",
         "description": "A website for a car workshop with a description of diagnostic services and a convenient module for booking a service appointment.",
         "client": "NORD CAR SERWIS",
-        "challenge": "No online visibility and no way to efficiently book repair appointments outside of working hours.",
-        "solution": "We built an ultra-fast single-page web application (SPA) with a booking form for a specific appointment date.",
+        "overviewTitle": "A workshop that takes bookings around the clock",
+        "overview": [
+          "The workshop barely existed online, and repair slots could only be booked by phone during working hours. Drivers searching for a garage in the evening ended up with the competition.",
+          "We built a lightning-fast site with a module for booking a specific slot. The driver describes the fault and picks a convenient day at any hour, and the workshop starts the morning with a ready list of requests."
+        ],
+        "features": [
+          {
+            "title": "Bookings after hours",
+            "description": "Slots reserved in the evening and at weekends, when drivers actually look for a garage."
+          },
+          {
+            "title": "Services explained clearly",
+            "description": "Diagnostics and repairs described so the driver knows what to expect."
+          },
+          {
+            "title": "Built for speed",
+            "description": "Lightweight code and optimized images, so the site loads instantly even on a weak connection."
+          },
+          {
+            "title": "Presence on Maps",
+            "description": "A Google Business Profile with hours and directions, because drivers search on the move."
+          }
+        ],
         "results": [
           "Fast loading (green Core Web Vitals)",
           "Convenient online appointment booking",
@@ -394,8 +671,29 @@
         "highlight": "More inquiries",
         "description": "An elegant furniture showroom website with a gallery of arrangements and an offer of made-to-measure upholstered furniture.",
         "client": "Meblex Salon Producenta",
-        "challenge": "The company needed a showcase presenting its portfolio of made-to-measure furniture to reduce effort in the early quoting phase.",
-        "solution": "An extensive categorized gallery and educational modules presenting materials, together with a quick contact form.",
+        "overviewTitle": "Made-to-measure furniture shown like in a showroom",
+        "overview": [
+          "The showroom makes upholstered furniture to order, so every conversation started by explaining options, materials and how the ordering process works. Without an online portfolio, quoting ate up a huge amount of time.",
+          "We prepared an extensive, categorized gallery of arrangements plus sections explaining materials and finishes. Clients now arrive already informed, and the conversation starts with specifics."
+        ],
+        "features": [
+          {
+            "title": "A categorized gallery",
+            "description": "Arrangements grouped so clients quickly find exactly what they are looking for."
+          },
+          {
+            "title": "Materials explained visually",
+            "description": "Sections presenting fabrics and finishes that previously had to be explained in every conversation."
+          },
+          {
+            "title": "A shorter path to a quote",
+            "description": "An inquiry form linked to the specific piece from the gallery."
+          },
+          {
+            "title": "Photography first",
+            "description": "Optimized but high-quality photos, because in furniture the visual impression decides."
+          }
+        ],
         "results": [
           "More free-quote inquiries",
           "Higher engagement on portfolio subpages",

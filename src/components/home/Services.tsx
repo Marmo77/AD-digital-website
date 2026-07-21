@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
-import { MonitorSmartphone, LayoutTemplate, Search, Rocket, PenTool, TrendingUp } from "lucide-react";
+import { MonitorSmartphone, LayoutTemplate, Search, Rocket, PenTool, BarChart3, MapPin, Megaphone } from "lucide-react";
 
 type ServiceItem = {
   id: string;
@@ -10,19 +10,38 @@ type ServiceItem = {
   tags: string[];
 };
 
+type Pillar = {
+  id: string;
+  title: string;
+  tagline: string;
+  description: string;
+};
+
+// Ikona filaru w przełączniku, żeby pasek nie był samym tekstem
+const pillarIcons: Record<string, any> = {
+  visibility: Search,
+  web: LayoutTemplate,
+  data: BarChart3,
+};
+
 export function Services() {
   const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState("all");
+  // Domyślnie pokazujemy filar najważniejszy biznesowo, a nie wszystko naraz
+  const [activeTab, setActiveTab] = useState("visibility");
 
   const rawList = t("services.list", { returnObjects: true }) as ServiceItem[];
-  
+  const pillars = t("services.pillars", { returnObjects: true }) as Pillar[];
+
+  // categoryId odpowiada filarom: visibility (widoczność) > web (strona) > data (dane)
   const configMap: Record<string, { icon: any, categoryId: string }> = {
+    "seo": { icon: Search, categoryId: "visibility" },
+    "gmb": { icon: MapPin, categoryId: "visibility" },
+    "analytics": { icon: BarChart3, categoryId: "data" },
+    "ads": { icon: Megaphone, categoryId: "data" },
     "landing_page": { icon: LayoutTemplate, categoryId: "web" },
     "cms": { icon: MonitorSmartphone, categoryId: "web" },
-    "seo": { icon: Search, categoryId: "marketing" },
-    "webapp": { icon: Rocket, categoryId: "apps" },
-    "redesign": { icon: PenTool, categoryId: "optimization" },
-    "marketing": { icon: TrendingUp, categoryId: "marketing" },
+    "redesign": { icon: PenTool, categoryId: "web" },
+    "webapp": { icon: Rocket, categoryId: "web" },
   };
 
   const services = rawList.map(item => ({
@@ -30,6 +49,13 @@ export function Services() {
     ...(configMap[item.id] || { icon: MonitorSmartphone, categoryId: "web" })
   }));
 
+  // Zakładki niosą hierarchię filarów, dzięki czemu nie potrzebujemy osobnych kart filarów
+  const filters = [
+    ...pillars.map(p => ({ id: p.id, label: p.title })),
+    { id: "all", label: t("services.filters.all") },
+  ];
+
+  const activePillar = pillars.find(p => p.id === activeTab);
   const filteredServices = activeTab === "all" ? services : services.filter(s => s.categoryId === activeTab);
 
   return (
@@ -68,6 +94,59 @@ export function Services() {
           </motion.p>
         </div>
 
+        {/* Przełącznik filarów z ikonami */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+          {filters.map((filter, index) => {
+            const Icon = pillarIcons[filter.id];
+            const isActive = activeTab === filter.id;
+            return (
+              <button
+                key={filter.id}
+                onClick={() => setActiveTab(filter.id)}
+                className={`inline-flex items-center gap-2 px-5 py-3 rounded-2xl text-sm font-semibold border transition-all duration-300 cursor-pointer ${
+                  isActive
+                    ? "bg-primary text-primary-foreground border-primary shadow-[0_6px_20px_rgba(45,212,191,0.28)]"
+                    : "bg-white dark:bg-background text-muted-foreground border-border/60 hover:border-primary/50 hover:text-primary"
+                }`}
+              >
+                {Icon && <Icon className="w-4 h-4" />}
+                {Icon && (
+                  <span
+                    className={`text-[11px] font-mono font-bold ${isActive ? "opacity-70" : "opacity-40"}`}
+                  >
+                    0{index + 1}
+                  </span>
+                )}
+                {filter.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Lead aktywnego filaru: wyrównany do lewej z akcentem, żeby przerwać środkowy blok tekstu */}
+        <div className="min-h-[4.5rem] mb-12 max-w-2xl mx-auto">
+          <AnimatePresence mode="wait">
+            {activePillar && (
+              <motion.div
+                key={activePillar.id}
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 12 }}
+                transition={{ duration: 0.25 }}
+                className="flex gap-4 border-l-2 border-primary pl-5 text-left"
+              >
+                <div>
+                  <p className="text-base md:text-lg font-bold tracking-tight text-foreground">
+                    {activePillar.tagline}
+                  </p>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mt-1">
+                    {activePillar.description}
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 min-h-[400px]">
           <AnimatePresence mode="popLayout">
