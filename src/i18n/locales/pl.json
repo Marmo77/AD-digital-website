@@ -5,6 +5,7 @@
       "about": "O mnie",
       "services": "Oferta",
       "process": "Proces",
+      "included": "Zakres",
       "contact": "Kontakt",
       "freeQuote": "Darmowa wycena",
       "allProjects": "Wszystkie realizacje",
@@ -14,7 +15,7 @@
     "hero": {
       "title": "Tworzymy strony, które zarabiają dla ",
       "titleHighlight": "Twojej firmy.",
-      "subtitle": "Zajmujemy się projektowaniem i wdrażaniem nowoczesnych stron internetowych (Goleniów, Szczecin, Stargard, Nowogard). Tworzymy strony WWW i sklepy internetowe, które świetnie wyglądają, wysoko pozycjonują się w Google i generują nowych klientów.",
+      "subtitle": "Robimy więcej niż stronę. Dbamy o to, żeby klienci realnie Cię znaleźli: pozycjonowanie w Google, Wizytówka Google i Mapy oraz analityka, która pokazuje efekty. Działamy w Szczecinie, Goleniowie, Stargardzie i Nowogardzie.",
       "ctaPrimary": "Darmowa Wycena",
       "ctaSecondary": "Zobacz realizacje",
       "scroll": "PRZEWIŃ"
@@ -28,7 +29,7 @@
         "sprzedają.",
         "konwertują."
       ],
-      "subtitle": "Cześć, jestem Aleksy! Mam 19 lat i z wykształcenia jestem programistą. Programowanie to dla mnie coś więcej niż tylko pisanie kodu – to realne narzędzie sprzedażowe.",
+      "subtitle": "Cześć, jestem Aleksy! Mam 19 lat i z wykształcenia jestem programistą. Programowanie to dla mnie coś więcej niż tylko pisanie kodu, to realne narzędzie sprzedażowe.",
       "description1": "Nie używam ociężałych szablonów (np. WordPress). Buduję od podstaw, wykorzystując potężny stos technologiczny (m.in. React i TypeScript), dzięki czemu Twoja strona jest bezkonkurencyjnie szybka i generuje zyski.",
       "description2": "Strona internetowa to inwestycja w rozwój Twojej firmy. Oferuję profesjonalne tworzenie stron internetowych (obsługuję Szczecin, Goleniów, Stargard, Nowogard i okolice). Wierzę w przejrzystość i partnerską współpracę bez skomplikowanego żargonu.",
       "cta": "Porozmawiajmy o Twoim biznesie",
@@ -55,27 +56,150 @@
       "viewCase": "Zobacz na żywo",
       "viewMore": "Zobacz więcej"
     },
+    "problem": {
+      "badge": "ZANIM ZAMÓWISZ STRONĘ",
+      "title": "Sama strona ",
+      "titleHighlight": "nie wystarczy",
+      "titleEnd": ".",
+      "subtitle": "Strona to <b>sklep</b>, a widoczność w Google to <u>ulica, przy której stoi</u>. Możesz mieć najlepszy lokal w mieście, ale postawiony na pustkowiu <i>nie przyprowadzi Ci ani jednego klienta</i>.",
+      "stats": [
+        {
+          "value": "46%",
+          "label": "wyszukiwań w Google to wyszukiwania lokalne",
+          "note": "Klienci z Twojej okolicy szukają w Google codziennie."
+        },
+        {
+          "value": "76%",
+          "label": "osób szukających lokalnie na telefonie kontaktuje się z firmą w ciągu 24 godzin",
+          "note": "Widoczność zamienia się w telefon niemal natychmiast."
+        },
+        {
+          "value": "1%",
+          "label": "użytkowników zagląda na drugą stronę wyników Google",
+          "note": "Jeśli nie ma Cię na pierwszej stronie, praktycznie nie istniejesz."
+        }
+      ],
+      "statsSource": "Dane branżowe (Google / Think with Google).",
+      "calculator": {
+        "badge": "POLICZ TO SAM",
+        "title": "Ile kosztuje Cię brak widoczności?",
+        "intro": "Przesuń suwaki i wpisz swoje realia. Wynik to pieniądze, które zostają dziś u konkurencji.",
+        "valueLabel": "Ile zarabiasz na jednym kliencie?",
+        "clientsLabel": "Ilu klientów miesięcznie tracisz?",
+        "clientsUnit": "klientów",
+        "resultLabel": "Tyle zostaje u konkurencji",
+        "periods": {
+          "month": "W miesiąc",
+          "quarter": "W kwartał",
+          "year": "W rok"
+        },
+        "dailyNote": "To około {{amount}} każdego dnia, w którym nikt Cię nie znajduje.",
+        "cta": "Odzyskaj tych klientów",
+        "disclaimer": "Szacunek na podstawie Twoich danych. Bez zobowiązań i bez zaliczki."
+      },
+      "withoutTitle": "Bez widoczności",
+      "without": [
+        "Klient wpisuje Twoją usługę w Google i widzi konkurencję",
+        "Strona istnieje, ale nikt na nią nie wchodzi",
+        "Brak firmy na Mapach, więc telefon milczy",
+        "Nie wiadomo, co działa, bo nikt tego nie mierzy"
+      ],
+      "withTitle": "Z widocznością",
+      "with": [
+        "Pojawiasz się, gdy klient szuka Twojej usługi w okolicy",
+        "Strona realnie pracuje i zbiera zapytania",
+        "Firma widoczna na Mapach Google, klienci dzwonią sami",
+        "Wiesz dokładnie, skąd przychodzą klienci i co przynosi zysk"
+      ],
+      "conclusion": "Dlatego nie kończymy na stronie. Zajmujemy się wszystkim, co sprawia, że klient Cię znajduje."
+    },
     "services": {
-      "badge": "W CZYM MOGĘ POMÓC",
-      "title": "Kompleksowe rozwiązania, które ",
-      "titleHighlight": "napędzają",
-      "titleEnd": " Twój biznes.",
-      "subtitle": "Od szybkich wizytówek po rozbudowane systemy. Gwarantuję precyzyjne kodowanie, nowoczesny design i mierzalne efekty oparte na najnowszych technologiach.",
+      "badge": "W CZYM POMAGAMY",
+      "title": "Nie sama strona, tylko ",
+      "titleHighlight": "widoczność",
+      "titleEnd": ", która sprowadza klientów.",
+      "subtitle": "Trzy obszary, które razem sprowadzają klientów.",
+      "pillars": [
+        {
+          "id": "visibility",
+          "title": "Widoczność",
+          "tagline": "Bez tego nikt Cię nie znajdzie",
+          "description": "Pozycjonowanie lokalne i Wizytówka Google sprawiają, że w ogóle Cię widać."
+        },
+        {
+          "id": "web",
+          "title": "Strona",
+          "tagline": "Zamienia ruch w zapytania",
+          "description": "Narzędzie, które przekuwa odwiedziny w kontakt i buduje status marki."
+        },
+        {
+          "id": "data",
+          "title": "Dane",
+          "tagline": "Dowód, że to działa",
+          "description": "Search Console i Analytics pokazują, skąd realnie przychodzą klienci."
+        }
+      ],
+      "filters": {
+        "all": "Wszystko",
+        "visibility": "Widoczność",
+        "web": "Strona",
+        "data": "Dane"
+      },
       "list": [
         {
+          "id": "seo",
+          "title": "Pozycjonowanie i SEO lokalne",
+          "description": "Sprawiamy, że firma pojawia się w Google, gdy klient szuka Twojej usługi w okolicy. Optymalizujemy stronę pod algorytmy od pierwszej linijki kodu, poprawiamy szybkość (Core Web Vitals) i semantykę, żeby wyprzedzić konkurencję.",
+          "tags": [
+            "SEO lokalne",
+            "Core Web Vitals",
+            "Semantyczny HTML"
+          ]
+        },
+        {
+          "id": "gmb",
+          "title": "Wizytówka Google i Mapy",
+          "description": "Zakładamy i optymalizujemy Profil Firmy w Google, żeby firma była widoczna na Mapach i w wynikach lokalnych. To najszybsza droga do telefonów od klientów z okolicy, często szybsza niż sama strona.",
+          "tags": [
+            "Profil Firmy",
+            "Mapy Google",
+            "Opinie"
+          ]
+        },
+        {
+          "id": "analytics",
+          "title": "Analityka i Search Console",
+          "description": "Podpinamy Google Analytics i Search Console, żeby dokładnie wiedzieć, skąd przychodzą klienci, na jakie frazy Cię znajdują i co realnie działa. Bez tego pozycjonowanie jest zgadywaniem.",
+          "tags": [
+            "Google Analytics",
+            "Search Console",
+            "Raporty"
+          ]
+        },
+        {
+          "id": "ads",
+          "title": "Kampanie Google Ads",
+          "description": "Gdy klienci potrzebni są od zaraz, uruchamiamy płatne kampanie. Sprowadzają ruch już od pierwszego dnia i świetnie uzupełniają pozycjonowanie, które pracuje długofalowo.",
+          "tags": [
+            "Google Ads",
+            "Meta Ads",
+            "Remarketing"
+          ]
+        },
+        {
           "id": "landing_page",
-          "title": "Strony wizytówkowe & Landing Page",
-          "description": "Szybkie, jednonastronicowe witryny stworzone do maksymalizacji konwersji i zbierania leadów. Idealne na start, promocję wydarzenia lub pojedynczej usługi. Brak zbędnego kodu, błyskawiczne ładowanie.",
+          "title": "Strony wizytówkowe i Landing Page",
+          "description": "Szybkie, jednostronicowe witryny stworzone do maksymalizacji konwersji i zbierania zapytań. Idealne na start, promocję wydarzenia lub pojedynczej usługi. Brak zbędnego kodu, błyskawiczne ładowanie.",
           "tags": [
             "React",
             "Vite",
-            "Wysoka Konwersja"
+            "Wysoka konwersja"
           ]
         },
         {
           "id": "cms",
           "title": "Strony z systemem zarządzania treścią (CMS)",
-          "description": "Indywidualnie zaprojektowane serwisy z intuicyjnym panelem administracyjnym. Pozwalają na samodzielne zarządzanie tekstami, dodawanie artykułów na bloga i zdjęć bez znajomości programowania.",
+          "description": "Indywidualnie zaprojektowane serwisy z intuicyjnym panelem administracyjnym. Pozwalają samodzielnie zarządzać tekstami, dodawać artykuły na bloga i zdjęcia bez znajomości programowania. Regularna treść to paliwo dla SEO.",
           "tags": [
             "Supabase",
             "Tailwind CSS",
@@ -83,29 +207,9 @@
           ]
         },
         {
-          "id": "seo",
-          "title": "Zaawansowane SEO i widoczność w sieci",
-          "description": "Buduję strony zoptymalizowane pod kątem algorytmów Google od pierwszej linijki kodu. Poprawiam szybkość wczytywania (Core Web Vitals) i dbam o idealną semantykę, by wyprzedzić Twoją konkurencję.",
-          "tags": [
-            "Technical SEO",
-            "Core Web Vitals",
-            "Semantyczny HTML"
-          ]
-        },
-        {
-          "id": "webapp",
-          "title": "Zaawansowane Aplikacje Webowe",
-          "description": "Wychodzę poza standardowe witryny. Tworzę autorskie aplikacje z logowaniem, bazami danych i integracjami zewnętrznych systemów (API), np. dedykowane portale klienta czy systemy rezerwacji.",
-          "tags": [
-            "TypeScript",
-            "API Integrations",
-            "Vercel"
-          ]
-        },
-        {
           "id": "redesign",
           "title": "Redesign obecnej strony",
-          "description": "Twoja witryna przestała sprzedawać lub działa zbyt wolno na telefonach? Przeprowadzę techniczny audyt, zaproponuję nowy układ UX/UI i przepiszę ją na nowoczesne technologie, zachowując pozycje w Google.",
+          "description": "Twoja witryna przestała sprzedawać lub działa zbyt wolno na telefonach? Przeprowadzamy techniczny audyt, proponujemy nowy układ UX/UI i przepisujemy ją na nowoczesne technologie, zachowując pozycje w Google.",
           "tags": [
             "Audyt UX/UI",
             "Migracja",
@@ -113,18 +217,52 @@
           ]
         },
         {
-          "id": "marketing",
-          "title": "Marketing i Analityka",
-          "description": "Łączę świetny produkt technologiczny z precyzyjnym dotarciem do klienta. Konfiguruję analitykę i prowadzę płatne kampanie reklamowe, które generują realny ruch i szybki zwrot z inwestycji.",
+          "id": "webapp",
+          "title": "Zaawansowane aplikacje webowe",
+          "description": "Wychodzimy poza standardowe witryny. Tworzymy autorskie aplikacje z logowaniem, bazami danych i integracjami zewnętrznych systemów (API), np. dedykowane portale klienta czy systemy rezerwacji.",
           "tags": [
-            "Google Ads",
-            "Meta Ads",
-            "Analityka"
+            "TypeScript",
+            "API Integrations",
+            "Vercel"
           ]
         }
       ],
-      "contactPrompt": "Nie znalazłeś tego, czego szukasz, lub potrzebujesz dedykowanej wyceny?",
+      "contactPrompt": "Nie wiesz, od czego zacząć, albo potrzebujesz dedykowanej wyceny?",
       "contactButton": "Porozmawiajmy o Twoim projekcie"
+    },
+    "included": {
+      "badge": "ZAKRES WSPÓŁPRACY",
+      "title": "Widoczność dostajesz ",
+      "titleHighlight": "zawsze",
+      "titleEnd": ".",
+      "subtitle": "Nie dzielimy widoczności na pakiety. Pozycjonowanie, Wizytówka Google i analityka wchodzą w każdy projekt, bo bez nich strona po prostu nie pracuje. Różni nas tylko zakres samego serwisu.",
+      "alwaysTitle": "W każdym projekcie",
+      "alwaysSubtitle": "Standard, którego nie musisz dokupywać",
+      "fomo": "Każdy miesiąc bez tych elementów to klienci, którzy trafiają do kogoś innego. Dlatego nie sprzedajemy ich osobno i nie chowamy za droższym pakietem.",
+      "fomoHighlight": "Twoja konkurencja ma to już od dawna.",
+      "always": [
+        "Optymalizacja SEO pod Twoje miasto i branżę",
+        "Wizytówka Google i obecność na Mapach",
+        "Konfiguracja Google Search Console",
+        "Google Analytics i pomiar zapytań",
+        "Szybkie ładowanie (Core Web Vitals)",
+        "Pełna responsywność na telefonach",
+        "Formularz kontaktowy zbierający leady",
+        "Dane strukturalne i semantyczny kod",
+        "Szkolenie z obsługi i wsparcie po wdrożeniu"
+      ],
+      "optionalTitle": "Dobieramy do potrzeb",
+      "optionalSubtitle": "Wyceniane indywidualnie, zależnie od zakresu",
+      "optional": [
+        "System zarządzania treścią (CMS) i blog",
+        "Kampanie Google Ads i Meta Ads",
+        "Sklep internetowy lub system rezerwacji",
+        "Dedykowana aplikacja webowa z logowaniem",
+        "Rozbudowana strategia treści pod wyszukiwarkę",
+        "Stała opieka i comiesięczne raporty widoczności"
+      ],
+      "note": "Każdy projekt wyceniamy indywidualnie, bo inaczej liczy się prosta wizytówka, a inaczej serwis z CMS i kampaniami. Napisz, czego potrzebujesz, a przygotujemy konkretną wycenę.",
+      "cta": "Poproś o wycenę"
     },
     "forWho": {
       "badge": "Czy to dla Ciebie?",
@@ -177,11 +315,11 @@
         {
           "phase": "01 / KONSULTACJA",
           "title": "Analiza i cele",
-          "desc": "Zaczynamy od niezobowiązującej rozmowy – na żywo lub online. Dokładnie analizuję Twoją branżę, działania konkurencji oraz oczekiwania Twoich klientów. Wspólnie definiujemy cele biznesowe, które ma realizować nowa strona. To solidny fundament, bez którego nie ruszamy z pracą.",
+          "desc": "Zaczynamy od niezobowiązującej rozmowy, na żywo lub online. Sprawdzamy, jak dziś wygląda Twoja widoczność w Google, kto zajmuje czołowe pozycje na Twoje frazy i czego szukają Twoi klienci. Wspólnie definiujemy cele biznesowe. To solidny fundament, bez którego nie ruszamy z pracą.",
           "tags": [
-            "Analiza Rynku",
-            "Brief Biznesowy",
-            "Cele Projektu"
+            "Audyt widoczności",
+            "Analiza konkurencji w Google",
+            "Cele projektu"
           ]
         },
         {
@@ -197,31 +335,31 @@
         {
           "phase": "03 / PROGRAMOWANIE",
           "title": "Kodowanie i optymalizacja",
-          "desc": "Tu dzieje się magia. Zamieniam zatwierdzone projekty w w pełni funkcjonalną stronę korzystając z najnowszych technologii. Dbam o każdy detal – od płynnych animacji, po optymalizację szybkości ładowania (Core Web Vitals) i perfekcyjne wyświetlanie na urządzeniach mobilnych.",
+          "desc": "Tu dzieje się magia. Zamieniamy zatwierdzone projekty w pełni funkcjonalną stronę, korzystając z najnowszych technologii. Od pierwszej linijki kodu budujemy ją pod algorytmy Google: semantyczny HTML, dane strukturalne, szybkość ładowania (Core Web Vitals) i perfekcyjne wyświetlanie na telefonach.",
           "tags": [
-            "Frontend Dev",
-            "Mobile Optymalizacja",
-            "Core Web Vitals"
+            "SEO techniczne",
+            "Core Web Vitals",
+            "Optymalizacja mobilna"
           ]
         },
         {
           "phase": "04 / TESTY",
           "title": "Kontrola jakości",
-          "desc": "Zanim pokażemy stronę światu, przechodzi ona rygorystyczny proces testowania. Sprawdzam jej wydajność w różnych przeglądarkach, testuję formularze i weryfikuję poprawne wyświetlanie na wszystkich możliwych rozdzielczościach ekranu. Otrzymujesz w pełni działającą wersję do ostatecznej weryfikacji.",
+          "desc": "Zanim pokażemy stronę światu, przechodzi rygorystyczne testy. Sprawdzamy wydajność w różnych przeglądarkach, testujemy formularze i weryfikujemy wyświetlanie na wszystkich rozdzielczościach. Kontrolujemy też, czy Google poprawnie widzi i indeksuje wszystkie podstrony. Otrzymujesz działającą wersję do ostatecznej akceptacji.",
           "tags": [
             "Cross-browser QA",
-            "Responsive Check",
-            "Final Review"
+            "Weryfikacja indeksowania",
+            "Testy responsywności"
           ]
         },
         {
           "phase": "05 / WDROŻENIE",
           "title": "Publikacja i Wsparcie",
-          "desc": "Gdy w pełni zaakceptujesz wygląd i działanie strony, a formalności finansowe zostaną dopięte, publikuję gotowy produkt na niezawodnych serwerach. Moja rola jednak się tu nie kończy. Pozostaję do Twojej dyspozycji – pomagam w obsłudze, wdrażam ewentualne poprawki i jestem gotowy na dalszą rozbudowę strony w przyszłości.",
+          "desc": "Publikujemy stronę i dopiero teraz zaczyna się praca nad widocznością. Zgłaszamy witrynę do Google Search Console, podpinamy Analytics oraz zakładamy i optymalizujemy Wizytówkę Google, żeby firma pojawiła się na Mapach. Nasza rola się tu nie kończy: pomagamy w obsłudze, monitorujemy pozycje i rozwijamy widoczność w kolejnych miesiącach.",
           "tags": [
-            "Publikacja w Sieci",
-            "Wsparcie Techniczne",
-            "Rozwój Projektu"
+            "Search Console",
+            "Wizytówka Google",
+            "Analytics i opieka"
           ]
         }
       ],
@@ -238,32 +376,36 @@
       "title": "Najczęściej zadawane ",
       "items": [
         {
-          "question": "Ile kosztuje stworzenie strony internetowej?",
-          "answer": "Zazwyczaj budżet moich projektów mieści się w przedziale od 1500 do 5000 PLN. Ostateczna kwota zawsze zależy od Twoich wymagań i wybranego typu strony (Landing Page będzie tańszy niż rozbudowany serwis z systemem CMS). Przed rozpoczęciem prac otrzymasz ode mnie dokładną, bezpłatną wycenę."
+          "question": "Czym różni się strona internetowa od pozycjonowania?",
+          "answer": "Strona to miejsce, do którego trafia klient. Pozycjonowanie to sposób, w jaki on w ogóle do niej trafia. Możesz mieć świetną witrynę, ale jeśli nie pojawia się w Google, nikt jej nie zobaczy. Dlatego u nas jedno i drugie idzie w parze i nie sprzedajemy tego osobno."
+        },
+        {
+          "question": "Ile kosztuje strona wraz z widocznością w Google?",
+          "answer": "Zazwyczaj budżet naszych projektów mieści się w przedziale od 1500 do 5000 zł. Ostateczna kwota zależy od zakresu: prosta wizytówka kosztuje mniej niż serwis z systemem CMS, blogiem czy kampaniami. Optymalizacja SEO, Wizytówka Google i analityka są w każdym projekcie, nie dopłacasz za nie osobno. Przed startem otrzymasz dokładną, bezpłatną wycenę."
+        },
+        {
+          "question": "Jak szybko zobaczę efekty w Google?",
+          "answer": "Wizytówka Google i Mapy potrafią przynieść pierwsze telefony w ciągu kilku tygodni. Pozycjonowanie organiczne to proces dłuższy: pierwsze ruchy widać zwykle po 1-3 miesiącach, a realne pozycje na konkurencyjne frazy budują się przez pół roku i dłużej. Jeśli klienci potrzebni są od zaraz, uzupełniamy to kampaniami Google Ads."
+        },
+        {
+          "question": "Czy zajmujecie się Wizytówką Google i Mapami?",
+          "answer": "Tak, to jeden z filarów naszej pracy. Zakładamy lub przejmujemy Profil Firmy w Google, uzupełniamy go, optymalizujemy kategorie i opis oraz ustawiamy wszystko tak, żeby firma pojawiała się w lokalnych wynikach i na Mapach. Dla firm usługowych w mniejszych miastach to często szybsze źródło klientów niż sama strona."
         },
         {
           "question": "Czy będę mógł sam edytować treści na stronie?",
-          "answer": "Tak. Tworzę również strony wyposażone w dedykowany, intuicyjny system CMS (Content Management System). Dzięki temu będziesz mógł samodzielnie aktualizować teksty, podmieniać zdjęcia czy dodawać wpisy bez konieczności kontaktu ze mną i bez wiedzy programistycznej."
+          "answer": "Tak, jeśli wybierzesz stronę z systemem zarządzania treścią (CMS). Dzięki niemu samodzielnie zaktualizujesz teksty, podmienisz zdjęcia i dodasz wpisy na blogu bez wiedzy programistycznej. Regularnie dodawana treść dodatkowo wzmacnia pozycjonowanie."
         },
         {
-          "question": "Czy pomagasz w pozycjonowaniu (SEO) i reklamach?",
-          "answer": "Zdecydowanie. Samo stworzenie strony to dopiero połowa sukcesu. Od strony technicznej wdrażam najnowsze struktury SEO, dzięki czemu witryna ładuje się błyskawicznie i jest faworyzowana przez algorytmy. Oferuję również kompleksowe prowadzenie płatnych kampanii Google Ads oraz Meta Ads, aby natychmiast sprowadzić klientów do Twojej firmy."
+          "question": "To jednorazowa usługa czy stała współpraca?",
+          "answer": "Wdrożenie strony wraz z konfiguracją SEO, Wizytówki Google i analityki rozliczamy jednorazowo. Widoczność w Google to jednak proces, dlatego wielu klientów zostaje z nami na dłużej, żebyśmy pilnowali pozycji, rozwijali treści i raportowali efekty. Nie jest to obowiązkowe, a zakres takiej opieki ustalamy indywidualnie."
         },
         {
           "question": "Jak długo trwa realizacja projektu?",
-          "answer": "Prosty Landing Page to zazwyczaj kwestia 7-14 dni. Rozbudowane strony z systemem CMS i wieloma podstronami zajmują od 3 do 5 tygodni. Dokładny harmonogram zawsze ustalamy przed startem."
+          "answer": "Prosta strona wizytówkowa to zwykle 7-14 dni. Rozbudowany serwis z systemem CMS i wieloma podstronami zajmuje od 3 do 5 tygodni. Konfiguracja Search Console, Analytics i Wizytówki Google odbywa się przy wdrożeniu. Dokładny harmonogram ustalamy przed startem."
         },
         {
-          "question": "Czy moja strona będzie poprawnie działać na telefonach?",
-          "answer": "Absolutnie tak. Projektowanie zaczynam często od wersji mobilnej (mobile-first). Gwarantuję, że strona będzie w 100% responsywna i idealnie dopasowana do smartfonów, tabletów i dużych ekranów."
-        },
-        {
-          "question": "Jakich technologii używasz?",
-          "answer": "Nie używam powolnych kreatorów z tysiącem wtyczek. Koduję od podstaw używając nowoczesnego stacku technologicznego: Vite, React, TypeScript, Supabase, Tailwind CSS. Zapewnia to maksymalne bezpieczeństwo i szybkość działania."
-        },
-        {
-          "question": "Jak wygląda proces współpracy?",
-          "answer": "Zaczynamy od spotkania (na żywo lub online), gdzie poznaję Twój biznes. Następnie przygotowuję strategię i projekt graficzny. Po Twojej akceptacji programuję stronę, podpinam pod domenę i przeprowadzam dla Ciebie krótkie szkolenie z obsługi."
+          "question": "Jakich technologii używacie?",
+          "answer": "Nie korzystamy z powolnych kreatorów z tysiącem wtyczek. Kodujemy od podstaw w nowoczesnym stacku: Vite, React, TypeScript, Tailwind CSS i Supabase. Dzięki temu strony ładują się błyskawicznie, co Google premiuje w wynikach wyszukiwania, i są bezpieczne."
         }
       ],
       "titleHighlight": "pytania"
