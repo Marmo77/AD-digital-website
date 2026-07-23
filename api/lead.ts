@@ -1,12 +1,21 @@
 /**
- * Vercel Serverless Function: /api/lead
- * Odbiera zgłoszenie z formularza kontaktowego i przekazuje je do Google Apps Script
- * (który zapisuje wiersz w arkuszu "Leady" i wysyła powiadomienie e-mail).
- *
- * Adres webhooka i token trzymamy po stronie serwera (nie trafiają do bundla klienta):
- *   - LEADS_WEBHOOK_URL  – adres wdrożenia Apps Script (…/exec)
- *   - LEADS_TOKEN        – współdzielony sekret (ten sam, co SHARED_TOKEN w skrypcie)
- *   - LEADS_WEBSITE_ID   – identyfikator witryny (domyślnie "1")
+a) What it does:
+Serverless fn on /api/lead. Takes contact form data (name, email, phone, message, lang), validates, forwards to Apps Script webhook - writes row in Sheets + sends me an email. Basically: client submits form - I get pinged in few sec.
+
+b) Key decisions:
+- Webhook URL + token in process.env - never shows to a client bundle
+- Honeypot field that bot fills (anti bot)
+- trimmed and sliced every field before forwarding no oversized data hitting the sheet
+- added language field, normalized to EN/PL site is bilingual, wanted the email notif in the right language automatically
+- Few types of errors (missing_fields, server_misconfigured, upstream_error, network_error) instead of one generic 500. Its easier to debug at midnight when something breaks :D
+- left detail in the 502 response -- temp, for debugging while it was still flaky, should probably strip before prod but kept it since its genuinely useful
+
+c) Why I like it:
+First piece of infra that actually makes money for the agency.
+Every lead goes through this exact function. Small file, but forced me to think about stuff a tutorial wouldn't cover like secrets can't touch the client, 
+bots find your form within hours of going live, 
+and good error messages save you way more time than they cost to write.
+And also its important to me to get leads from my potential clients.
  */
 
 export default async function handler(req: any, res: any) {
@@ -27,7 +36,6 @@ export default async function handler(req: any, res: any) {
     return;
   }
 
-  // Body może przyjść jako obiekt (auto-parse) lub string
   let body = req.body;
   if (typeof body === "string") {
     try {
@@ -36,10 +44,9 @@ export default async function handler(req: any, res: any) {
       body = {};
     }
   }
-  const { fullname, email, phone, message, company } = body || {};
+  const { fullname, email, phone, message, company, language } = body || {};
 
-  // Honeypot: pole "company" jest ukryte przed użytkownikiem – jeśli wypełnione, to bot.
-  // Udajemy sukces, żeby bot nie próbował ponownie.
+  // honeypot
   if (company) {
     res.status(200).json({ ok: true });
     return;
@@ -49,13 +56,19 @@ export default async function handler(req: any, res: any) {
     res.status(400).json({ ok: false, error: "missing_fields" });
     return;
   }
+  // lang
+  const normalizedLanguage =
+    String(language || "").toUpperCase() === "EN" ? "EN" : "PL";
 
   const payload = {
     token,
     fullname: String(fullname).trim().slice(0, 200),
     email: String(email).trim().slice(0, 200),
-    phone: String(phone || "").trim().slice(0, 50),
+    phone: String(phone || "")
+      .trim()
+      .slice(0, 50),
     message: String(message).trim().slice(0, 5000),
+    language: normalizedLanguage,
     website_id: process.env.LEADS_WEBSITE_ID || "1",
   };
 
@@ -70,15 +83,18 @@ export default async function handler(req: any, res: any) {
     let data: any = {};
     try {
       data = JSON.parse(text);
-    } catch {
-      /* Apps Script może zwrócić HTML przy błędzie – zostawiamy pusty obiekt */
-    }
+    } catch {}
 
     if (!upstream.ok || data.ok === false) {
       const detail = data.error || text.slice(0, 300);
       console.error("Apps Script upstream error:", upstream.status, detail);
-      // Zwracamy szczegóły tymczasowo, aby zdiagnozować problem (do usunięcia po naprawie)
-      res.status(502).json({ ok: false, error: "upstream_error", status: upstream.status, detail });
+      // temp for check
+      res.status(502).json({
+        ok: false,
+        error: "upstream_error",
+        status: upstream.status,
+        detail,
+      });
       return;
     }
 

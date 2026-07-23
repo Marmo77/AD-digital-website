@@ -30,7 +30,7 @@ type ContactFormValues = z.infer<typeof contactFormValidationSchema>;
 
 
 const ContactFormComponent = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -64,6 +64,7 @@ const ContactFormComponent = () => {
           email: _data.email,
           phone: _data.phone,
           message: _data.message,
+          language: i18n.language === "en" ? "EN" : "PL",
           company: _data.company, // honeypot
         }),
       });
@@ -184,7 +185,7 @@ const ContactFormComponent = () => {
             </div>
             <div className="flex flex-col">
               <Label htmlFor="privacy" className="text-sm text-foreground/80 cursor-pointer font-normal leading-tight">
-                {t("contact.form.privacyStart")}<Link to="/privacy" className="text-primary hover:underline">{t("contact.form.privacyLink")}</Link>{t("contact.form.privacyEnd")}
+                {t("contact.form.privacyStart")}<Link to="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{t("contact.form.privacyLink")}</Link>{t("contact.form.privacyEnd")}
               </Label>
               {errors.privacy && <span className="text-xs text-destructive mt-1">{t(String(errors.privacy.message))}</span>}
             </div>

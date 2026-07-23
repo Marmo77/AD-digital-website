@@ -74,6 +74,8 @@ export function Footer() {
             </HashLink>
             <Link
               to="/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-primary transition-colors"
             >
               {t("footer.privacy")}
